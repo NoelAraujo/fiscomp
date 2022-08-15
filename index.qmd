@@ -1,0 +1,7 @@
+# Olá {.unnumbered}
+
+Texto em desenvolvimento contínuo, favor reportar os erros.
+
+Agradecimentos a todos os meus amigos que revisaram os projetos.
+
+Livro gerado com <https://quarto.org/docs/books>.
