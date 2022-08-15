@@ -25,21 +25,21 @@
     "href": "Projeto1/projeto1.html#estrutura-de-repetição",
     "title": "1  Aquecimento",
     "section": "1.3 Estrutura de Repetição",
-    "text": "1.3 Estrutura de Repetição\n\nIgnorando um gama gigantesca de fatores, vamos assumir, o cenário irrealístico, de que a temperatura anual de uma cidade na região Sudeste do Brasil é descrito por uma função cosseno, cuja miníma anual é 5°, e máxima anual é 35°, acontecendo no primeiro dia do Verão, dia 21 de dezembro (que corresponde ao 355° dia do ano).\n\nCrie uma função que simule o comportamento de temperatura anual.\nVamos trabalhar as datas como índices. Crie um vetor com todos os números de 1 até 365.\nCalcule a temperatura anual usando for, map e o operador broadcasting, representado por um ponto \".\"\nCrie uma figura com seu resultado, usando o pacote Plots.jl.\n\n\n\n\n\n\n\n\nDica\n\n\n\n\n\nProcure por Trig word problem: modeling annual temperature na Internet."
+    "text": "1.3 Estrutura de Repetição\n\nIgnorando um gama gigantesca de fatores, vamos assumir, o cenário irrealístico, de que a temperatura anual de uma cidade na região Sudeste do Brasil é descrito por uma função cosseno, cuja miníma anual é 5°, e máxima anual é 35°, acontecendo no primeiro dia do Verão, dia 21 de dezembro (que corresponde ao 355° dia do ano).\n\nCrie uma função que simule o comportamento de temperatura anual.\nVamos trabalhar as datas como índices. Crie um vetor com todos os números de 1 até 365.\nCalcule a temperatura anual usando for, map e o operador broadcasting, representado por um ponto \".\"\nCrie uma figura com seu resultado, usando o pacote Plots.jl.\n\n\n\n\n\n\n\n\nDica\n\n\n\nProcure por Trig word problem: modeling annual temperature na Internet."
   },
   {
     "objectID": "Projeto1/projeto1.html#trigonometria",
     "href": "Projeto1/projeto1.html#trigonometria",
     "title": "1  Aquecimento",
     "section": "1.4 Trigonometria",
-    "text": "1.4 Trigonometria\nComputadores são máquinas incríveis para fazer contas, mas ainda sim possuem limites. Vamos testar um deles com o cálculo da função seno.\n\nCrie um programa para estimar o valor de sen(x) através de sua expansão de Taylor truncada em \\(N\\) elementos: \\[\n   sin(x) = \\sum_{n=0}^{N} (-1)^n \\frac{x^{2n+1}}{(2n+1)!}\n\\]\n\nEscolha um valor de \\(x\\) e calcule a série para \\(N\\) diferentes. Quanto maior \\(N\\), melhor será seus resultado, e nós desejamos verificar isso exibindo os erro absoluto em um plot de escala logarítmica. Use a biblioteca Plots.jl para isso.\nPara quais valores de \\(N\\) você não consegue mais realizar a somatória ? Por quê?\n\n\n\n\n\n\n\n\nObservação\n\n\n\n\n\nerro absoluto = \\(|y_{estimado} - y_{exato}|\\).\nUse a função sin(x) que já vem por padrão em Julia para obter o valor exato."
+    "text": "1.4 Trigonometria\nComputadores são máquinas incríveis para fazer contas, mas ainda sim possuem limites. Vamos testar um deles com o cálculo da função seno.\n\nCrie um programa para estimar o valor de sen(x) através de sua expansão de Taylor truncada em \\(N\\) elementos: \\[\n    sin(x) = \\sum_{n=0}^{N} (-1)^n \\frac{x^{2n+1}}{(2n+1)!}\n\\]\n\n\nEscolha um valor de \\(x\\) e calcule a série para \\(N\\) diferentes. Quanto maior \\(N\\), melhor será seus resultado, e nós desejamos verificar isso exibindo os erro absoluto em um plot de escala logarítmica. Use a biblioteca Plots.jl para isso.\nPara quais valores de \\(N\\) você não consegue mais realizar a somatória ? Por quê?\n\n\n\n\n\n\n\nNota\n\n\n\nerro absoluto = \\(|y_{estimado} - y_{exato}|\\).\nUse a função sin(x) que já vem por padrão em Julia para obter o valor exato."
   },
   {
     "objectID": "Projeto1/projeto1.html#resistores-em-série",
     "href": "Projeto1/projeto1.html#resistores-em-série",
     "title": "1  Aquecimento",
     "section": "1.5 Resistores em Série",
-    "text": "1.5 Resistores em Série\nSerá inevitável que você fará uso de pacotes prontos. E é comum em Julia a criação de novos tipos de dados - tipos no sentido Int ou Float. Esse recurso permite que você desenvolva códigos mais inteligível e tudo começa com struct. Nesse exercício criaremos um tipo de dado para ajudar a calcular resistências em série de circuitos elétricos.\n\nDefina um struct1 chamado resistor com 2 campos do tipo Number: Resistência, \\(R\\) e Corrente, \\(i\\).\n\nInstancie 2 resistores em série, com \\(i = 4A\\), e \\(R_1 = 5\\Omega\\) e \\(R_2 = 20\\Omega\\).\nCrie uma função que receba o tipo de entrada resistor e retorne a tensão \\(U = R\\cdot i\\).\nCrie um novo método que some 2 resistências em série e retorne um novo objeto do tipo resistor."
+    "text": "1.5 Resistores em Série\nSerá inevitável que você fará uso de pacotes prontos. E é comum em Julia a criação de novos tipos de dados - tipos no sentido Int ou Float. Esse recurso permite que você desenvolva códigos mais inteligível e tudo começa com struct. Nesse exercício criaremos um tipo de dado para ajudar a calcular resistências em série de circuitos elétricos.\n\nDefina um struct1 chamado resistor com 2 campos do tipo Number: Resistência, \\(R\\) e Corrente, \\(i\\).\n\n\nInstancie 2 resistores em série, com \\(i = 4A\\), e \\(R_1 = 5\\Omega\\) e \\(R_2 = 20\\Omega\\).\nCrie uma função que receba o tipo de entrada resistor e retorne a tensão \\(U = R\\cdot i\\).\nCrie um novo método que some 2 resistências em série e retorne um novo objeto do tipo resistor."
   },
   {
     "objectID": "Projeto2/projeto2.html",
@@ -49,25 +49,18 @@
     "text": "Objetivo Geral: Aprender como obter taxas de decaimento.\nObjetivo Especifico: Fazer fits de curvas de decaimento com lei de potência, típico de sistemas de atenuação de energia no espaço. Como a taxa de decaimento é rápida, você precisará ter cuidado adicional para fazer seu fitting.\nConteúdo: Escala Logarítmica; Lei do Inverso do Quadrado da Distância; Despacito; Métodos dos Mínimos Quadrados; Propagação de Erros.\nUma situação que você fará uso de computador para facilitar sua vida no mundo da Física, será para obtenção e tratamentos de dados experimentais. Rotineiramente você precisará criar figuras com os seus resultados, estimar parâmetros relevantes do sistema e ainda escrever relatórios. Como não são todos os estudantes que tem a oportunidade de ter uma aula específica sobre esses assuntos, esse projeto será um guia inicial de como fazer tratamentos de dados."
   },
   {
-    "objectID": "Projeto2/projeto2.html#aa",
-    "href": "Projeto2/projeto2.html#aa",
-    "title": "2  Tratamento de Dados",
-    "section": "2.1 aa",
-    "text": "2.1 aa\n\nMais um teste muito louco\n\nsub item para ver se fica legal"
-  },
-  {
-    "objectID": "Projeto2/projeto2.html#bb",
-    "href": "Projeto2/projeto2.html#bb",
-    "title": "2  Tratamento de Dados",
-    "section": "2.2 bb",
-    "text": "2.2 bb\n\nSegundo Mais um teste muito louco\n\nsub item para ver se fica legal"
-  },
-  {
     "objectID": "Projeto2/projeto2.html#o-experimento",
     "href": "Projeto2/projeto2.html#o-experimento",
     "title": "2  Tratamento de Dados",
     "section": "2.1 O Experimento",
     "text": "2.1 O Experimento\nVocê pode aumentar ou diminuir a altura do som do seu celular com 2 botões. Contudo, seu ouvido não funciona da mesma maneira. Se você é exposto a sons de mesma intensidade, mas frequências diferentes, você terá a impressão que os sons estão em volumes diferentes. Essa sensibilidade diferente para cada frequência depende de pessoa para pessoa, e sua primeira atividade será descobrir os limites dos seus ouvidos.\nVocê irá realizar o experimento proposto em [1], para acessar os seus detalhes, clique aqui. A atividade consiste em escutar sons com frequências bem definidas, porém de intensidades diferentes ao longo do tempo. Ao contar a quantidade de tons, você conseguirá calcular os seus limites auditivos.\n\n\n\n\n\n\nAviso\n\n\n\nNão esqueça que seu primeiro passo na atividade não é preencher a tabela, mas sim ajustar a altura do fone de ouvido para que você escute 18 ou 19 batidas em 3500Hz.\nLeia toda a prática antes de começar a realiza-lá.\n\n\n\n\n\n\n\n\nAviso\n\n\n\nNão se preocupe com os resultados no regime de alta frequência. Fones de ouvidos não são feitos para ter alta fidelidade nessa região, logo, você provavelmente não escutará tantas batidas.\nRelaxe, você não está surdo.\n\n\n\n\n\n\n\n\nDica\n\n\n\nEsse experimento é longo e será inevitável a fadiga. Isso é um problema para garantir a qualidade dos seus dados, pois você terá muita atenção para contar as batidas no começo da prática, e não terá a mesma disposição e atenção para contar batidas no final do experimento.\nUma maneira de contornar o cansaço físico é não realizar o experimento de forma linear, escute as frequências em ordem aleatória.\n\n\n\nLeia atentamente a descrição do experimento e preencha uma tabela com a quantidade de batidas que você escutou em cada repetição.\n\nArmazene os seus resultados em uma planilha.\nSalve os dados como um arquivo CSV.\nLeia os dados em Julia com o pacote DelimitedFiles.jl, e com o pacote de vizualização de sua escolha, faça um gráfico semilogx dos seus resultados.\nO tamanho da fonte da figura deve ser comparável ao texto onde ele estará embutido.\n\n\n\n\n\n\n\n\nObservação\n\n\n\n\n\nSalvar arquivos em formato .csv é conveniente apenas quando o conjunto de dados é pequeno, pois você pode acessar os dados com um editor de texto.\nQuando o conjunto de dados é enorme, e você não precisa de uma banco de dados, use arquivos do formato .hdf5.\n\n\n\n\n\n\n\n[1] S.B. Staff, Measuring your threshold of hearing for sounds of different pitches, (2020)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fiscomp",
+    "section": "",
+    "text": "Texto em desenvolvimento contínuo, favor reportar os erros.\nAgradecimentos a todos os meus amigos que revisaram os projetos.\nLivro gerado com https://quarto.org/docs/books."
   },
   {
     "objectID": "references.html",
