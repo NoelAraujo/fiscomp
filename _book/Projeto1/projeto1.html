@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../references.html" rel="next">
+<link href="../Projeto2/projeto2.html" rel="next">
 <link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -109,6 +109,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../Projeto2/projeto2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
@@ -155,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="vetores-e-matrizes" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="vetores-e-matrizes"><span class="header-section-number">1.1</span> Vetores e Matrizes</h2>
 <p>É muito difícil você fazer Física sem usar vetores ou matrizes, por isso você precisa dominar operações básicas de Algebra Linear.</p>
-<ol type="1">
+<ol class="example" type="1">
 <li><p>Dados 3 vetores <span class="math inline">\(\vec{a} = (1,-1,1)\)</span>, <span class="math inline">\(\vec{b} = (-3,1,5)\)</span> e <span class="math inline">\(\vec{c} = (4,-7,3)\)</span> :</p>
 <ol type="a">
 <li><p>Calcule a norma (valor absoluto Euclidiano) de cada vetor.</p></li>
@@ -168,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="leitura-e-escrita" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="leitura-e-escrita"><span class="header-section-number">1.2</span> Leitura e Escrita</h2>
 <p>Outra tarefa recorrente em programação é leitura de dados em arquivo para posterior análise.</p>
-<ol start="2" type="1">
+<ol start="2" class="example" type="1">
 <li><p>Voltaremos aos tempos de ensino médio, e vamos calcular tempo de queda livre <span class="math inline">\(t_q = \sqrt{2h/g}\)</span>, porém não apenas na Terra.</p>
 <ol type="a">
 <li><p>Pesquise o valor da aceleração da gravidade, <span class="math inline">\(g\)</span>, em diferentes planetas do sistema solar. Salve seus resultados em um arquivo <code>.txt</code>, cuja primeira coluna é o nome do planeta, e na segunda o valor de <span class="math inline">\(g\)</span>. Separe os dados com uma vírgula.</p></li>
@@ -181,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="estrutura-de-repetição" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="estrutura-de-repetição"><span class="header-section-number">1.3</span> Estrutura de Repetição</h2>
-<ol start="3" type="1">
+<ol start="3" class="example" type="1">
 <li><p>Ignorando um gama gigantesca de fatores, vamos assumir, o cenário irrealístico, de que a temperatura anual de uma cidade na região Sudeste do Brasil é descrito por uma função cosseno, cuja miníma anual é 5°, e máxima anual é 35°, acontecendo no primeiro dia do Verão, dia 21 de dezembro (que corresponde ao 355° dia do ano).</p>
 <ol type="a">
 <li><p>Crie uma função que simule o comportamento de temperatura anual.</p></li>
@@ -210,14 +215,14 @@ Dica
 <section id="trigonometria" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="trigonometria"><span class="header-section-number">1.4</span> Trigonometria</h2>
 <p>Computadores são máquinas incríveis para fazer contas, mas ainda sim possuem limites. Vamos testar um deles com o cálculo da função seno.</p>
-<ol start="4" type="1">
+<ol start="4" class="example" type="1">
 <li>Crie um programa para estimar o valor de <em>sen(x)</em> através de sua expansão de Taylor truncada em <span class="math inline">\(N\)</span> elementos: <span class="math display">\[
-    sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
-\]</span></li>
-</ol>
+   sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+\]</span>
 <ol type="a">
 <li><p>Escolha um valor de <span class="math inline">\(x\)</span> e calcule a série para <span class="math inline">\(N\)</span> diferentes. Quanto maior <span class="math inline">\(N\)</span>, melhor será seus resultado, e nós desejamos verificar isso exibindo os erro absoluto em um plot de escala logarítmica. Use a biblioteca <code>Plots.jl</code> para isso.</p></li>
 <li><p>Para quais valores de <span class="math inline">\(N\)</span> você não consegue mais realizar a somatória ? Por quê?</p></li>
+</ol></li>
 </ol>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -240,13 +245,13 @@ Observação
 <section id="resistores-em-série" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="resistores-em-série"><span class="header-section-number">1.5</span> Resistores em Série</h2>
 <p>Será inevitável que você fará uso de pacotes prontos. E é comum em Julia a criação de novos tipos de dados - <code>tipos</code> no sentido <code>Int</code> ou <code>Float</code>. Esse recurso permite que você desenvolva códigos mais inteligível e tudo começa com <code>struct</code>. Nesse exercício criaremos um tipo de dado para ajudar a calcular resistências em série de circuitos elétricos.</p>
-<ol start="5" type="1">
-<li>Defina um <code>struct</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> chamado <code>resistor</code> com 2 campos do tipo <code>Number</code>: Resistência, <span class="math inline">\(R\)</span> e Corrente, <span class="math inline">\(i\)</span>.</li>
-</ol>
+<ol start="5" class="example" type="1">
+<li>Defina um <code>struct</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> chamado <code>resistor</code> com 2 campos do tipo <code>Number</code>: Resistência, <span class="math inline">\(R\)</span> e Corrente, <span class="math inline">\(i\)</span>.
 <ol type="a">
 <li>Instancie 2 resistores em série, com <span class="math inline">\(i = 4A\)</span>, e <span class="math inline">\(R_1 = 5\Omega\)</span> e <span class="math inline">\(R_2 = 20\Omega\)</span>.</li>
 <li>Crie uma função que receba o tipo de entrada <code>resistor</code> e retorne a tensão <span class="math inline">\(U = R\cdot i\)</span>.</li>
 <li>Crie um novo <em>método</em> que some 2 resistências em série e retorne um novo objeto do tipo <code>resistor</code>.</li>
+</ol></li>
 </ol>
 
 
@@ -364,8 +369,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto2/projeto2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

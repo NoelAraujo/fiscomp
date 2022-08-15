@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - Projeto1/projeto1.qmd
+    - Projeto2/projeto2.qmd
     # - summary.qmd
     # - intro.qmd
     - references.qmd
@@ -17,7 +18,7 @@ book:
 
 
 bibliography: references.bib
-
+csl: journal-of-computational-physics-x.csl
 format:
   html:
     theme:
