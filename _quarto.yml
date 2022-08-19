@@ -1,0 +1,43 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Física Computacional"
+  author: "Noel Araujo Moreira"
+  date: "8/15/2022"
+  chapters:
+    - index.qmd
+    # - part: intro.qmd
+    #   chapters:
+    #     - instalar_linux.qmd
+    #     - instalar_windows.qmd
+    - part: projetos.qmd
+      chapters:
+        - Projeto1/projeto1.qmd
+        - Projeto2/projeto2.qmd
+    - references.qmd
+  search: true
+
+
+bibliography: references.bib
+csl: journal-of-computational-physics-x.csl
+format:
+  html:
+    theme:
+      light: lumen
+    code-fold: show
+    code-copy: hover
+    code-block-bg: true
+    highlight-style: Ayu
+    # code-block-border-left: "#31BAE9"
+    number-sections: true
+    anchor-sections: true
+    toc-title: "Exercícios"
+    title-block-banner: "#1990FE"
+    fontcolor: "#291816"
+    linkcolor: "#1990FE"
+    code-bg: "#FFFFFF"
+    title-block-banner-color: "#FFFFFF"
+
+jupyter: julia-1.8

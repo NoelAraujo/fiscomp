@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Física Computacional",
+    "section": "",
+    "text": "Texto em desenvolvimento contínuo, favor reportar os erros.\nAgradecimentos a todos os meus amigos que revisaram os projetos.\nLivro gerado com https://quarto.org/docs/books."
+  },
+  {
+    "objectID": "projetos.html",
+    "href": "projetos.html",
+    "title": "Projetos",
+    "section": "",
+    "text": "Projetos serão alterados baseados no feedback dos leitores."
+  },
+  {
     "objectID": "Projeto1/projeto1.html",
     "href": "Projeto1/projeto1.html",
     "title": "1  Aquecimento",
@@ -54,13 +68,6 @@
     "title": "2  Tratamento de Dados",
     "section": "2.1 O Experimento",
     "text": "2.1 O Experimento\nVocê pode aumentar ou diminuir a altura do som do seu celular com 2 botões. Contudo, seu ouvido não funciona da mesma maneira. Se você é exposto a sons de mesma intensidade, mas frequências diferentes, você terá a impressão que os sons estão em volumes diferentes. Essa sensibilidade diferente para cada frequência depende de pessoa para pessoa, e sua primeira atividade será descobrir os limites dos seus ouvidos.\nVocê irá realizar o experimento proposto em [1], para acessar os seus detalhes, clique aqui. A atividade consiste em escutar sons com frequências bem definidas, porém de intensidades diferentes ao longo do tempo. Ao contar a quantidade de tons, você conseguirá calcular os seus limites auditivos.\n\n\n\n\n\n\nAviso\n\n\n\nNão esqueça que seu primeiro passo na atividade não é preencher a tabela, mas sim ajustar a altura do fone de ouvido para que você escute 18 ou 19 batidas em 3500Hz.\nLeia toda a prática antes de começar a realiza-lá.\n\n\n\n\n\n\n\n\nAviso\n\n\n\nNão se preocupe com os resultados no regime de alta frequência. Fones de ouvidos não são feitos para ter alta fidelidade nessa região, logo, você provavelmente não escutará tantas batidas.\nRelaxe, você não está surdo.\n\n\n\n\n\n\n\n\nDica\n\n\n\nEsse experimento é longo e será inevitável a fadiga. Isso é um problema para garantir a qualidade dos seus dados, pois você terá muita atenção para contar as batidas no começo da prática, e não terá a mesma disposição e atenção para contar batidas no final do experimento.\nUma maneira de contornar o cansaço físico é não realizar o experimento de forma linear, escute as frequências em ordem aleatória.\n\n\n\nLeia atentamente a descrição do experimento e preencha uma tabela com a quantidade de batidas que você escutou em cada repetição.\n\nArmazene os seus resultados em uma planilha.\nSalve os dados como um arquivo CSV.\nLeia os dados em Julia com o pacote DelimitedFiles.jl, e com o pacote de vizualização de sua escolha, faça um gráfico semilogx dos seus resultados.\nO tamanho da fonte da figura deve ser comparável ao texto onde ele estará embutido.\n\n\n\n\n\n\n\n\nObservação\n\n\n\n\n\nSalvar arquivos em formato .csv é conveniente apenas quando o conjunto de dados é pequeno, pois você pode acessar os dados com um editor de texto.\nQuando o conjunto de dados é enorme, e você não precisa de uma banco de dados, use arquivos do formato .hdf5.\n\n\n\n\n\n\n\n[1] S.B. Staff, Measuring your threshold of hearing for sounds of different pitches, (2020)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Física Computacional",
-    "section": "",
-    "text": "Texto em desenvolvimento contínuo, favor reportar os erros.\nAgradecimentos a todos os meus amigos que revisaram os projetos.\nLivro gerado com https://quarto.org/docs/books."
   },
   {
     "objectID": "references.html",

@@ -1,0 +1,410 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Fiscomp},
+  pdfauthor={Noel Araujo Moreira},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Fiscomp}
+\author{Noel Araujo Moreira}
+\date{8/15/2022}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, frame hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{oluxe1}{%
+\chapter*{Olá}\label{oluxe1}}
+\addcontentsline{toc}{chapter}{Olá}
+
+Texto em desenvolvimento contínuo, favor reportar os erros.
+
+Agradecimentos a todos os meus amigos que revisaram os projetos.
+
+Livro gerado com \url{https://quarto.org/docs/books}.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{aquecimento}{%
+\chapter{Aquecimento}\label{aquecimento}}
+
+\textbf{Objetivo Geral}: Quebrar o gelo com a linguagem Julia.
+
+\textbf{Objetivo Especifico}: Resolver vários exercícios de pequena
+complexidade, para mostrar funcionalidades da linguagem que serão
+recorrente durante o curso
+
+\textbf{Conteúdo}: Instalação da linguagem e configuração do VS Code;
+Entrada e Saída; Álgebra Linear; Estruturas de repetição; Erros
+numéricos; Multiple-Dispatch
+
+Se você já sabe Julia, ou consegue resolver os exercícios sem
+dificuldades, simplesmente pule esse projeto.
+
+\hypertarget{vetores-e-matrizes}{%
+\section{Vetores e Matrizes}\label{vetores-e-matrizes}}
+
+É muito difícil você fazer Física sem usar vetores ou matrizes, por isso
+você precisa dominar operações básicas de Algebra Linear.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Dados 3 vetores \(\vec{a} = (1,-1,1)\), \(\vec{b} = (-3,1,5)\) e
+  \(\vec{c} = (4,-7,3)\) \footnote{Valores copiados de \cite{p1_ex2}} :
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Calcule a norma (valor absoluto Euclidiano) de cada vetor.
+  \item
+    Calcule o produto escalar e vetorial entre todas as combinações de
+    \(\vec{a},\vec{b}\) e \(\vec{c}\).
+  \item
+    Calcule o ângulo entre os vetores \(\vec{ab}\) e \(\vec{ac}\).
+  \item
+    Crie a matriz \(A = [\vec{a}\; \vec{b}\; \vec{c}]\) e calcule seu
+    determinante.
+  \end{enumerate}
+\end{enumerate}
+
+\hypertarget{leitura-e-escrita}{%
+\section{Leitura e Escrita}\label{leitura-e-escrita}}
+
+Outra tarefa recorrente em programação é leitura de dados em arquivo
+para posterior análise.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Voltaremos aos tempos de ensino médio, e vamos calcular tempo de queda
+  livre \(t_q = \sqrt{2h/g}\), porém não apenas na Terra.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Pesquise o valor da aceleração da gravidade, \(g\), em diferentes
+    planetas do sistema solar. Salve seus resultados em um arquivo
+    \texttt{.txt}, cuja primeira coluna é o nome do planeta, e na
+    segunda o valor de \(g\). Separe os dados com uma vírgula.
+  \item
+    Use o pacote \texttt{DelimitedFiles.jl} para ler os dados em uma
+    matriz.
+  \item
+    Para cada planeta, calcule quanto tempo um objeto demora para
+    atingir o solo, dado que a altura inicial é \(h=120 m\).
+  \item
+    Por meio de interpolação de texto, exiba seus resultados como:
+    \texttt{"{[}planeta{]}:\ tempo\ de\ queda\ é\ {[}tempo{]}\ segundos"}.
+  \item
+    Use funções padrões de Julia, e descubra qual o planeta que demora
+    \emph{mais} e \emph{menos} tempo para a queda acontecer.
+  \end{enumerate}
+\end{enumerate}
+
+\hypertarget{estrutura-de-repetiuxe7uxe3o}{%
+\section{Estrutura de Repetição}\label{estrutura-de-repetiuxe7uxe3o}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Ignorando um gama gigantesca de fatores, vamos assumir, o cenário
+  irrealístico, de que a temperatura anual de uma cidade na região
+  Sudeste do Brasil é descrito por uma função cosseno, cuja miníma anual
+  é 5°, e máxima anual é 35°, acontecendo no primeiro dia do Verão, dia
+  21 de dezembro (que corresponde ao 355° dia do ano).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Crie uma função que simule o comportamento de temperatura anual.
+  \item
+    Vamos trabalhar as datas como índices. Crie um vetor com todos os
+    números de 1 até 365.
+  \item
+    Calcule a temperatura anual usando \texttt{for}, \texttt{map} e o
+    operador \texttt{broadcasting}, representado por um ponto
+    \texttt{"."}
+  \item
+    Crie uma figura com seu resultado, usando o pacote
+    \texttt{Plots.jl}.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Dica}, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, toptitle=1mm, opacityback=0, bottomrule=.15mm, toprule=.15mm, titlerule=0mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, colback=white]
+Procure por \textbf{Trig word problem: modeling annual temperature} na
+Internet.
+\end{tcolorbox}
+
+\hypertarget{trigonometria}{%
+\section{Trigonometria}\label{trigonometria}}
+
+Computadores são máquinas incríveis para fazer contas, mas ainda sim
+possuem limites. Vamos testar um deles com o cálculo da função seno.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Crie um programa para estimar o valor de \emph{sen(x)} através de sua
+  expansão de Taylor truncada em \(N\) elementos: \[
+      sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+   \]
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Escolha um valor de \(x\) e calcule a série para \(N\) diferentes.
+  Quanto maior \(N\), melhor será seus resultado, e nós desejamos
+  verificar isso exibindo os erro absoluto em um plot de escala
+  logarítmica. Use a biblioteca \texttt{Plots.jl} para isso.
+\item
+  Para quais valores de \(N\) você não consegue mais realizar a
+  somatória ? Por quê?
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, toptitle=1mm, opacityback=0, bottomrule=.15mm, toprule=.15mm, titlerule=0mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, colback=white]
+erro absoluto = \(|y_{estimado} - y_{exato}|\).
+
+Use a função \texttt{sin(x)} que já vem por padrão em Julia para obter o
+valor exato.
+\end{tcolorbox}
+
+\hypertarget{resistores-em-suxe9rie}{%
+\section{Resistores em Série}\label{resistores-em-suxe9rie}}
+
+Será inevitável que você fará uso de pacotes prontos. E é comum em Julia
+a criação de novos tipos de dados - \texttt{tipos} no sentido
+\texttt{Int} ou \texttt{Float}. Esse recurso permite que você desenvolva
+códigos mais inteligível e tudo começa com \texttt{struct}. Nesse
+exercício criaremos um tipo de dado para ajudar a calcular resistências
+em série de circuitos elétricos.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Defina um \texttt{struct}\footnote{É esperado que você busque na
+    internet por exemplos mínimos de como trabalhar com \texttt{struct}.}
+  chamado \texttt{resistor} com 2 campos do tipo \texttt{Number}:
+  Resistência, \(R\) e Corrente, \(i\).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Instancie 2 resistores em série, com \(i = 4A\), e \(R_1 = 5\Omega\) e
+  \(R_2 = 20\Omega\).
+\item
+  Crie uma função que receba o tipo de entrada \texttt{resistor} e
+  retorne a tensão \(U = R\cdot i\).
+\item
+  Crie um novo \emph{método} que some 2 resistências em série e retorne
+  um novo objeto do tipo \texttt{resistor}.
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
+
+
+
+\end{document}
