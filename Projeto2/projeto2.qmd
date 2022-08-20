@@ -10,51 +10,10 @@
 
 Uma situação que você fará uso de computador para facilitar sua vida no mundo da Física, será para obtenção e tratamentos de dados experimentais. Rotineiramente você precisará criar figuras com os seus resultados, estimar parâmetros relevantes do sistema e ainda escrever relatórios. Como não são todos os estudantes que tem a oportunidade de ter uma aula específica sobre esses assuntos, esse projeto será um guia inicial de como fazer tratamentos de dados.
 
-## O Experimento
+{{< include _21_experimento.qmd >}}
 
-Você pode aumentar ou diminuir a altura do som do seu celular com 2 botões. Contudo, seu ouvido não funciona da mesma maneira. Se você é exposto a sons de mesma intensidade, mas frequências diferentes, você terá a impressão que os sons estão em volumes diferentes. Essa sensibilidade diferente para cada frequência depende de pessoa para pessoa, e sua primeira atividade será descobrir os limites dos **seus** ouvidos.
+{{< include _22_atenuacao.qmd >}}
 
-Você irá realizar o experimento proposto em [@p2_experimento], para acessar os seus detalhes, clique [aqui](https://www.sciencebuddies.org/science-fair-projects/project-ideas/HumBio_p011/human-biology-health/measuring-hearing-threshold-different-pitches). A atividade consiste em escutar sons com frequências bem definidas, porém de intensidades diferentes ao longo do tempo. Ao contar a quantidade de tons, você conseguirá calcular os seus limites auditivos.
+{{< include _23_fit_com_erros.qmd >}}
 
-::: callout-caution
-## Aviso
-Não esqueça que seu primeiro passo na atividade não é preencher a tabela, mas sim ajustar a altura do fone de ouvido para que você escute 18 ou 19 batidas em 3500Hz.
-
-Leia toda a prática antes de começar a realiza-lá.
-:::
-
-::: callout-caution
-## Aviso
-Não se preocupe com os resultados no regime de alta frequência. Fones de ouvidos não são feitos para ter alta fidelidade nessa região, logo, você provavelmente não escutará tantas batidas.
-
-Relaxe, você não está surdo.
-:::
-
-::: callout-tip
-## Dica
-Esse experimento é longo e será inevitável a fadiga. Isso é um problema para garantir a qualidade dos seus dados, pois você terá muita atenção para contar as batidas no começo da prática, e não terá a mesma disposição e atenção para contar batidas no final do experimento.
-
-Uma maneira de contornar o cansaço físico é não realizar o experimento de forma linear, escute as frequências em ordem aleatória.
-:::
-
-
-
-
-(@) Leia atentamente a descrição do [experimento](https://www.sciencebuddies.org/science-fair-projects/project-ideas/HumBio_p011/human-biology-health/measuring-hearing-threshold-different-pitches) e preencha uma tabela com a quantidade de batidas que você escutou em cada repetição.
-
-    a. Armazene os seus resultados em uma planilha\footnote{Tipo Microsoft Excel ou similar}.
-
-    a. Salve os dados como um arquivo CSV.
-
-    a. Leia os dados em Julia com o pacote `DelimitedFiles.jl`, e com o pacote de vizualização de sua escolha, faça um gráfico `semilogx` dos seus resultados. 
-
-        O tamanho da fonte da figura deve ser comparável ao texto onde ele estará embutido.
-
-
-
-::: {.callout-note collapse="true"}
-## Observação
-Salvar arquivos em formato `.csv` é conveniente apenas quando o conjunto de dados é pequeno, pois você pode acessar os dados com um editor de texto.
-
-Quando o conjunto de dados é enorme, e você não precisa de uma banco de dados, use arquivos do formato `.hdf5`.
-:::
+{{< include _24_propagacao_erros.qmd >}}

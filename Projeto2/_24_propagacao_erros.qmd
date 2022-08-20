@@ -1,0 +1,82 @@
+## Dados com Mais Erros
+
+Vamos aprimorar o nosso conhecimento do processo de *fitting*. Nós usamoa a biblioteca `LsqFit.jl` pela conivência e nos deparamos com uma situação simples onde ela falhou. Felizmente eu lhe disse a origem do problema e sua solução.
+
+Mas e se seu código rodasse dentro de um sistema embarcado?^[Um micro controlador fabricado para um equipamento ou máquina específica.] Para economizar bateria do equipamento, você gostaria de refazer todas as contas do fit, porém otimizadas com comandos específicos do seu dispositivo. Logo, o que você precisa é conhecer a matemática dos **Métodos dos Mínimos Quadrados**.
+
+Vamos usar o *fitting* da função de primeiro grau, pois nós acabamos de usar ela. Suponha uma função modelo do tipo
+
+$$
+    y(r) = \alpha r + \beta
+$$
+
+A distância $d_i$ de cada ponto experimental $(r_i, I_i)$ e a curva de fit é:
+$$
+    d_i = I_i - (\alpha r_i + \beta)
+$$
+
+O *Métodos dos Mínimos Quadrados* é autoexplicativo, vamos somar todos os $N$ valores dos erros, $d_i$, ao quadrado. Precisaremos de um nome para essa quantidade, e vou chamar de $D$:
+$$
+    D = \sum_{i=1}^N [I_i - (\alpha r_i + \beta)]^2
+$$
+
+Buscamos o valor mínimo de $D$ variando $\alpha$ e $\beta$, ou seja, a primeira derivada parcial deve ser nula:
+$$
+    \begin{alignat*}{4}
+    \frac{\partial D}{\partial \alpha}  &= \sum_{i=1}^N 2(-r_i)[I_i - (\alpha r_i + \beta)]= 0\\
+    \frac{\partial D}{\partial \beta}  &= \sum_{i=1}^N 2(-1)[I_i - (\alpha r_i + \beta)]= 0
+    \end{alignat*}
+$$
+
+Agora reorganizando as expressões, temos uma sistema linear:
+$$
+    \begin{alignat*}{4}
+     \alpha \sum_{i=1}^N r_i^2 + \beta \sum_{i=1}^N r_i  &= \sum_{i=1}^N r_iI_i\\
+    \alpha \sum_{i=1}^N r_i + \beta N  &= \sum_{i=1}^N I_i
+    \end{alignat*}
+$$
+
+Finalmente, podemos escrever esse sistema em forma matricial:
+
+$$
+    \begin{pmatrix}
+        \sum_{i=1}^N r_i^2  & \sum_{i=1}^N r_i  \\
+        \sum_{i=1}^N r_i & N
+    \end{pmatrix}
+    \begin{pmatrix}
+        \alpha \\
+        \beta
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \sum_{i=1}^N r_iI_i \\
+        \sum_{i=1}^N I_i
+    \end{pmatrix}
+$$ {#eq-sistema-linear}
+
+Sistemas lineares do tipo $Ax=b$ são facilmente resolvidos em Julia com o operador `backslash`, o barra invertida: $x= A\backslash b$.
+
+Até o momento nós obtivemos o valor de $\alpha$ e $\beta$, mas ainda faltam as margem de erro. No lugar de aprender os detalhes de estatística de matriz de covariância, vamos focar em outro assunto correlato, mais pertinente a dados experimentais: *Cada medição experimental possui um erro associado*.
+
+Não precisamos aprender o cálculo de [Propagação de Erros](https://en.wikipedia.org/wiki/Propagation_of_uncertainty), pois isso é a finalidade de cursos de laboratório. O que faremos é usar um pacote chamado `Measurements.jl` que faz toda a propagação de erro nativamente em Julia, ou seja, podemos fazer qualquer análise com os nossos dados, e a propagação de erro será automática.
+
+(@) Com os mesmos dados de $r$ e $I(r)$ que você calculo o fit através de linearização. Vamos recalcular o fit usando o sistema de equações que foi apresentado. A diferença, é que você adicionará um erro para cada valor de $I(r)$ e verá a propagação de erros acontecer.
+
+    a. Para cada  valor de $I(r)$ adicione um erro experimental^[Lembre-se de multiplicar valores aleatórios como no Exercício 3.2.]. Nada impede lhe de adicionar erros na medição de $r$, mas a figura final fica confusa, então eu quero que você não faça isso.
+
+    a. Faça o `scatter` plot usando o pacote `Plots.jl`, pois ela é integrada com o pacote \texttt{Measurements}, e seus gráficos já terão barras de erros.
+    \item Crie novos vetores $(r\_log, I\_log)$, com os valores de $(r, I(r))$ em escala logarítmica.
+
+    a. Resolva o sistema linear da @eq-sistema-linear com os seus dados de $(r\_log, I\_log)$.
+
+    a. Para extrair o Valor do fit use `Measurements.value`,  e para as incertezas, use `Measurements.uncertainty`. Com esses comandos, você consegue calcular a margem de erro, e finalmente pode exibir a última figura com todos os resultados.
+
+Ao final desse projeto, sua figura estará próxima da @fig-p3-fit-final.
+
+
+::: {#fig-p3-fit-final}
+
+![](fit_final.png)
+
+ Fit usando Método dos Mínimos Quadrados de dados linearizados, e com propagação de erros.
+:::

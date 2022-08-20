@@ -1,0 +1,23 @@
+## Atenuação Sonora
+
+Experimentos científicos não feitos apenas para ter resultados em um gráfico, como aconteceu na prática anterior, pois o idealizador do experimento quer obter alguma informação relevante dos dados. Em alguns casos as variáveis relevantes ainda não são claras, e o objetivo do experimento é justamente descobrir quais são as propriedades básicas do sistema, em outros casos já existe um modelo matemático com uma lista de comportamentos esperados, e seu objetivo será obter alguns parâmetros desse modelo.
+
+Como a modelagem completa do sistema auditivo humano não é tópico de interesse em nosso projeto, trabalharemos com tópico correlato, e muito mais simples, isto é, Atenuação Sonora pela **Lei do Inverso do Quadrado da Distância**
+
+$$
+    I(r) = \frac{P}{4\pi r^2},
+$$ {#eq-p2-inverso-quadrado}
+
+onde $I(r)$ é intensidade sonora a uma distância $r$ da origem, e $P$ é a potência da fonte. Um experimento que desejasse validar essa equação deveria encontrar 2 números: o primeiro é o termo geométrico $4\pi$, e o segundo, é o crescimento quadrático, $r^2$. Nessa sessão, **não** vamos criar um experimento, criaremos os dados e aprenderemos a estimar os parâmetros.
+
+(@) Para nossoas simulações precisamos definir alguns valores para trabalhar com @eq-p2-inverso-quadrado, e nos basearemos no artigo [@p2_despacito], onde o autor calcula quantos decibeis são produzidos por todas os Alexas do mundo tocando a música *Despacito* ao mesmo tempo^[O autor desse Caderno de Exercícios deseja compartilhar sua literatura de fatos e assuntos engraçados. e por isso colocou essa referência no texto.].
+    a. Com $P=159$ e $r \in [0.1, 28]$ (com 30 pontos), faça um `scatter` de $I(r)$ em escala loglog.
+
+    a. Refaça a figura anterior, garantindo pontos igualmente espaçados em escala loglog.
+
+    a. Seria possível criar essa mesma figura com $r$ iniciando em zero?
+
+    a. Supondo que esses dados foram obtidos de um experimento, você deve obter as constantes para $y(x,p) = P/ar^b$. Já sabemos que $a=4\pi$ e $b=2$, mas você deve obter isso com o pacote `LsqFit.jl`. Consulte a documentação do pacote [aqui](https://julianlsolvers.github.io/LsqFit.jl/latest/getting_started/).
+
+    a. Com os parâmetros que você obteve, aplique eles sobre o domínio $r$ e obtenha um vetor `y_fit` - e sobreponha com a figura de $I(r)$ anterior para testar a qualidade do seu fit.
+
