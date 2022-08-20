@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>FisComp - 3&nbsp; O Sol</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: 1;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../references.html" rel="next">
+<link href="../Projeto2/projeto2.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      color: #FFFFFF;
+background: #1990FE;
+    }
+    </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">O Sol</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">O Sol</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">FisComp</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/NoelAraujo/fiscomp" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Física Computacional</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../projetos.html" class="sidebar-item-text sidebar-link">Projetos</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prólogo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto2/projeto2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">O Sol</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#radiação-solar" id="toc-radiação-solar" class="nav-link active" data-scroll-target="#radiação-solar"> <span class="header-section-number">3.1</span> Radiação Solar</a></li>
+  <li><a href="#derivada" id="toc-derivada" class="nav-link" data-scroll-target="#derivada"> <span class="header-section-number">3.2</span> Derivada</a></li>
+  <li><a href="#raíz" id="toc-raíz" class="nav-link" data-scroll-target="#raíz"> <span class="header-section-number">3.3</span> Raíz</a></li>
+  <li><a href="#integral" id="toc-integral" class="nav-link" data-scroll-target="#integral"> <span class="header-section-number">3.4</span> Integral</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NoelAraujo/fiscomp/issues/new" class="toc-action">Criar uma issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><strong>Objetivo Geral</strong>: Aprender alguns princípios de cálculo numérico.</p>
+<p><strong>Objetivo Especifico</strong>: Calcular o valor de derivadas e integrais com métodos numéricos, usando a física de radiação de corpo negro como pano de fundo. Esse assunto é uma das primeiras vezes no curso de Física no qual é necessário encontrar a solução (a raiz) de uma equação transcendental.</p>
+<p><strong>Conteúdo</strong>: Radiação de Corpo Negro; Derivada; Ordem de Erro; Método de Newton-Raphson, Método da Secante; Quadratura do Trapézio, Simpson, Bode.</p>
+<p>Você já assistiu algum filme do Predador? Uma das características mais marcantes do personagem é sua tecnologia de visão noturna. Isso não é pura ficção científica, há décadas que seres humanos também já usam imagens térmicas, e aplicações fora do campo militar existem aos montes, a mais interessante que devo mencionar é a observação de capivaras como na <a href="#fig-capivaras">Figura&nbsp;<span>3.1</span></a>.</p>
+<div id="fig-capivaras" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="capivara.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 3.1: Imagem térmica de uma capivara com seu filhote em Campo Grande-MS <span class="citation" data-cites="p3_capivaras">[<a href="../references.html#ref-p3_capivaras" role="doc-biblioref">Silva et al 2019</a>]</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>Tudo que possui matéria emite ondas eletromagnéticas em diferentes frequências. Você nesse momento esta emitindo radiação no regime do infra-vermelho, que nosso olhos não conseguem ver, mesmo você estando brilhando. A explicação desse fenômeno é recente na história da humanidade, e em seu curso de Física Moderna, estudará a <strong>Radiação de Corpo Negro</strong>.</p>
+<section id="radiação-solar" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="radiação-solar"><span class="header-section-number">3.1</span> Radiação Solar</h2>
+<p>O melhor exemplo de Corpo Negro que qualquer um pode acessar, é Sol de todo dia<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Ele parece amarelo, mas na verdade é composto de vários comprimentos de onda diferentes, alguns dos quais são bloqueados pela atmosfera (lembra da Camada de Ozônio?), outros chegam na superfície, e fazem a vida prosperar - o pico do espectro solar ser no campo visível humano é provavelmente uma coincidência causada por uma junção de fatores complexos.</p>
+<div id="fig-solar-wikipedia" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Solar_Spectrum.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 3.2: Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho, e no topo de atmosfera, em amarelo. A região de máximo de irradiância depende da Temperatura do corpo que emissor. O Sol tem pico na região vísivel, você tem um pico na região infra-vermelha. Fonte: <a href="https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png">Wikipédia</a></figcaption><p></p>
+</figure>
+</div>
+<p>Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a <strong>Lei de Planck</strong>. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.</p>
+<p>Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.</p>
+</section>
+<section id="derivada" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="derivada"><span class="header-section-number">3.2</span> Derivada</h2>
+<p>Em algum momento durante seu curso de Cálculo 1, você viu a definição de Derivada através do uso de Limite em um ponto <span class="math inline">\(t_0\)</span> é :</p>
+<p><span class="math display">\[
+    f'(t_0) = \lim_{\Delta t \to 0} \frac{ f(t_0 + \Delta t) - f(t_0) }{\Delta t}.
+\]</span></p>
+<div id="fig-p3-derivada-curva" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="derivada.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 3.3: Em principio você consegue estimar derivadas de qualquer função se <span class="math inline">\(\Delta t\)</span> for muito pequeno.</figcaption><p></p>
+</figure>
+</div>
+<p>Para ser estritamente correto, o valor de <span class="math inline">\(\Delta t\)</span> deve ser um infinitesimal. Contudo, fazem alguns séculos que engenheiros e físicos assumem que <span class="math inline">\(\Delta t\)</span> seja apenas um valor <em>pequeno o suficiente</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, permitindo calcular derivadas por força bruta.</p>
+<p>Pelo que escrevi até o momento, a derivada em certo posição deveria ser uma expressão simples, apenas calculamos:</p>
+<p><span id="eq-diff-simple"><span class="math display">\[
+    \frac{ f(t_0 + \Delta t) - f(t_0) }{\Delta t}
+\tag{3.1}\]</span></span></p>
+<p>Contudo, aparecem <strong>erros de arredondamento</strong> ou <strong>erros de truncamento</strong> e nossas respostas perdem precisão dependendo do valor de <span class="math inline">\(\Delta t\)</span>.</p>
+<p>Os erros de truncamento não são imprevisíveis, em muitos casos sabemos a <strong>Ordem de Magnitude</strong>, o <code>big oh</code>, <span class="math inline">\(\mathcal{O}(\Delta t)\)</span> do nosso problema,por exemplo, para a <a href="#eq-diff-simple">Equação&nbsp;<span>3.1</span></a>, o erro de truncamento é <span class="math inline">\(\mathcal{O}(\Delta t)\)</span>.</p>
+<p>Livros de Cálculo Numérico ou Análise de Algoritmos trazem uma discussão mais elaborada sobre esse assunto. <em>Aqui, o ponto importante é conhecer o vocabulário de cálculo numérico e seus conceitos.</em></p>
+<p>A <a href="#tbl-primeira-derivada">Tabela&nbsp;<span>3.1</span></a> e <a href="#tbl-seg-ter-derivada">Tabela&nbsp;<span>3.2</span></a> contêm fórmulas que você fará uso durante esse projeto.</p>
+<div id="tbl-primeira-derivada" class="anchored">
+<table class="table">
+<caption>Tabela 3.1: Derivadas de Primeira Ordem</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 65%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">Fórmula</th>
+<th style="text-align: center;">Erro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Para Frente de 2 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f'(t_0)\)</span> = <span class="math inline">\(\frac{ f(t_0 + \Delta t) - f(\Delta t) }{\Delta t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t)\)</span></td>
+</tr>
+<tr class="even">
+<td>Para traz de 2 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f'(t_0)\)</span> = <span class="math inline">\(\frac{ f(t_0) - f(t_0 - \Delta t) }{\Delta t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Simétrica de 3 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f'(t_0)\)</span> = <span class="math inline">\(\frac{ f(t_0+ \Delta t) - f(t_0 - \Delta t) }{2\Delta t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t^2)\)</span></td>
+</tr>
+<tr class="even">
+<td>Simétrica de 5 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f'(t_0)\)</span> = <span class="math inline">\(\frac{ f(t_0- 2\Delta t) -8f(t_0 - \Delta t) + 8f(t_0 + \Delta t) - f(t_0 + 2\Delta t)) }{12\Delta t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t^4)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-seg-ter-derivada" class="anchored">
+<table class="table">
+<caption>Tabela 3.2: Derivadas de Segunda e Terceira Ordem</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 68%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">Fórmula</th>
+<th style="text-align: center;">Erro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Simétrica de 3 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f''(t_0)\)</span> = <span class="math inline">\(\frac{ f(t_0 - \Delta t) - 2f(t_0) + f(t_0 + \Delta t) }{\Delta t^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t^2)\)</span></td>
+</tr>
+<tr class="even">
+<td>Simétrica de 5 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f''(t_0)\)</span> = <span class="math inline">\(\frac{ -f(t_0 - 2\Delta t) + 16f(t_0 - \Delta t) - 30f(t_0) + 16f(t_0 + \Delta t) - f(t_0 + 2\Delta_x)}{12\Delta t^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t^3)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Assimétrica de 4 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f'''(t_0)\)</span> = <span class="math inline">\(\pm \frac{ -f(t_0 \mp \Delta t) + 3f(t_0) - 3f(t_0 \pm \Delta t) + f(t_0 \pm 2\Delta t)) }{\Delta t^3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t)\)</span></td>
+</tr>
+<tr class="even">
+<td>Assimétrica de 5 pontos</td>
+<td style="text-align: left;"><span class="math inline">\(f'''(t_0)\)</span> = <span class="math inline">\(\frac{ -f(t_0 - 2\Delta t) + 2f(t_0 - \Delta t) - 2f(t_0 + \Delta t) + f(t_0 + 2\Delta t)) }{2\Delta t^3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(\Delta t^2)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Sobre a temática de erros de truncamento, eu recomendo ao leitor curioso, a palestra do professor John L. Gustafson, discutindo sobre erros numéricos, disponível no <a href="https://www.youtube.com/watch?v=aP0Y1uAA-2Y">YouTube</a>.</p>
+<p>Vamos fixar os novos conceitos calculando a derivada de alguma função conhecida, e para aumentar sua cultura, vamos calcular a primeira derivada da <em>Equação Parametrizada de um Coração</em>:</p>
+<p><span id="eq-p3-coracao"><span class="math display">\[
+    \begin{alignat}{4}
+        x(t) &amp;= 16sin^3(t)\\
+        y(t) &amp;= 13cos(t) - 5cos(2t) - 2cos(3t) - cos(4t)
+    \end{alignat}
+\tag{3.2}\]</span></span></p>
+<div id="p3-coracao">
+<p><img src="coracao.png" class="img-fluid"></p>
+</div>
+<ol class="example" type="1">
+<li><p>Baseado na <a href="#eq-p3-coracao">Equação&nbsp;<span>3.2</span></a> :</p>
+<ol type="a">
+<li><p>Obtenha a expressão analítica da Primeira Derivada, <span class="math inline">\(x'_{exato}\)</span>, e Segunda Derivada <span class="math inline">\(x''_{exato}\)</span>.</p></li>
+<li><p>Implemente as funções <em>Primeira e Segunda</em> Derivada Simétrica de 3 pontos.</p></li>
+<li><p>Sorteie um número aleatório para <span class="math inline">\(t_0\)</span>.</p></li>
+<li><p>Crie um vetor com valores de <span class="math inline">\(\Delta t \in [10^{-8}, 10^{-1}]\)</span> em escala logarítmica.</p></li>
+<li><p>Calcule <span class="math inline">\(|x'(t_0) - x'_{exato}(t_0)|\)</span> para diferentes valores de <span class="math inline">\(\Delta t\)</span></p></li>
+<li><p>Repita o item anterior para a Segunda Derivada.</p></li>
+<li><p>Exiba os resultados em uma Figura de escala log-log. Para melhor interpretação, inverta o eixo X.</p></li>
+</ol></li>
+</ol>
+<p>Agora que você já sabe derivar uma função <span class="math inline">\(f(t)\)</span>, usaremos o mesmo raciocínio com vetores. Assim, podemos calcular a derivada da Lei de Planck</p>
+<p><span id="eq-p3-lei-plank"><span class="math display">\[
+        E(\lambda; T) = \frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda kT} - 1} \times 2.161413 \cdot 10^{-14}\pi \frac{W^2}{m^2 nm}
+\tag{3.3}\]</span></span></p>
+<p>Essa expressão da Lei de Planck não é apresentada em livros textos de física, ela fornece a <em>Radiância</em> solar, contudo, medições de satélite correspondem a <em>Irradiância</em>. Para mais detalhes, confira a discussão em <span class="citation" data-cites="p3_irradiancia_treta">KatyB [<a href="../references.html#ref-p3_irradiancia_treta" role="doc-biblioref">2014</a>]</span> e uma explicação mais <em>esclarecedora</em> em <span class="citation" data-cites="p3_irradiancia_detalhe">H. Zhu [<a href="../references.html#ref-p3_irradiancia_detalhe" role="doc-biblioref">2019</a>]</span>.</p>
+<ol start="2" class="example" type="1">
+<li>Nesse exercício, graficaremos a Lei de Planck junto a dados experimentais. Não é necessário entender as origens e fundamentos da <a href="#eq-p3-lei-plank">Equação&nbsp;<span>3.3</span></a> para realizar o exercício, mas se lhe interessa, sugiro o capítulo 3 do livro <span class="citation" data-cites="p3_book_radiation">James A. Coakley Jr [<a href="../references.html#ref-p3_book_radiation" role="doc-biblioref">2014</a>]</span>.
+<ol type="a">
+<li><p>Como essa equação é famosa, pesquise os valores das constantes fundamentais, e escreva uma função em Julia que calcule <span class="math inline">\(E(\lambda; T)\)</span></p></li>
+<li><p>Com <span class="math inline">\(T=6000\)</span>, e um vetor <span class="math inline">\(\lambda \in [200, 2500]\, \text{nm}\)</span>, calcule o espectro de irradiância do Sol armazenando os resultados em um vetor chamado <span class="math inline">\(E\_\lambda\)</span></p></li>
+<li><p>Exiba o espectro que você obteve em uma figura, e normalize o eixo vertical, o comprimento de onda, em nanômetros, ou seja, divida todos os valores do eixo vertical por <span class="math inline">\(1 \text{nm} = 10^{-9}\text{m}\)</span>. Assim, o eixo vertical poderá ser descrito como ‘<span class="math inline">\(\lambda \; [\text{nm}]\)</span>’.</p></li>
+<li><p>Clique <a href="spectra.txt">aqui</a> e baixe os dados que usaremos, esses dados foram obtidos do <em>National Renewable Energy Laboratory</em> <span class="citation" data-cites="p3_satelite">Laboratory [<a href="../references.html#ref-p3_satelite" role="doc-biblioref">2021</a>]</span>. A primeira coluna é o Comprimento de Onda multiplicado por um fator <span class="math inline">\(10^9\)</span> (ou seja, em unidades de <span class="math inline">\(nm\)</span>), e a segunda é a irradiância em <span class="math inline">\(W m^{-2} nm^{-1}\)</span>. Sobreponha esses dados experimentais com a figura produzida com os dados teóricos.</p></li>
+</ol></li>
+</ol>
+<p>Nosso próximo objetivo é calcular o comprimento de onda no qual a irradiância é máxima, vamos denominar esse valor <span class="math inline">\(\lambda^*\)</span>. A nível computacional é muito fácil, é só usar o comando <code>findmax()</code>. Se os valores do comprimento de onda estão em um vetor <span class="math inline">\(\lambda\)</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>E_max, idx_max <span class="op">=</span> <span class="fu">findmax</span>(E_λ)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>λ_star <span class="op">=</span> λ[idx_max]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sinto informar, mas nós usaremos o caminho das pedras.</p>
+<ol start="3" class="example" type="1">
+<li><p>Vamos achar o máximo com conhecimentos de Cálculo 1: o máximo (ou minimo, ou inflexão) de uma função <span class="math inline">\(f(x)\)</span> existe quando a primeira derivada é nula, <span class="math inline">\(f'(x^*) = 0\)</span>.</p>
+<p>A expressão analítica de <span class="math inline">\(E'(\lambda)\)</span> disponível no Wikipedia é <span class="citation" data-cites="p3_Wien">Wikipedia [<a href="../references.html#ref-p3_Wien" role="doc-biblioref">2021</a>]</span> <span id="eq-wien"><span class="math display">\[
+            E'(\lambda; T) = 2hc^2\left ( \frac{hc}{kT\lambda^7}\frac{e^{hc/\lambda kT}}{(e^{hc/\lambda k T} -1 )^2} - \frac{1}{\lambda^6}\frac{5}{e^{hc/\lambda k T} -1 }  \right )
+\tag{3.4}\]</span></span></p>
+<ol type="a">
+<li>Implemente a Primeira Derivada Simétrica de 5 Pontos e aplique sobre os <strong>Dados Teóricos</strong> que você tem.</li>
+</ol>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Aviso
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Não calcule a primeira derivada sobre os dados de satélite, pois as oscilações são grandes o suficientes para atrapalhar nossa análise - e não quero que voê se preocupe com mais problemas.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Observação
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Você esta calculando derivada de vetores, então alguns pontos nas extremidades ficarão sem derivadas, a menos que algum critério especial seja definido. Não faremos nada, simplesmente ignore a derivada nas bordas.</p>
+</div>
+</div>
+<ol type="a">
+<li><p>Diminua a magnitude dos dados com uma normalização do tipo <span class="math inline">\(f \rightarrow f/max(f)\)</span></p></li>
+<li><p>Crie um vetor com os valores analíticos e também os normalize</p></li>
+<li><p>Compare com os valores numéricos com os analíticos em uma figura</p></li>
+</ol></li>
+</ol>
+</section>
+<section id="raíz" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="raíz"><span class="header-section-number">3.3</span> Raíz</h2>
+</section>
+<section id="integral" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="integral"><span class="header-section-number">3.4</span> Integral</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-p3_irradiancia_detalhe" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">H. Zhu, P.B.</span> 2019. Understanding Radiance (Brightness), Irradiance and Radiant Flux.
+</div>
+<div id="ref-p3_book_radiation" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">James A. Coakley Jr, P.Y.</span> 2014. <em>Atmospheric Radiation: A Primer with Illustrative Solutions</em>. Wiley-VCH.
+</div>
+<div id="ref-p3_irradiancia_treta" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">KatyB</span>. 2014. convert units for spectral irradiance.
+</div>
+<div id="ref-p3_satelite" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">Laboratory, N.R.E.</span> 2021. Solar Spectra.
+</div>
+<div id="ref-p3_capivaras" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">Silva et al, L.G. da</span>. 2019. Termografia de capivaras (Hydrochoerus hydrochaeris) do perímetro urbano de Campo Grande-MS. <em>PUBVET</em> <em>13</em>, 3, 1–9.
+</div>
+<div id="ref-p3_Wien" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">Wikipedia</span>. 2021. Wien’s displacement law.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Minhas desculpas se você está em região polar durante o inverno.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>O valor exato de <span class="math inline">\(\Delta t\)</span> para ser <em>pequeno o suficiente</em> é uma discussão por si própria. Para facilitar sua vida, use o valor fornecido durante os exercícios.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Projeto2/projeto2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

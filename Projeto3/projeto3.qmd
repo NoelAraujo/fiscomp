@@ -1,0 +1,43 @@
+# O Sol
+
+
+**Objetivo Geral**: Aprender alguns princípios de cálculo numérico.
+
+**Objetivo Especifico**: Calcular o valor de derivadas e integrais com métodos numéricos, usando a física de radiação de corpo negro como pano de fundo. Esse assunto é uma das primeiras vezes no curso de Física no qual é necessário encontrar a solução (a raiz) de uma equação transcendental.
+
+**Conteúdo**: Radiação de Corpo Negro; Derivada; Ordem de Erro; Método de Newton-Raphson, Método da Secante; Quadratura do Trapézio, Simpson, Bode.
+
+Você já assistiu algum filme do Predador? Uma das características mais marcantes do personagem é sua tecnologia de visão noturna. Isso não é pura ficção científica, há décadas que seres humanos também já usam imagens térmicas, e aplicações fora do campo militar existem aos montes, a mais interessante que devo mencionar é a observação de capivaras como na @fig-capivaras.
+
+::: {#fig-capivaras}
+
+![](capivara.png)
+
+Imagem térmica de uma capivara com seu filhote em Campo Grande-MS [@p3_capivaras].
+:::
+
+Tudo que possui matéria emite ondas eletromagnéticas em diferentes frequências. Você nesse momento esta emitindo radiação no regime do infra-vermelho, que nosso olhos não conseguem ver, mesmo você estando brilhando. A explicação desse fenômeno é recente na história da humanidade, e em seu curso de Física Moderna, estudará a **Radiação de Corpo Negro**.
+
+
+## Radiação Solar
+
+O melhor exemplo de Corpo Negro que qualquer um pode acessar, é Sol de todo dia^[Minhas desculpas se você está em região polar durante o inverno.]. Ele parece amarelo, mas na verdade é composto de vários comprimentos de onda diferentes, alguns dos quais são bloqueados pela atmosfera (lembra da Camada de Ozônio?), outros chegam na superfície, e fazem a vida prosperar -  o pico do espectro solar ser no campo visível humano é provavelmente uma coincidência causada por uma junção de fatores complexos.
+
+::: {#fig-solar-wikipedia}
+
+![](Solar_Spectrum.png)
+
+Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho, e no topo de atmosfera, em amarelo. A região de máximo de irradiância depende da Temperatura do corpo que emissor. O Sol tem pico na região vísivel, você tem um pico na região infra-vermelha.  Fonte: [Wikipédia](https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png)
+:::
+
+
+Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a **Lei de Planck**. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.
+
+Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.
+
+
+{{< include _derivada.qmd >}}
+
+
+## Raíz
+## Integral

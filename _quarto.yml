@@ -12,6 +12,7 @@ book:
       chapters:
         - Projeto1/projeto1.qmd
         - Projeto2/projeto2.qmd
+        - Projeto3/projeto3.qmd
     - references.qmd
   search: true
   repo-url: https://github.com/NoelAraujo/fiscomp
@@ -19,7 +20,7 @@ book:
 
 
 bibliography: references.bib
-csl: journal-of-computational-physics-x.csl
+csl: acm-siggraph.csl
 format:
   html:
     theme:
@@ -28,14 +29,14 @@ format:
     code-copy: hover
     code-block-bg: true
     highlight-style: Ayu
-    # code-block-border-left: "#31BAE9"
     number-sections: true
     anchor-sections: true
-    toc-title: "Exercícios"
+    toc-title: "Conteúdo"
     title-block-banner: "#1990FE"
     fontcolor: "#291816"
     linkcolor: "#1990FE"
     code-bg: "#FFFFFF"
     title-block-banner-color: "#FFFFFF"
+    lang: pt
 
 jupyter: julia-1.8

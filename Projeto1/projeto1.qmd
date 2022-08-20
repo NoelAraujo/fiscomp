@@ -1,11 +1,11 @@
-# Aquecimento
+# Prólogo
 
 
 **Objetivo Geral**: Quebrar o gelo com a linguagem Julia.
 
 **Objetivo Especifico**: Resolver vários exercícios de pequena complexidade, para mostrar funcionalidades da linguagem que serão recorrente durante o curso
 
-**Conteúdo**: Instalação da linguagem e configuração do VS Code; Entrada e Saída; Álgebra Linear; Estruturas de repetição; Erros numéricos; Multiple-Dispatch
+**Conteúdo**: Entrada e Saída; Álgebra Linear; Estruturas de repetição; Erros numéricos; Multiple-Dispatch
 
 Se você já sabe Julia, ou consegue resolver os exercícios sem dificuldades, simplesmente pule esse projeto.
 

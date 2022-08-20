@@ -1,6 +1,6 @@
 # Projetos
 
-Cada projeto será focado em um conceito principal, listado no **Objetivo Geral** de cada capítulo. Sempre que possível, você não precisará descobrir um *truque mágico* na internet para resolver os exercícios.
+Cada projeto tem um **Objetivo Geral** explícito. Sempre que possível, você não precisará descobrir um *truque mágico* na internet para resolver os exercícios propostos.
 
 Todos os projetos são:
 
@@ -8,4 +8,4 @@ Todos os projetos são:
 
 - realizados com linguagem Julia, pois ela possui alta performance, similar ao C e Fortran, além de recursos modernos que facilitarão sua vida de programador;
 
-- alterados baseados no feedback dos leitores. Por favor, indique todas as questões que as instruções não estão claras, ou simplismente se o projeto ficou complicado de mais. Sua opinião honesta faz a diferença.
+- atualizados assim que recebe qualquer feedback dos leitores. Por favor, indique todas as questões que as instruções não estão claras, ou simplismente se o projeto ficou complicado de mais. Sua opinião honesta faz a diferença.
