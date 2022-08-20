@@ -1,7 +1,10 @@
 # Olá {.unnumbered}
 
-Texto em desenvolvimento contínuo, favor reportar os erros.
+**Física Computacional**, ou **FisComp** para os íntimos, poderia ser uma disciplina muito interessante se o ênfoque fosse em física, e não em métodos numéricos sem contextualização. Esse texto é uma tentativa produzir uma literatura nova, e espero que seja fonte de inspiração para que as futuras gerações façam algo ainda melhor do que aqui apresentado.
 
-Agradecimentos a todos os meus amigos que revisaram os projetos.
+O texto está desenvolvimento contínuo, favor reportar os erros.
 
-Livro gerado com <https://quarto.org/docs/books>.
+*Agradecimentos eternos aos meus amigos que revisaram os projetos.*
+
+---
+Essa página foi gerada com <https://quarto.org/docs/books>.

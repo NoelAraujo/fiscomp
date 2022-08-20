@@ -3,21 +3,19 @@ project:
   output-dir: docs
 
 book:
-  title: "Física Computacional"
+  title: "FisComp"
   author: "Noel Araujo Moreira"
   date: "8/15/2022"
   chapters:
     - index.qmd
-    # - part: intro.qmd
-    #   chapters:
-    #     - instalar_linux.qmd
-    #     - instalar_windows.qmd
     - part: projetos.qmd
       chapters:
         - Projeto1/projeto1.qmd
         - Projeto2/projeto2.qmd
     - references.qmd
   search: true
+  repo-url: https://github.com/NoelAraujo/fiscomp
+  repo-actions: [issue]
 
 
 bibliography: references.bib

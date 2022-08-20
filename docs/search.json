@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Física Computacional",
+    "title": "FisComp",
     "section": "",
-    "text": "Texto em desenvolvimento contínuo, favor reportar os erros.\nAgradecimentos a todos os meus amigos que revisaram os projetos.\nLivro gerado com https://quarto.org/docs/books."
+    "text": "Física Computacional, ou FisComp para os íntimos, poderia ser uma disciplina muito interessante se o ênfoque fosse em física, e não em métodos numéricos sem contextualização. Esse texto é uma tentativa produzir uma literatura nova, e espero que seja fonte de inspiração para que as futuras gerações façam algo ainda melhor do que aqui apresentado.\nO texto está desenvolvimento contínuo, favor reportar os erros.\nAgradecimentos eternos aos meus amigos que revisaram os projetos.\n\nEssa página foi gerada com https://quarto.org/docs/books."
   },
   {
     "objectID": "projetos.html",
     "href": "projetos.html",
     "title": "Projetos",
     "section": "",
-    "text": "Projetos serão alterados baseados no feedback dos leitores."
+    "text": "Todos os projetos são:\n\npensados para alunos que já cursaram Cálculo 1, Algebra Linear, Física 1, e Introdução a Programação;\nrealizados com linguagem Julia, pois ela possui alta performance, similar ao C e Fortran, além de recursos modernos que facilitarão sua vida de programador;\nalterados baseados no feedback dos leitores. Por favor, indique todas as questões que as instruções não estão claras, ou simplismente se o projeto ficou complicado de mais. Sua opinião honesta faz a diferença."
   },
   {
     "objectID": "Projeto1/projeto1.html",
