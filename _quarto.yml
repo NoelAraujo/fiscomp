@@ -21,6 +21,7 @@ book:
 
 bibliography: references.bib
 csl: acm-siggraph.csl
+# https://www.zotero.org/styles
 format:
   html:
     theme:

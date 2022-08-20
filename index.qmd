@@ -1,8 +1,8 @@
 # Física Computacional {.unnumbered}
 
-**Física Computacional**, ou **FisComp** para os íntimos, é uma disciplina comum em cursos universitários de Física. Isso se faz necessário, pois, de uma maneira ou outra, em pleno século 21 não é possível fazer física sem o auxlídio do computador, e essa disciplina visa ensinar conceito de Métodos Numéricos aplicados a física.
+**Física Computacional**, ou **FisComp** para os íntimos, é uma disciplina comum em cursos universitários de Física. Isso se faz necessário, pois, de uma maneira ou outra, em pleno século 21 não é possível fazer física sem o auxílio do computador, e essa disciplina visa ensinar conceito de Métodos Numéricos aplicados à Física.
 
-Contudo, do ponto de vista do autor desse livro, os demais livros textos são focados excessivamente em derivações dos métodos numéricos, e deixam a contextualização muito superficial no da física envolvida. Isso é frustrante, pois o leitor não é exposto a diferentes cenários, gerando a impressão que todos os algoritmos que aprendeu, *só servem para passar na prova*.
+Entretanto, do ponto de vista do autor desse livro, os livros a respeito desse assunto são focados excessivamente em derivações dos métodos numéricos, e deixam a contextualização muito superficial da física envolvida. Isso é frustrante, pois o estudante não é exposto a diferentes cenários, gerando a impressão que todos os algoritmos que aprendeu, *só servem para passar na prova*.
 
 Como alternativa ao *status quo*, esse texto é criado do zero, com a finalidade de ensinar **Física Computacional com mais ênfase na Física**. Vários *Projetos Temáticos* discutirão, em muitos detalhes, como *obter* física utilizando diferentes técnicas computacionais.
 
