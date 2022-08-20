@@ -1,0 +1,73 @@
+## Raíz
+
+O último exercício referenciava o Wikipédia. Caso não o tenha acessado a página, agora é sua chance. Nela, busque pela seção *Derivation from Planck's law*, e você descobrirá que a solução para o valor máximo do comprimento de onda $\lambda_{peak}$, não é obtido por manipulações algébricas. Você precisa recorrer ao computador para descobrir qual a solução da equação:
+$$
+    (x-5)e^x + 5 = 0
+$$ {#eq-transcendental}
+
+Iremos estudar métodos que permitem achar a solução de problemas do tipo $g(x) = 0$, ou seja, em termos técnicos, nós queremos as raízes de uma função.
+
+Inicialmente, vamos verificar que a solução da @eq-transcendental é $x = 4.9651142$.  Em seguida, usaremos esses métodos para encontrar o comprimento de onda $\lambda^*$ onde  $E'(\lambda^*; T) = 0$ - que é exatamente onde fica o pico do espectro.
+
+
+(@) O primeiro método é o menos elaborado. Nós podemos exibir a função $ln|g(x)|$, pois $ln(0) = -\infty$ é uma singularidade, facilmente identificável como um declínio muito rápido.
+    a. Crie 2 arrays, $\vec{x}$ e $\vec{g}$ e exiba $\vec{x} \; vs \; ln(abs(\vec{g}))$. Você deve escolher os valores de $\vec{x}$, até visualizar a singularidade.
+
+    a. Em seguida, faça um loop que buscará pela raiz $x^*$ sabendo que $|g(x^*)|$ é um mínimo. Portanto, para um valor  $|g(x_i)|$ antes da raiz, e outro ponto $|g(x_j)|$ depois da raiz, sempre será verdade que $|g(x_i)| > |g(x^*)|$ e $|g(x_j)| > |g(x^*)|$.
+
+    a. Outra maneira de interpretar o mesmo problema, é que dado um $g(x_i)$ antes da raiz, e outro $g(x_j)$ depois da raiz, eles necessariamente possuem sinais opostos (um positivo, e outro negativo. Estou ignorando o caso onde a função apenas toca o eixo vertical). Assim, $g(x_i)*g(x_j) < 0$. Use essa condição para encontrar $x^*$ novamente.
+
+::: callout-note
+## Observação
+O processo de achar a singularidade não é automático, ele é um processo de tentativa e erro, mas  pode salvar sua vida quando os métodos tradicionais não funcionarem.
+:::
+
+
+(@) O segunda método se chama Método de Newton-Raphson. Ele consiste em usar derivadas e intersecções sucessivas até chegar na raiz.
+    a. Tenho certeza que ver um vídeo é mais interessante que ler a explicação. Assista [Newton-Raphson method | Animated and explained | Algorithm for finding roots of a function](https://www.youtube.com/watch?v=qlNqPE_X4ME) no YouTube do Canal `MathAndPhysics`.
+
+        No final do vídeo, você deve ter encontrado a Fórmula
+        $$
+            x_{i+1} = x_{i} - \frac{g(x_i)}{g'(x_i)}
+        $$ {#eq-newton-raphson}
+
+    b. Obtenha $g'(x)$ da @eq-newton-raphson com a @eq-transcendental
+
+    c. Você precisa escolher um valor inicial $x_0$, use a sua resposta do exercício anterior, e aplique a em um loop, faça a iteração da @eq-newton-raphson. Pare quando $|x_{i+1} - x_i| < 10^{-6}$.
+
+    d. Armazene todos valores e os exiba numa figura.
+
+::: callout-note
+## Observação
+Eu alterei a função '$f$' exibida no vídeo, para '$g$', apenas para manter consistência de notação.
+:::
+
+(@) O último método se chama Método da Secante.
+
+    a. Você Já deve ter percebido que não vou definir as tecnicalidades do método aqui no texto. Assista o vídeo [Explicação do Método da Secante - Conceitos básicos - Utilizando o Software GeoGebra](https://www.youtube.com/watch?v=_KuvOaJXzrE) do Canal `Matemática na Veia Online`.
+
+        Dessa vez, o vídeo não fornece uma fórmula, apenas um procedimento, e justamente isso que eu quero que você entenda. Eu pouparei seu tempo, e darei a Fórmula:
+        $$
+            x_{i+1} = x_{i} - g(x_i)\frac{x_i - x_{i-1}}{g(x_i) - g(x_{i-1})}
+        $$ {#eq-secante}
+
+        Repare que não precisamos mais de $g'(x)$, mas precisamos armazenar um valor anterior, $x_{i-1}$.
+
+        b. Encontre a raiz $x^*$ com @eq-secante com o mesmo critério de parada $|x_{i+1} - x_i| < 10^{-6}$.
+
+Ao exibir a evolução dos valores, você deve encontrar que o Método da Secante é mais lento que o Newton-Rapshon.
+
+
+(@) Temos todo o conhecimento para obter $\lambda_{peak}$
+
+    a. Use o primeiro método, e com a Primeira derivada de irradiância dos dados teóricos normalizados, diga qual o $\lambda^*$ no qual $E(\lambda; T)$ é máximo.
+
+    a. Use o Método de Newton-Raphson e tente descubrir $\lambda_{peak}$ com @eq-p3-lei-plank e @eq-wien
+
+Você não deve ter conseguido achar $\lambda_{peak}$ com o Método de Newton-Raphson. Isso é resultados das ordens de magnitude astronômicas que estão envolvidas nas divisão $g(x_i)/g'(x_{i})$. Todavia, o método mais simplista conseguiu fornecer a resposta correta.
+
+::: callout-tip
+## Dica
+**Nem sempre os algoritmos mais elaboradas são as melhores.**
+:::
+

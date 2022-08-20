@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>raiz</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: 1;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="_raiz_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_raiz_files/libs/quarto-html/quarto.js"></script>
+<script src="_raiz_files/libs/quarto-html/popper.min.js"></script>
+<script src="_raiz_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_raiz_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_raiz_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_raiz_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_raiz_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_raiz_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_raiz_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="raíz" class="level2">
+<h2 class="anchored" data-anchor-id="raíz">Raíz</h2>
+<p>O último exercício referenciava o Wikipédia. Caso não o tenha acessado a página, agora é sua chance. Nela, busque pela seção <em>Derivation from Planck’s law</em>, e você descobrirá que a solução para o valor máximo do comprimento de onda <span class="math inline">\(\lambda_{peak}\)</span>, não é obtido por manipulações algébricas. Você precisa recorrer ao computador para descobrir qual a solução da equação:</p>
+<p><span id="eq-transcendental"><span class="math display">\[
+    (x-5)e^x + 5 = 0
+\tag{1}\]</span></span></p>
+<p>Iremos estudar métodos que permitem achar a solução de problemas do tipo <span class="math inline">\(g(x) = 0\)</span>, ou seja, em termos técnicos, nós queremos as raízes de uma função.</p>
+<p>Inicialmente, vamos verificar que a solução da <a href="#eq-transcendental">Equation&nbsp;1</a> é <span class="math inline">\(x = 4.9651142\)</span>. Em seguida, usaremos esses métodos para encontrar o comprimento de onda <span class="math inline">\(\lambda^*\)</span> onde <span class="math inline">\(E'(\lambda^*; T) = 0\)</span> - que é exatamente onde fica o pico do espectro.</p>
+<ol class="example" type="1">
+<li>O primeiro método é o menos elaborado. Nós podemos exibir a função <span class="math inline">\(ln|g(x)|\)</span>, pois <span class="math inline">\(ln(0) = -\infty\)</span> é uma singularidade, facilmente identificável como um declínio muito rápido.
+<ol type="a">
+<li><p>Crie 2 arrays, <span class="math inline">\(\vec{x}\)</span> e <span class="math inline">\(\vec{g}\)</span> e exiba <span class="math inline">\(\vec{x} \; vs \; ln(abs(\vec{g}))\)</span>. Você deve escolher os valores de <span class="math inline">\(\vec{x}\)</span>, até visualizar a singularidade.</p></li>
+<li><p>Em seguida, faça um loop que buscará pela raiz <span class="math inline">\(x^*\)</span> sabendo que <span class="math inline">\(|g(x^*)|\)</span> é um mínimo. Portanto, para um valor <span class="math inline">\(|g(x_i)|\)</span> antes da raiz, e outro ponto <span class="math inline">\(|g(x_j)|\)</span> depois da raiz, sempre será verdade que <span class="math inline">\(|g(x_i)| &gt; |g(x^*)|\)</span> e <span class="math inline">\(|g(x_j)| &gt; |g(x^*)|\)</span>.</p></li>
+<li><p>Outra maneira de interpretar o mesmo problema, é que dado um <span class="math inline">\(g(x_i)\)</span> antes da raiz, e outro <span class="math inline">\(g(x_j)\)</span> depois da raiz, eles necessariamente possuem sinais opostos (um positivo, e outro negativo. Estou ignorando o caso onde a função apenas toca o eixo vertical). Assim, <span class="math inline">\(g(x_i)*g(x_j) &lt; 0\)</span>. Use essa condição para encontrar <span class="math inline">\(x^*\)</span> novamente.</p></li>
+</ol></li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Observação
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>O processo de achar a singularidade não é automático, ele é um processo de tentativa e erro, mas pode salvar sua vida quando os métodos tradicionais não funcionarem.</p>
+</div>
+</div>
+<ol start="2" class="example" type="1">
+<li>O segunda método se chama Método de Newton-Raphson. Ele consiste em usar derivadas e intersecções sucessivas até chegar na raiz.
+<ol type="a">
+<li><p>Tenho certeza que ver um vídeo é mais interessante que ler a explicação. Assista <a href="https://www.youtube.com/watch?v=qlNqPE_X4ME">esse</a> vídeo no YouTube do Canal <code>MathAndPhysics</code>.</p>
+<p>No final do vídeo, você deve ter encontrado a Fórmula <span id="eq-newton-raphson"><span class="math display">\[
+     x_{i+1} = x_{i} - \frac{g(x_i)}{g'(x_i)}
+  \tag{2}\]</span></span></p></li>
+<li><p>Obtenha <span class="math inline">\(g'(x)\)</span> da <a href="#eq-newton-raphson">Equation&nbsp;2</a> com a <a href="#eq-transcendental">Equation&nbsp;1</a></p></li>
+<li><p>Você precisa escolher um valor inicial <span class="math inline">\(x_0\)</span>, use a sua resposta do exercício anterior, e aplique a em um loop, faça a iteração da <a href="#eq-newton-raphson">Equation&nbsp;2</a>. Pare quando <span class="math inline">\(|x_{i+1} - x_i| &lt; 10^{-6}\)</span>.</p></li>
+<li><p>Armazene todos valores e os exiba numa figura.</p></li>
+</ol></li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Observação
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eu alterei a função ‘<span class="math inline">\(f\)</span>’ exibida no vídeo, para ‘<span class="math inline">\(g\)</span>’, apenas para manter consistência de notação.</p>
+</div>
+</div>
+<ol start="3" class="example" type="1">
+<li><p>O último método se chama Método da Secante.</p>
+<ol type="a">
+<li><p>Você Já deve ter percebido que não vou definir as tecnicalidades do método aqui no texto. Assista o vídeo <a href="https://www.youtube.com/watch?v=_KuvOaJXzrE">Explicação do Método da Secante - Conceitos básicos - Utilizando o Software GeoGebra</a> do Canal <code>Matemática na Veia Online</code>.</p>
+<p>Dessa vez, o vídeo não fornece uma fórmula, apenas um procedimento, e justamente isso que eu quero que você entenda. Eu pouparei seu tempo, e darei a Fórmula: <span id="eq-secante"><span class="math display">\[
+     x_{i+1} = x_{i} - g(x_i)\frac{x_i - x_{i-1}}{g(x_i) - g(x_{i-1})}
+  \tag{3}\]</span></span></p>
+<p>Repare que não precisamos mais de <span class="math inline">\(g'(x)\)</span>, mas precisamos armazenar um valor anterior, <span class="math inline">\(x_{i-1}\)</span>.</p>
+<ol start="2" type="a">
+<li>Encontre a raiz <span class="math inline">\(x^*\)</span> com <a href="#eq-secante">Equation&nbsp;3</a> com o mesmo critério de parada <span class="math inline">\(|x_{i+1} - x_i| &lt; 10^{-6}\)</span>.</li>
+</ol></li>
+</ol></li>
+</ol>
+<p>Ao exibir a evolução dos valores, você deve encontrar que o Método da Secante é mais lento que o Newton-Rapshon.</p>
+<ol start="4" class="example" type="1">
+<li><p>Temos todo o conhecimento para obter <span class="math inline">\(\lambda_{peak}\)</span></p>
+<ol type="a">
+<li><p>Use o primeiro método, e com a Primeira derivada de irradiância dos dados teóricos normalizados, diga qual o <span class="math inline">\(\lambda^*\)</span> no qual <span class="math inline">\(E(\lambda; T)\)</span> é máximo.</p></li>
+<li><p>Use o Método de Newton-Raphson e tente descubrir <span class="math inline">\(\lambda_{peak}\)</span> com <strong>?@eq-p3-lei-plank</strong> e <strong>?@eq-wien</strong></p></li>
+</ol></li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Dica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Você não deve ter conseguido achar <span class="math inline">\(\lambda_{peak}\)</span> com o Método de Newton-Raphson. Isso é resultados das ordens de magnitude astronômicas que estão envolvidas nas divisão <span class="math inline">\(g(x_i)/g'(x_{i})\)</span>. Todavia, o método mais simplista conseguiu fornecer a resposta correta.</p>
+<p>Use isso como aprendizado: nem sempre as análises mais rebuscadas são as melhores.</p>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

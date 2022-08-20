@@ -38,6 +38,6 @@ Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os co
 
 {{< include _derivada.qmd >}}
 
+{{< include _raiz.qmd >}}
 
-## Raíz
 ## Integral
