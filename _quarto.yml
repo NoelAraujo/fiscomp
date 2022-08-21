@@ -33,7 +33,8 @@ format:
     number-sections: true
     anchor-sections: true
     toc-title: "Conteúdo"
-    title-block-banner: "#1990FE"
+    # title-block-banner: "#1990FE"
+    title-block-banner: "cover.png"
     fontcolor: "#291816"
     linkcolor: "#1990FE"
     code-bg: "#FFFFFF"
