@@ -40,4 +40,5 @@ Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os co
 
 {{< include _raiz.qmd >}}
 
-## Integral
+{{< include _integral.qmd >}}
+

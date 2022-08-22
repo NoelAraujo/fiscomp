@@ -553,6 +553,64 @@ Dica
 </section>
 <section id="integral" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="integral"><span class="header-section-number">3.4</span> Integral</h2>
+<p>A <a href="#eq-p3-lei-plank">Equação&nbsp;<span>3.3</span></a> diz quanta energia existe para cada comprimento de onda, mas e se eu te perguntasse qual a energia total? A resposta para essa pergunta é a Lei de Stefan-Boltzman.</p>
+<p>Obtemos a energia total integrando sobre todos os comprimentos de onda - na verdade, é mais fácil integrar usando as frequências, <span class="math inline">\(E(\nu)\)</span>, do que com comprimentos de onda <span class="math inline">\(E(\lambda)\)</span>. Ao realizar essa operação, vamos encontrar novamente uma expressão sem solução analítica convencional, confira a referência <span class="citation" data-cites="p3_integracao">[<a href="../references.html#ref-p3_integracao" role="doc-biblioref">University of Washington Center for Quantitative Science 2020</a>]</span>, na seção <em>8.3.2 Stefan-Boltzmann Law</em> encontramos:</p>
+<p><span class="math display">\[
+    E_{total} = \frac{8\pi h}{c^3} \left ( \frac{kT}{h}\right )^4\int_0^{\infty} \frac{x^3dx}{e^x - 1}
+\]</span></p>
+<p>Nessa seção, nosso objetivo é usar e obter o valor da integral:</p>
+<p><span id="eq-p3-integral-calcular"><span class="math display">\[
+    I = \int_0^{\infty} \frac{x^3dx}{e^x - 1}
+\tag{3.8}\]</span></span></p>
+<p>Talvez você estudará em um curso de Física Matemática como resolver esse tipo de integral, você usará técnicas de <em>Integrais de Contorno</em>, e o resultado será <span class="math inline">\(\pi^4/15\)</span>. Como essa integral é um problema clássico, a solução já esta na internet, como por exemplo aqui <span class="citation" data-cites="p3_integral_contorno">S [<a href="../references.html#ref-p3_integral_contorno" role="doc-biblioref">2012</a>]</span>.</p>
+<p>Calcularemos o valor de uma integral a lá Integrais de Riemann. Dividimos um intervalo <span class="math inline">\(x\)</span> em segmentos discretos <span class="math inline">\([x_1, x_2, ..., x_N]\)</span>. Em seguida determinamos todos os <span class="math inline">\(f(x_i)\)</span>, com <span class="math inline">\(x_i = x_{0} + i\cdot h\)</span>, fornecendo assim, pontos para criar pequenos retângulos, cuja área é fácil de obter. Por último, somamos a área de todos os retângulos. Quanto menor o espaçamento <span class="math inline">\(h = x_{i+1} - x_{i}\)</span>, melhor nossa estimativa da integral.</p>
+<p>Na <a href="#fig-p3-areas">Figura&nbsp;<span>3.4</span></a> vemos uma representação exagerada do procedimento. Dado um ponto <span class="math inline">\(x_0\)</span>, conseguimos definir um lado do retângulo como sendo o segmento <span class="math inline">\([x_{-1}, x_{1}]\)</span>. O outro lado será a altura <span class="math inline">\(f(x_0)\)</span>.</p>
+<div id="fig-p3-areas" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="areas.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 3.4: Repare no espaçamento de <span class="math inline">\(h\)</span> entre cada ponto <span class="math inline">\(f_0\)</span></figcaption><p></p>
+</figure>
+</div>
+<p>No entanto, podemos ser mais inteligentes, e não criar retângulos, mas sim trapézios. Isso trará resultados mais rápidos. A tabela a seguir fornecem algumas fórmulas que resumem diferentes métodos:</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 68%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">Fórmula</th>
+<th style="text-align: center;">Erro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trapézio</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{h}{2}( f(x_{-1}) + 2f(x_0) + f(x_{1}) )\)</span></td>
+<td style="text-align: center;">(h^3)$</td>
+</tr>
+<tr class="even">
+<td>Simpson</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{h}{3}( f(x_{-1}) + 4f(x_0) + f(x_{1}) )\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(h^5)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Bode</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{2h}{45}( 7f(x_0) + 32f(x_{1}) + 12f(x_{2}) + 32f(x_{3})) + 7f(x_{4})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(h^7)\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol start="8" class="example" type="1">
+<li><p>Agora que você já possui as fórmulas, basta discretizar o espaço o domínio de integração. Como nossa função converge para zero rapidamente, não precisamos integrar até o infinito.</p>
+<ol type="a">
+<li><p>Defina uma função <span class="math inline">\(f(x) = x^3/(e^x - 1)\)</span></p></li>
+<li><p>Crie um vetor com valores de <span class="math inline">\(x = [10^{-8}, 50]\)</span> e discretize ele em <span class="math inline">\(N=2^{12}\)</span> passos.</p></li>
+<li><p>Calcule a Integral da <a href="#eq-p3-integral-calcular">Equação&nbsp;<span>3.8</span></a> usando os 3 métodos tabelados. Repare que a <a href="#fig-p3-areas">Figura&nbsp;<span>3.4</span></a> consegue representar os índices das Fórmula do Trapézio e Simpson, mas não para Fórmula de Bode. Você precisa de uma estrutura de repetição com passo 2 para fórmula do Trapézio/Simpson, e passo 4 para Bode.</p></li>
+</ol></li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -568,8 +626,14 @@ Dica
 <div id="ref-p3_satelite" class="csl-entry" role="doc-biblioentry">
 <span class="smallcaps">Laboratory, N.R.E.</span> 2021. Solar Spectra.
 </div>
+<div id="ref-p3_integral_contorno" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">S, S.</span> 2012. complex analysis - Contour integral for <span class="math inline">\(x^3/(e^x-1)\)</span>? - Mathematics Stack Exchange.
+</div>
 <div id="ref-p3_capivaras" class="csl-entry" role="doc-biblioentry">
 <span class="smallcaps">Silva et al, L.G. da</span>. 2019. Termografia de capivaras (Hydrochoerus hydrochaeris) do perímetro urbano de Campo Grande-MS. <em>PUBVET</em> <em>13</em>, 3, 1–9.
+</div>
+<div id="ref-p3_integracao" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">University of Washington Center for Quantitative Science, U. by the T.P.</span> 2020. 8.3 Black Body Radiation | Calculus-Integration.
 </div>
 <div id="ref-p3_Wien" class="csl-entry" role="doc-biblioentry">
 <span class="smallcaps">Wikipedia</span>. 2021. Wien’s displacement law.

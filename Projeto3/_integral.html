@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>integral</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: 1;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="_integral_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_integral_files/libs/quarto-html/quarto.js"></script>
+<script src="_integral_files/libs/quarto-html/popper.min.js"></script>
+<script src="_integral_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_integral_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_integral_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_integral_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_integral_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_integral_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_integral_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="integral" class="level2">
+<h2 class="anchored" data-anchor-id="integral">Integral</h2>
+<p>A <strong>?@eq-p3-lei-plank</strong> diz quanta energia existe para cada comprimento de onda, mas e se eu te perguntasse qual a energia total? A resposta para essa pergunta é a Lei de Stefan-Boltzman.</p>
+<p>Obtemos a energia total integrando sobre todos os comprimentos de onda - na verdade, é mais fácil integrar usando as frequências, <span class="math inline">\(E(\nu)\)</span>, do que com comprimentos de onda <span class="math inline">\(E(\lambda)\)</span>. Ao realizar essa operação, vamos encontrar novamente uma expressão sem solução analítica convencional, confira a referência <span class="citation" data-cites="p3_integracao">@p3_integracao</span>, na seção <em>8.3.2 Stefan-Boltzmann Law</em> encontramos:</p>
+<p><span class="math display">\[
+    E_{total} = \frac{8\pi h}{c^3} \left ( \frac{kT}{h}\right )^4\int_0^{\infty} \frac{x^3dx}{e^x - 1}
+\]</span></p>
+<p>Nessa seção, nosso objetivo é usar e obter o valor da integral:</p>
+<p><span id="eq-p3-integral-calcular"><span class="math display">\[
+    I = \int_0^{\infty} \frac{x^3dx}{e^x - 1}
+\tag{1}\]</span></span></p>
+<p>Talvez você estudará em um curso de Física Matemática como resolver esse tipo de integral, você usará técnicas de <em>Integrais de Contorno</em>, e o resultado será <span class="math inline">\(\pi^4/15\)</span>. Como essa integral é um problema clássico, a solução já esta na internet, como por exemplo aqui <span class="citation" data-cites="p3_integral_contorno">@p3_integral_contorno</span>.</p>
+<p>Calcularemos o valor de uma integral a lá Integrais de Riemann. Dividimos um intervalo <span class="math inline">\(x\)</span> em segmentos discretos <span class="math inline">\([x_1, x_2, ..., x_N]\)</span>. Em seguida determinamos todos os <span class="math inline">\(f(x_i)\)</span>, com <span class="math inline">\(x_i = x_{0} + i\cdot h\)</span>, fornecendo assim, pontos para criar pequenos retângulos, cuja área é fácil de obter. Por último, somamos a área de todos os retângulos. Quanto menor o espaçamento <span class="math inline">\(h = x_{i+1} - x_{i}\)</span>, melhor nossa estimativa da integral.</p>
+<p>Na <a href="#fig-p3-areas">Figure&nbsp;1</a> vemos uma representação exagerada do procedimento. Dado um ponto <span class="math inline">\(x_0\)</span>, conseguimos definir um lado do retângulo como sendo o segmento <span class="math inline">\([x_{-1}, x_{1}]\)</span>. O outro lado será a altura <span class="math inline">\(f(x_0)\)</span>.</p>
+<div id="fig-p3-areas" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="areas.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1: Repare no espaçamento de <span class="math inline">\(h\)</span> entre cada ponto <span class="math inline">\(f_0\)</span></figcaption><p></p>
+</figure>
+</div>
+<p>No entanto, podemos ser mais inteligentes, e não criar retângulos, mas sim trapézios. Isso trará resultados mais rápidos. A tabela a seguir fornecem algumas fórmulas que resumem diferentes métodos:</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 68%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">Fórmula</th>
+<th style="text-align: center;">Erro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trapézio</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{h}{2}( f(x_{-1}) + 2f(x_0) + f(x_{1}) )\)</span></td>
+<td style="text-align: center;">(h^3)$</td>
+</tr>
+<tr class="even">
+<td>Simpson</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{h}{3}( f(x_{-1}) + 4f(x_0) + f(x_{1}) )\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(h^5)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Bode</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{2h}{45}( 7f(x_0) + 32f(x_{1}) + 12f(x_{2}) + 32f(x_{3})) + 7f(x_{4})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(h^7)\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol class="example" type="1">
+<li><p>Agora que você já possui as fórmulas, basta discretizar o espaço o domínio de integração. Como nossa função converge para zero rapidamente, não precisamos integrar até o infinito.</p>
+<ol type="a">
+<li><p>Defina uma função <span class="math inline">\(f(x) = x^3/(e^x - 1)\)</span></p></li>
+<li><p>Crie um vetor com valores de <span class="math inline">\(x = [10^{-8}, 50]\)</span> e discretize ele em <span class="math inline">\(N=2^{12}\)</span> passos.</p></li>
+<li><p>Calcule a Integral da Eq <span class="math inline">\(\ref{eq-p3-integral-calcular}\)</span> usando os 3 métodos tabelados. Repare que a <a href="#fig-p3-areas">Figure&nbsp;1</a> consegue representar os índices das Fórmula do Trapézio e Simpson, mas não para Fórmula de Bode.</p></li>
+</ol></li>
+</ol>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
