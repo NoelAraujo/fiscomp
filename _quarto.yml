@@ -5,7 +5,8 @@ project:
 book:
   title: "FisComp"
   author: "Noel Araujo Moreira"
-  date: "8/15/2022"
+  date: last-modified
+  date-format: medium
   chapters:
     - index.qmd
     - part: projetos.qmd
@@ -33,7 +34,6 @@ format:
     number-sections: true
     anchor-sections: true
     toc-title: "Conteúdo"
-    # title-block-banner: "#1990FE"
     title-block-banner: "cover.png"
     fontcolor: "#291816"
     linkcolor: "#1990FE"

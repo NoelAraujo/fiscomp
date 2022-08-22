@@ -53,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
     (x-5)e^x + 5 = 0
 \tag{1}\]</span></span></p>
 <p>Iremos estudar métodos que permitem achar a solução de problemas do tipo <span class="math inline">\(g(x) = 0\)</span>, ou seja, em termos técnicos, nós queremos as raízes de uma função.</p>
-<p>Inicialmente, vamos verificar que a solução da <a href="#eq-transcendental">Equation&nbsp;1</a> é <span class="math inline">\(x = 4.9651142\)</span>. Em seguida, usaremos esses métodos para encontrar o comprimento de onda <span class="math inline">\(\lambda^*\)</span> onde <span class="math inline">\(E'(\lambda^*; T) = 0\)</span> - que é exatamente onde fica o pico do espectro.</p>
+<p>Vamos verificar que a solução da <a href="#eq-transcendental">Equation&nbsp;1</a> é <span class="math inline">\(x = 4.9651142\)</span>. Em seguida, usaremos esses métodos para encontrar o comprimento de onda <span class="math inline">\(\lambda^*\)</span> onde <span class="math inline">\(E'(\lambda^*; T) = 0\)</span> - que é exatamente onde fica o pico do espectro.</p>
 <ol class="example" type="1">
 <li>O primeiro método é o menos elaborado. Nós podemos exibir a função <span class="math inline">\(ln|g(x)|\)</span>, pois <span class="math inline">\(ln(0) = -\infty\)</span> é uma singularidade, facilmente identificável como um declínio muito rápido.
 <ol type="a">
@@ -78,7 +78,7 @@ Observação
 <ol start="2" class="example" type="1">
 <li>O segunda método se chama Método de Newton-Raphson. Ele consiste em usar derivadas e intersecções sucessivas até chegar na raiz.
 <ol type="a">
-<li><p>Tenho certeza que ver um vídeo é mais interessante que ler a explicação. Assista <a href="https://www.youtube.com/watch?v=qlNqPE_X4ME">esse</a> vídeo no YouTube do Canal <code>MathAndPhysics</code>.</p>
+<li><p>Tenho certeza que ver um vídeo é mais interessante que ler a explicação. Assista <a href="https://www.youtube.com/watch?v=qlNqPE_X4ME">Newton-Raphson method | Animated and explained | Algorithm for finding roots of a function</a> no YouTube do Canal <code>MathAndPhysics</code>.</p>
 <p>No final do vídeo, você deve ter encontrado a Fórmula <span id="eq-newton-raphson"><span class="math display">\[
      x_{i+1} = x_{i} - \frac{g(x_i)}{g'(x_i)}
   \tag{2}\]</span></span></p></li>
@@ -121,6 +121,7 @@ Observação
 <li><p>Use o Método de Newton-Raphson e tente descubrir <span class="math inline">\(\lambda_{peak}\)</span> com <strong>?@eq-p3-lei-plank</strong> e <strong>?@eq-wien</strong></p></li>
 </ol></li>
 </ol>
+<p>Você não deve ter conseguido achar <span class="math inline">\(\lambda_{peak}\)</span> com o Método de Newton-Raphson. Isso é resultados das ordens de magnitude astronômicas que estão envolvidas nas divisão <span class="math inline">\(g(x_i)/g'(x_{i})\)</span>. Todavia, o método mais simplista conseguiu fornecer a resposta correta.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -131,8 +132,7 @@ Dica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Você não deve ter conseguido achar <span class="math inline">\(\lambda_{peak}\)</span> com o Método de Newton-Raphson. Isso é resultados das ordens de magnitude astronômicas que estão envolvidas nas divisão <span class="math inline">\(g(x_i)/g'(x_{i})\)</span>. Todavia, o método mais simplista conseguiu fornecer a resposta correta.</p>
-<p>Use isso como aprendizado: nem sempre as análises mais rebuscadas são as melhores.</p>
+<p><strong>Nem sempre os algoritmos mais elaboradas são as melhores.</strong></p>
 </div>
 </div>
 </section>
