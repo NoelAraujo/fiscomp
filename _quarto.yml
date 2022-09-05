@@ -14,6 +14,7 @@ book:
         - Projeto1/projeto1.qmd
         - Projeto2/projeto2.qmd
         - Projeto3/projeto3.qmd
+        - Projeto4/projeto4.qmd
     - references.qmd
   search: true
   repo-url: https://github.com/NoelAraujo/fiscomp

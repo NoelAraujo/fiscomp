@@ -1,0 +1,58 @@
+## Lei de Beer-Lambert
+
+Em nosso contexto, de luz solar atravessando a atmosfera terrestre, *absorção* de energia significa que as nuvens e gases da atmosfera vão absorver energia e transforma-lá, seja em energia térmica (fazendo moléculas se movimentarem ou vibrarem), seja em espalhamento (energia é absorvida pela nuvem, e é reemitida em luz). Contudo, não sabemos como quantificar a atenuação de um feixe de luz atravessando uma nuvem.
+
+Absorção é um processo de 'perda' de energia do sistema, por isso o decaimento é diferente da atenuação sonora, vista no Projeto 2, cujo decaimento era quadrático, $1/r^2$, motivada pela conservação de energia no espaço. Faremos um modelo de atenuação por absorção baseado em ideias simples de proporcionalidade, e descobriremos que a intensidade luminosa tem decaimento exponencial, $e^{-r}$. O processo de modelagem que você irá ler é importante, pois o mecanismo se repete em outros contextos da Física.
+
+Imagine uma nuvem de densidade $n$, e formato bem definido, de largura $dx$ e área $A$, como representado na Figure XXX. Como cada molécula interage com a luz solar $I_0$, precismos quantificar essa interação com um número, e a seção de choque $\sigma$ faz exatamente isso. Nós imaginamos que cada átomos faz uma sombra sombra na luz incidente, vide Figure YYY, e portanto, a luz que atravessa o meio é atenuada. O valor exato de $\sigma$ depende de qual frequência estamos trabalhando, para não esquecer disso, a notação utilizada será  $\sigma_{\omega}$. Na modelagem a seguir, vamos fixar nosso raciocínio para uma frequência $\omega$ bem definida.
+
+Vamos a modelagem:
+
+- Como a quantidade de luz atenuada foi $dI$, e a luz inicial foi $I$, a porcentagem de luz transmitida é $dI/I$. Para não esquecermos que estamos trabalhando em uma frequência bem definida, adicionaremos o sub indice $\omega$: $dI_{\omega}/I_{\omega}$
+
+- A quantidade de átomos que interagiram com a luz fornece qual a área da nuvem que ficou bloqueada (a área que criou a sombra). A quantidade de átomos é obtido da densidade e volume, $N = n dx A$. A área total de interação é obtida com a seção de choque temos  $A_{choque} = \sigma n dx A$. Finalmente, a proporção de átomos que bloquearam a luz e de área total é $A_{choque}/A = \sigma n dx$
+
+Fazendo igualdade de proporções,  e colocando um sinal de negativo, para indicar que luz esta sendo perdida, obtemos a *Lei de Lambert-Beer*:
+
+$$
+    \frac{dI_{\omega}(x)}{I_{\omega}} = - \sigma(\omega) n dx.
+$$ {#eq-lambert-beer}
+
+Se a seção de choque e a densidade forem constantes no espaço, a solução é uma exponencial, como prometido no começo do capítulo:
+$$
+    I(x) = I_0e^{-\sigma n x}.
+$$ {#eq-solucao-lambert-beer}
+
+::: callout-note
+A integral $\tau = \int_0^x \sigma(\omega) n dx' = \sigma n x$ tem vários nomes, aqui, será conhecida como Profundidade Óptica.
+:::
+
+Derivadas numéricas em *pontos* não são surpresa, pois nós trabalhamos com elas no Capítulo 3. Infelizmente não podemos resolver a Equação @eq-lambert-beer apenas com nosso conhecimento atual, pois precisamos resolver numericamente uma *equação* que contenha derivadas. Aprender a resolver esse tipo de problema é essencial, por exemplo, para calcular a solução de $I(x)$ com densidade variando no espaço, $n(x)$.
+
+(@) Nesse primeiro projeto, vamos aprender resolver Equações Diferenciais Ordinárias, EDOs, com o **Método de Euler**.
+
+    Em essência: Você pega a definição de derivada, e a discretiza. Vamos resolver um problema genérico, e depois voltamos ao nosso contexto. Imagine que a função da intensidade $I(x)$ pode ser escrita da seguinte forma:
+    $$
+        \frac{dI}{dx} = f(I),
+    $$ {#eq-edo-padrao}
+
+    no qual $f(I)$ é uma função que pode depender de mais parâmetros - porém eles são omitindo eles para facilitar a notação. Agora, lembremos da definição formal de uma derivada, que envolve limites, e isolamos o termo que se refere ao *futuro*:
+
+    $$
+        \begin{alignat*}{4}
+        \frac{dI}{dx} &= f(I)\\
+        \lim_{\Delta x \to 0} \frac{\Delta I}{\Delta x} &= f(I)\\
+        \frac{\Delta I}{\Delta x} &\approx f(I)\\
+        \frac{I_{k+1} - I_{k}}{\Delta x} &= f(I)\\
+        I_{k+1} - I_{k} &= \Delta x\cdot f(I)\\
+        I_{k+1} &= I_{k} + \Delta x\cdot f(I)
+        \end{alignat*}
+    $$
+
+    Se você sabe a condição inicial, $I_0$, e um intervalo $\Delta x$, você consegue obter o valor de $I_{n+1}$ iterativamente.
+
+
+(@) Altere a Equação @eq-lambert-beer para adquirir o formato da Equação @eq-edo-padrao, descubra qual é a função $f(I)$ e produza uma função em Julia `f(I,p)`, onde `p` é uma tupla com os valores de $\sigma, n$.
+- Com $I_0 = 10$, $x \in [0,5]$, $\Delta x = 10^{-2}$ e $\sigma = n = 1$, obtenha a curva de $I(x)$ com o Método de Euler.
+
+- Exiba seu resultado em uma figura e compare com o resultado exato, $I(x) = I_0e^{-\sigma n x}$.

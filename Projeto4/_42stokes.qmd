@@ -1,0 +1,92 @@
+## Luz com Polarização
+
+O modelo da sessão anterior é uma grande simplificação da interação luz-matéria, o que não é necessariamente um defeito, com a Equação @eq-solucao-lambert-beer} pode-se obter resultados rotineiros em um laboratório de Espectroscopia de Absorção. Nosso modelo simplificado também foi útil para você compreender o Método de Euler, que era o objetivo principal.
+
+Uma situação que necessita levar em conta a **polarização** da luz é na área de Sensoriamento Remoto, uma vez que cristais de gelo dentro das nuvens, alteram a polarização do espectro eletromagnético, e interfere na imagens que um satélite produz.
+Vamos adicionar polarização ao nosso modelo para você ter um primeiro contato com *Exponenciais de Matrizes* - um tópico normalmente ensinado em Física Matemática ou Mecânica Quântica.
+
+A Figura \ref{fig:fig_polarizacao} ilustra uma versão simplificada do problema. Um feixe de luz com polarização bem definida pelas direções $(E_x, E_y)$ atravessa um material, e altera sua polarização para outra direção.
+
+
+::: {#fig-polarizacao}
+
+![](mudanca_polarizacao.png)
+
+Mudança na direção de polarização de um feixe de luz ao atravessar um material, por exemplo, uma nuvem com cristais de gelo.
+:::
+
+Afim de descrever *como* a polarização é modificada, você precisa conhecer - apenas conheça o conceito, não precisa compreender os detalhes. novos conceitos, são eles **Vetores de Stokes** e **Matrizes de Mueller**. Vetores de Stokes são usados para representar muito mais que as 2 componentes $(E_x, E_y)$ da polarização, eles são vetores de 4 dimensões @p4_stokes:
+
+$$
+    \vec{s} = \begin{bmatrix}
+E_xE_x^* + E_yE_y^* \\
+E_xE_x^* - E_yE_y^* \\
+E_xE_y^* + E_yE_x^* \\
+i(E_xE_y^* - E_yE_x^*)
+\end{bmatrix}.
+$$ {#eq-def-strokes}
+
+Se $\vec{s}$ é a luz do sol,  e $\vec{s}'$ a luz que atravessou a nuvem, podemos relacioná-los\cite{p4_mueller} com uma matriz $M$:
+
+$$
+    \vec{s}' = M\vec{s}.
+$$ {#eq-transformcao-s-M}
+
+A matriz $M$ é a Matriz de Mueller, ela representa a física da interação luz-matéria,  podendo ser *medida* em laboratório. Do ponto de vista teórico existem algumas matrizes de Mueller para casos especiais, o que nos leva a pergunta: *Existe alguma matriz de Mueller para nosso problema?* Queremos uma matriz que represente mudança de polarização com efeitos de absorção, e [@p4absorcaomueller] já respondeu essa pergunta na década de 70.
+
+
+No nosso projeto usaremos o formato da matriz bi-isotrópica apresentada em [@p4_oriol], onde cada em termo diferente de zero, inspirado em @p4absorcaomueller,  terá o fator de absorção $\alpha = n(\omega)\sigma$, formando a matriz
+$$
+    M = \begin{bmatrix}
+\alpha & 0 & 0 & \alpha \\
+0 & \alpha & \alpha & 0 \\
+0 & -\alpha & \alpha & 0 \\
+\alpha & 0 & 0 & \alpha
+\end{bmatrix}.
+$$ {#eq-minha-matriz-mueller}
+
+Até o momento da escrita desse texto, não existia nenhum resultado para as palavras chaves "bi-isotropic ice" ou "bi-isotropic cloud". Portanto, $M$ ainda não possui equivalente físico, e essa matriz tem apenas finalidade didática.
+
+(@) Chegou o momento de botar em prática seus novos conhecimentos, misturamos a @eq-lambert-beer com a @eq-transformcao-s-M} para obter nossa nova a equação diferencial:
+    $$
+        \frac{d \vec{s}}{dx} = -Md\vec{s}
+    $$ {#eq-stokes-mueller-exercicio}
+
+
+    a. Com a @eq-def-strokes} e $E_x = 0.5$ e $E_y = 0.25i$ monte sua condição inicial $s_0$.
+
+    a. Use $\alpha = 1$ e crie a matriz de Mueller $M$ seguindo Equação @eq-minha-matriz-mueller.
+
+    a. Adapte os seus códigos do Método de Euler do exercício anterior, e resolva a @eq-stokes-mueller-exercicio no intervalo $x \in [0,5]$.
+
+    a. Como o vetor $\vec{s}$ tem 4 componentes, não é possível fazer um gráfico de 4-dimensões. Exiba todos os componente de forma sobreposta em uma figura que evolui ao longo do tempo, $s_i \times t$.
+
+    a. solução analítica da intensidade da luz quando trabalhamos sem polarização, foi $I(x) = I_0e^{-\sigma n x}$. Por analogia, a solução do problema atual seria $s(x) = s_0e^{-Mx}$. *Assuma* que $e^{-Mx}$ quer dizer que você deve calcular a função exponencial, `exp`, de cada elemento da matriz $A = -Mx$, e então calcule sua curva teórica.
+
+    a. Compare com os resultados numéricos com os teóricos, e para a sua surpresa, o resultado teórico que esta errado.
+
+
+<!-- [TO DO] Falar da operação exponencial de matriz;
+
+[TO DO] Digo qual é a solução, e mando comparar com o numérico
+\begin{equation}\label{eq_solucao_expM}
+    e^{-Mx} = \begin{bmatrix}
+\frac{1}{2} + \frac{e^{-2\alpha x}}{2} & 0 & 0 & -\frac{1}{2} + \frac{e^{-2\alpha x}}{2} \\
+0 & cos(\alpha x)e^{-\alpha x} & -sin(\alpha x)e^{-\alpha x} & 0 \\
+0 & sin(\alpha x)e^{-\alpha x} & cos(\alpha x)e^{-\alpha x} & 0 \\
+-\frac{1}{2} + \frac{e^{-2\alpha x}}{2} & 0 & 0 & \frac{1}{2} + \frac{e^{-2\alpha x}}{2}
+\end{bmatrix}.
+\end{equation}
+
+
+
+\begin{enumerate}[label=\textcolor{myblue1}{\arabic*.}, resume]
+    \item [TO DO]  Falo que calculo simbólico irá ajudar a provar o resultado $A_{11}$ e Falo pro Aluno \textbf{NÃO} se preocupar em derivar todos os termos, vamos fazer apenas o mais simples.
+
+    \begin{enumerate}[label*=\textcolor{myblue1}{\arabic*.}]
+    \item [TO DO] Fazer expansão simples com valor numérico
+    \item [TO DO] Usar resultado para gerar resultados simbolicos
+    \item [TO DO] Calculo simbolico da matriz
+    \item [TO DO] Dizer cada passo que precisa ser feito apenas do $A_{11}$
+    \end{enumerate}
+\end{enumerate} -->

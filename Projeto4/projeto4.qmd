@@ -1,0 +1,18 @@
+# Nuvens na Frente do Sol
+
+**Objetivo Geral**: Resolver Equações Diferenciais de Primeira Ordem.
+
+**Objetivo Especifico**: Usar o Método de Euler com valores escalares e matriciais, para mostrar sua generalidade. No caso de equações diferenciais de primeira ordem, a solução típica em Física é uma exponencial, e por isso o conceito de Exponencial Matricial surge naturalmente, como é um cálculo laborioso, ferramentas simbólicas são grades facilitadoras. Finalmente, a visualização de Equações Diferenciais são melhor expressadas com campos de direções, produzidas em um computador com gráfico chamados `quiver`.
+
+**Conteúdo**: Lei de Beer-Lambert; Método de Euler; Matrizes de Mueller; Exponencial de Matriz; Cálculo Simbólico; Equação de Transferência Radiativa; Quiver;
+
+
+O capítulo anterior mostrou que o espectro de radiação solar não é perfeito devido a efeitos de absorção, de certas frequências, pela atmosfera terrestre. Isso acontece em todo o universo, e ao olhar para as *janelas de frequências* certas, podemos ver o que esta escondido atrás de uma atmosfera ou de um nuvem. O Telescópio James Webb é um ótimo exemplo, ele foi criado para ter imagens no infra vermelho, justamente pois as nuvens inter estelares tem menor espalhamento nessa região do espectro eletromagnético.
+
+Esse curso de Física Computacional é direcionado a alunos em anos inciais da graduação, logo, não posso apresentar um modelo matemático (de clássica ou quântica avançadas)  para encontrar frequências de ressonâncias, pois só traria frustrações ao leitor. No entanto, podemos aprender alguns conceitos básicos que são correlatos a espalhamento, e cuja matemática não é complexa, são eles **absorção** e **emissão**.
+
+{{< include _41beer_lambert.qmd >}}
+
+{{< include _42stokes.qmd >}}
+
+<!-- {{< include _43quiver.qmd >}} -->
