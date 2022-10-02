@@ -3,43 +3,68 @@ project:
   output-dir: docs
 
 book:
-  title: "FisComp"
+  title: "Física Computacional"
   author: "Noel Araujo Moreira"
+
   date: last-modified
   date-format: medium
+
+  page-footer: "2022"
+
+  sidebar:
+    style: docked
+    background: "#FFFFFF"
+    collapse-level: 1
+    navbar-hl: "#06BEE1"
+    type: "dark"
+
   chapters:
     - index.qmd
-    - part: projetos.qmd
+    - part: Projeto1/projeto1.qmd
       chapters:
-        - Projeto1/projeto1.qmd
-        - Projeto2/projeto2.qmd
-        - Projeto3/projeto3.qmd
-        - Projeto4/projeto4.qmd
+        - Projeto1/_11_vetores.qmd
+        - Projeto1/_12_leitura_escrita.qmd
+        - Projeto1/_13_loops.qmd
+        - Projeto1/_14_trigonometria.qmd
+        - Projeto1/_15_resistores.qmd
+    - part: Projeto2/projeto2.qmd
+      chapters:
+        - Projeto2/_21_experimento.qmd
+        - Projeto2/_22_atenuacao.qmd
+        - Projeto2/_23_fit_com_erros.qmd
+        - Projeto2/_24_propagacao_erros.qmd
+    - part: Projeto3/projeto3.qmd
+      chapters:
+        - Projeto3/_31_derivada.qmd
+        - Projeto3/_32_raiz.qmd
+        - Projeto3/_33_integral.qmd
     - references.qmd
-  search: true
   repo-url: https://github.com/NoelAraujo/fiscomp
   repo-actions: [issue]
 
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+    code-line-numbers: false
+    code-block-border-left: "#06BEE1"
+    code-copy: hover
+    code-block-bg: "#F4F4F9"
+    highlight-style: github
+    number-sections: false
+    anchor-sections: true
+    css: styles.css
+    toc-title: "Conteúdo"
+    lang: pt
+
+
+execute:
+  echo: true
+  warning: true
+  cache: true
 
 bibliography: references.bib
 csl: acm-siggraph.csl
 # https://www.zotero.org/styles
-format:
-  html:
-    theme:
-      light: lumen
-    code-fold: show
-    code-copy: hover
-    code-block-bg: true
-    highlight-style: Ayu
-    number-sections: true
-    anchor-sections: true
-    toc-title: "Conteúdo"
-    title-block-banner: "cover.png"
-    fontcolor: "#291816"
-    linkcolor: "#1990FE"
-    code-bg: "#FFFFFF"
-    title-block-banner-color: "#FFFFFF"
-    lang: pt
 
 jupyter: julia-1.8

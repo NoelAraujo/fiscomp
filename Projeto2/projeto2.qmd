@@ -1,4 +1,4 @@
-# Tratamento de Dados
+# 2. Tratamento de Dados
 
 
 **Objetivo Geral**: Aprender como obter taxas de decaimento.
@@ -9,11 +9,3 @@
 
 
 Uma situação que você fará uso de computador para facilitar sua vida no mundo da Física, será para obtenção e tratamentos de dados experimentais. Rotineiramente você precisará criar figuras com os seus resultados, estimar parâmetros relevantes do sistema e ainda escrever relatórios. Como não são todos os estudantes que tem a oportunidade de ter uma aula específica sobre esses assuntos, esse projeto será um guia inicial de como fazer tratamentos de dados.
-
-{{< include _21_experimento.qmd >}}
-
-{{< include _22_atenuacao.qmd >}}
-
-{{< include _23_fit_com_erros.qmd >}}
-
-{{< include _24_propagacao_erros.qmd >}}

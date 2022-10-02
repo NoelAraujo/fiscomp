@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Física Computacional - 3. O Sol</title>
+<title>Física Computacional - 8&nbsp; Dados com erros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -49,8 +93,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto3/_31_derivada.html" rel="next">
-<link href="../Projeto2/_24_propagacao_erros.html" rel="prev">
+<link href="../Projeto2/_24_propagacao_erros.html" rel="next">
+<link href="../Projeto2/_22_atenuacao.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,6 +124,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -90,7 +135,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">3. O Sol</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dados com erros</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -159,11 +204,11 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../Projeto2/projeto2.html" class="sidebar-item-text sidebar-link">2. Tratamento de Dados</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto2/_21_experimento.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">O Experimento</span></a>
@@ -176,7 +221,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto2/_23_fit_com_erros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dados com erros</span></a>
+  <a href="../Projeto2/_23_fit_com_erros.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Dados com erros</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,12 +233,12 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link active">3. O Sol</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link">3. O Sol</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto3/_31_derivada.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Derivada</span></a>
@@ -221,20 +266,14 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#radiação-solar" id="toc-radiação-solar" class="nav-link active" data-scroll-target="#radiação-solar">Radiação Solar</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NoelAraujo/fiscomp/issues/new" class="toc-action">Criar uma issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">3. O Sol</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Dados com erros</span></h1>
 </div>
 
 
@@ -248,42 +287,46 @@ div.csl-indent {
 
 </header>
 
-<p><strong>Objetivo Geral</strong>: Aprender alguns princípios de cálculo numérico.</p>
-<p><strong>Objetivo Especifico</strong>: Calcular o valor de derivadas e integrais com métodos numéricos, usando a física de radiação de corpo negro como pano de fundo. Esse assunto é uma das primeiras vezes no curso de Física no qual é necessário encontrar a solução (a raiz) de uma equação transcendental.</p>
-<p><strong>Conteúdo</strong>: Radiação de Corpo Negro; Derivada; Ordem de Erro; Método de Newton-Raphson, Método da Secante; Quadratura do Trapézio, Simpson, Bode.</p>
-<p>Você já assistiu algum filme do Predador? Uma das características mais marcantes do personagem é sua tecnologia de visão noturna. Isso não é pura ficção científica, há décadas que seres humanos também já usam imagens térmicas, e aplicações fora do campo militar existem aos montes, a mais interessante que devo mencionar é a observação de capivaras como na <a href="#fig-capivaras">Figura&nbsp;<span>1</span></a>.</p>
-<div id="fig-capivaras" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="capivara.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 1: Imagem térmica de uma capivara com seu filhote em Campo Grande-MS <span class="citation" data-cites="p3_capivaras">[<a href="../references.html#ref-p3_capivaras" role="doc-biblioref">Silva et al 2019</a>]</span>.</figcaption><p></p>
-</figure>
-</div>
-<p>Tudo que possui matéria emite ondas eletromagnéticas em diferentes frequências. Você nesse momento esta emitindo radiação no regime do infra-vermelho, que nosso olhos não conseguem ver, mesmo você estando brilhando. A explicação desse fenômeno é recente na história da humanidade, e em seu curso de Física Moderna, estudará a <strong>Radiação de Corpo Negro</strong>.</p>
-<section id="radiação-solar" class="level2">
-<h2 class="anchored" data-anchor-id="radiação-solar">Radiação Solar</h2>
-<p>O melhor exemplo de Corpo Negro que qualquer um pode acessar, é Sol de todo dia<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Ele parece amarelo, mas na verdade é composto de vários comprimentos de onda diferentes, alguns dos quais são bloqueados pela atmosfera (lembra da Camada de Ozônio?), outros chegam na superfície, e fazem a vida prosperar - o pico do espectro solar ser no campo visível humano é provavelmente uma coincidência causada por uma junção de fatores complexos.</p>
-<div id="fig-solar-wikipedia" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Solar_Spectrum.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 2: Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho, e no topo de atmosfera, em amarelo. A região de máximo de irradiância depende da Temperatura do corpo que emissor. O Sol tem pico na região vísivel, você tem um pico na região infra-vermelha. Fonte: <a href="https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png">Wikipédia</a></figcaption><p></p>
-</figure>
-</div>
-<p>Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a <strong>Lei de Planck</strong>. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.</p>
-<p>Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-p3_capivaras" class="csl-entry" role="doc-biblioentry">
-<span class="smallcaps">Silva et al, L.G. da</span>. 2019. Termografia de capivaras (Hydrochoerus hydrochaeris) do perímetro urbano de Campo Grande-MS. <em>PUBVET</em> <em>13</em>, 3, 1–9.
-</div>
-</div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Minhas desculpas se você está em região polar durante o inverno.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>Seus resultados experimentais anteriores foram <em>perfeitos</em> ou <em>ideais</em>, já que criamos eles no computador. No mundo real seus dados irão desviar do modelo matemático por inúmeros motivos, desde o equipamento de medição com problemas, até efeitos não-lineares que foram desconsiderados, começarem a serem relevantes. A solução inevitável é estimar o erro dos seus resultados, e existe todo um arcabouço matemático dedicado a isso. No entanto, é um processo <em>chato</em> e <em>trabalhoso</em>. Felizmente, computadores são ótimos para automatizar processos trabalhosos.</p>
+<ol class="example" type="1">
+<li><p>Vamos recriar o fit do problema anterior, porém adicionaremos erros aleatórios para emular dados reais.</p>
+<ol type="a">
+<li><p>Quando trabalhamos com simulações envolvendo números aleatórios, é uma boa prática cientifica controlar o gerador de números aleatórios, assim, os seus dados podem ser reproduzidos por outras pessoas. Com o pacote <code>Random.jl</code> fixe a <code>seed</code> de números aleatórios com o número 18 - não tem nada de especial com esse número. Ele só foi fixado para você não ficar escolhendo números.</p></li>
+<li><p>Para cada valor de <span class="math inline">\(I(r)\)</span>, multiplique por um número aleatório com a função <code>rand</code>, e exiba seus novos resultados com <code>scatter</code> plot. Multiplicar por números aleatórios vai garantir que a ordem de grandeza do erro é proporcional ao valor da medição.</p></li>
+<li><p>Com o pacote <code>LsqFit.jl</code> calcule novamente os valores dos parâmetros <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>. O pacote permite estimar o erro de cada parâmetro com a função <code>stderror(fit)</code> ou o intervalo de confiança com <code>confidence_interval(fit)</code>. Exiba curvas de intervalo de confiança, junto da curva <code>y_fit</code>.</p></li>
+</ol></li>
 </ol>
-</section>
+<p>Até o momento, seus resultados devem estar parecido com a <a href="#fig-p3-fit1">Figura&nbsp;<span>8.1</span></a>. Tecnicamente, nós não fizemos errado, usamos equações certas e podemos ainda ajustar a função <code>curve_fit</code> para fixar os limites inferiores/superiores de cada parâmetro, e mesmo assim, eu já lhe garanto que isso não é a solução.</p>
+<div id="fig-p3-fit1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="fig_fit1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 8.1: Fit não ideal sobre os dados gerados ao usar valores default da biblioteca <code>LsqFit.jl</code>.</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Nosso erro foi esquecer que trabalhamos com valores em escala logarítmica.</strong> O nome do pacote utilizado, <code>LsqFit.jl</code>, significa <em>Least-Squares Fitting</em>, que em essência, calcula o <em>erro quadrático</em> entre sua função modelo com os dados experimentais. Os nossos dados possuem valores que decrescem ordens de magnitude, logo, pontos próximos da origem, possuem erros maiores, e serão as regiões dominantes do ponto de vista do algoritmo.</p>
+<p><strong>A primeira solução</strong> é fazer um <em>fit ponderado</em>, no qual você informa ao algoritmo qual a “importância”, o “peso”, a “contribuição” que cada valor <span class="math inline">\(I(r)\)</span> possui, com um vetor <code>w_t</code>. Normalmente você faz esse procedimento quando já conhece alguma informação extra do sistema. No nosso exemplo, isso não é verdade, e o melhor que <em>poderiamos</em> fazer é supor alguns pesos <em>ad hoc</em>, e usar o comando</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve_fit</span>(modelo, x_data, y_data, wt, condição_inicial)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>A segunda solução</strong> é a correta, vamos <em>linearizar</em> os dados, isto é, nós aplicamos mudanças de variáveis no sistema, de tal forma que ele se comporte como uma equação de primeiro grau. Em problemas com fatores exponenciais, nossa transformação acontece aplicando a função logarítmica:</p>
+<p><span id="eq-linearizar"><span class="math display">\[
+    \begin{alignat*}{4}
+    I(r) &amp;= \frac{P}{4\pi r^2}\\
+    I(r) &amp;= \frac{1}{r^2}\cdot\frac{P}{4\pi}\\
+    log_{10}(I(r)) &amp;= log_{10}\left (\frac{1}{r^2} \right ) + log_{10}\left (\frac{P}{4\pi} \right )\\
+    log_{10}(I(r)) &amp;= log_{10}\left (r^{-2} \right ) + log_{10}\left (\frac{P}{4\pi}\right )\\
+    log_{10}(I(r)) &amp;= -2log_{10}(r) + log_{10}\left (\frac{P}{4\pi}\right )\\
+    Y &amp;= -2X + C
+    \end{alignat*}
+\tag{8.1}\]</span></span></p>
+<ol start="2" class="example" type="1">
+<li>Linearize seus dados
+<ol type="a">
+<li><p>Calcule o logaritmo de <span class="math inline">\(r\)</span> e <span class="math inline">\(I(r)\)</span></p></li>
+<li><p>Refaça o seu fit com um modelo do tipo <span class="math inline">\(y(x,p) = p_1x + p_2\)</span>.</p></li>
+<li><p>Exiba seus resultados e veja que agora estarão muito melhores.</p></li>
+</ol></li>
+</ol>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -386,13 +429,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Projeto2/_24_propagacao_erros.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Dados com Mais Erros</span></span>
+      <a href="../Projeto2/_22_atenuacao.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Atenuação Sonora</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto3/_31_derivada.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Derivada</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto2/_24_propagacao_erros.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Dados com Mais Erros</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Física Computacional - 3. O Sol</title>
+<title>Física Computacional - 12&nbsp; Integral</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,8 +49,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto3/_31_derivada.html" rel="next">
-<link href="../Projeto2/_24_propagacao_erros.html" rel="prev">
+<link href="../references.html" rel="next">
+<link href="../Projeto3/_32_raiz.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,6 +80,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -90,7 +91,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">3. O Sol</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -188,7 +189,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link active">3. O Sol</a>
+            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link">3. O Sol</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,7 +207,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto3/_33_integral.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Integral</span></a>
+  <a href="../Projeto3/_33_integral.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Integral</span></a>
   </div>
 </li>
       </ul>
@@ -221,20 +222,14 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#radiação-solar" id="toc-radiação-solar" class="nav-link active" data-scroll-target="#radiação-solar">Radiação Solar</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NoelAraujo/fiscomp/issues/new" class="toc-action">Criar uma issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">3. O Sol</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Integral</span></h1>
 </div>
 
 
@@ -248,42 +243,74 @@ div.csl-indent {
 
 </header>
 
-<p><strong>Objetivo Geral</strong>: Aprender alguns princípios de cálculo numérico.</p>
-<p><strong>Objetivo Especifico</strong>: Calcular o valor de derivadas e integrais com métodos numéricos, usando a física de radiação de corpo negro como pano de fundo. Esse assunto é uma das primeiras vezes no curso de Física no qual é necessário encontrar a solução (a raiz) de uma equação transcendental.</p>
-<p><strong>Conteúdo</strong>: Radiação de Corpo Negro; Derivada; Ordem de Erro; Método de Newton-Raphson, Método da Secante; Quadratura do Trapézio, Simpson, Bode.</p>
-<p>Você já assistiu algum filme do Predador? Uma das características mais marcantes do personagem é sua tecnologia de visão noturna. Isso não é pura ficção científica, há décadas que seres humanos também já usam imagens térmicas, e aplicações fora do campo militar existem aos montes, a mais interessante que devo mencionar é a observação de capivaras como na <a href="#fig-capivaras">Figura&nbsp;<span>1</span></a>.</p>
-<div id="fig-capivaras" class="quarto-figure quarto-figure-center anchored">
+<p>A <a href="_31_derivada.html#eq-p3-lei-plank">Equação&nbsp;<span>10.3</span></a> diz quanta energia existe para cada comprimento de onda, mas e se eu te perguntasse qual a energia total? A resposta para essa pergunta é a Lei de Stefan-Boltzman.</p>
+<p>Obtemos a energia total integrando sobre todos os comprimentos de onda - na verdade, é mais fácil integrar usando as frequências, <span class="math inline">\(E(\nu)\)</span>, do que com comprimentos de onda <span class="math inline">\(E(\lambda)\)</span>. Ao realizar essa operação, vamos encontrar novamente uma expressão sem solução analítica convencional, confira a referência <span class="citation" data-cites="p3_integracao">[<a href="../references.html#ref-p3_integracao" role="doc-biblioref">University of Washington Center for Quantitative Science 2020</a>]</span>, na seção <em>8.3.2 Stefan-Boltzmann Law</em> encontramos:</p>
+<p><span class="math display">\[
+    E_{total} = \frac{8\pi h}{c^3} \left ( \frac{kT}{h}\right )^4\int_0^{\infty} \frac{x^3dx}{e^x - 1}
+\]</span></p>
+<p>Nessa seção, nosso objetivo é usar e obter o valor da integral:</p>
+<p><span id="eq-p3-integral-calcular"><span class="math display">\[
+    I = \int_0^{\infty} \frac{x^3dx}{e^x - 1}
+\tag{12.1}\]</span></span></p>
+<p>Talvez você estudará em um curso de Física Matemática como resolver esse tipo de integral, você usará técnicas de <em>Integrais de Contorno</em>, e o resultado será <span class="math inline">\(\pi^4/15\)</span>. Como essa integral é um problema clássico, a solução já esta na internet, como por exemplo aqui <span class="citation" data-cites="p3_integral_contorno">S [<a href="../references.html#ref-p3_integral_contorno" role="doc-biblioref">2012</a>]</span>.</p>
+<p>Calcularemos o valor de uma integral a lá Integrais de Riemann. Dividimos um intervalo <span class="math inline">\(x\)</span> em segmentos discretos <span class="math inline">\([x_1, x_2, ..., x_N]\)</span>. Em seguida determinamos todos os <span class="math inline">\(f(x_i)\)</span>, com <span class="math inline">\(x_i = x_{0} + i\cdot h\)</span>, fornecendo assim, pontos para criar pequenos retângulos, cuja área é fácil de obter. Por último, somamos a área de todos os retângulos. Quanto menor o espaçamento <span class="math inline">\(h = x_{i+1} - x_{i}\)</span>, melhor nossa estimativa da integral.</p>
+<p>Na <a href="#fig-p3-areas">Figura&nbsp;<span>12.1</span></a> vemos uma representação exagerada do procedimento. Dado um ponto <span class="math inline">\(x_0\)</span>, conseguimos definir um lado do retângulo como sendo o segmento <span class="math inline">\([x_{-1}, x_{1}]\)</span>. O outro lado será a altura <span class="math inline">\(f(x_0)\)</span>.</p>
+<div id="fig-p3-areas" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="capivara.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 1: Imagem térmica de uma capivara com seu filhote em Campo Grande-MS <span class="citation" data-cites="p3_capivaras">[<a href="../references.html#ref-p3_capivaras" role="doc-biblioref">Silva et al 2019</a>]</span>.</figcaption><p></p>
+<p><img src="areas.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 12.1: Repare no espaçamento de <span class="math inline">\(h\)</span> entre cada ponto <span class="math inline">\(f_0\)</span></figcaption><p></p>
 </figure>
 </div>
-<p>Tudo que possui matéria emite ondas eletromagnéticas em diferentes frequências. Você nesse momento esta emitindo radiação no regime do infra-vermelho, que nosso olhos não conseguem ver, mesmo você estando brilhando. A explicação desse fenômeno é recente na história da humanidade, e em seu curso de Física Moderna, estudará a <strong>Radiação de Corpo Negro</strong>.</p>
-<section id="radiação-solar" class="level2">
-<h2 class="anchored" data-anchor-id="radiação-solar">Radiação Solar</h2>
-<p>O melhor exemplo de Corpo Negro que qualquer um pode acessar, é Sol de todo dia<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Ele parece amarelo, mas na verdade é composto de vários comprimentos de onda diferentes, alguns dos quais são bloqueados pela atmosfera (lembra da Camada de Ozônio?), outros chegam na superfície, e fazem a vida prosperar - o pico do espectro solar ser no campo visível humano é provavelmente uma coincidência causada por uma junção de fatores complexos.</p>
-<div id="fig-solar-wikipedia" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Solar_Spectrum.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 2: Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho, e no topo de atmosfera, em amarelo. A região de máximo de irradiância depende da Temperatura do corpo que emissor. O Sol tem pico na região vísivel, você tem um pico na região infra-vermelha. Fonte: <a href="https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png">Wikipédia</a></figcaption><p></p>
-</figure>
-</div>
-<p>Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a <strong>Lei de Planck</strong>. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.</p>
-<p>Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.</p>
+<p>No entanto, podemos ser mais inteligentes, e não criar retângulos, mas sim trapézios. Isso trará resultados mais rápidos. A tabela a seguir fornecem algumas fórmulas que resumem diferentes métodos:</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 68%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">Fórmula</th>
+<th style="text-align: center;">Erro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trapézio</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{h}{2}( f(x_{-1}) + 2f(x_0) + f(x_{1}) )\)</span></td>
+<td style="text-align: center;">(h^3)$</td>
+</tr>
+<tr class="even">
+<td>Simpson</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{h}{3}( f(x_{-1}) + 4f(x_0) + f(x_{1}) )\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(h^5)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Bode</td>
+<td style="text-align: left;"><span class="math inline">\(\int^{h}_{-h} = \frac{2h}{45}( 7f(x_0) + 32f(x_{1}) + 12f(x_{2}) + 32f(x_{3})) + 7f(x_{4})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{O}(h^7)\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol class="example" type="1">
+<li><p>Agora que você já possui as fórmulas, basta discretizar o espaço o domínio de integração. Como nossa função converge para zero rapidamente, não precisamos integrar até o infinito.</p>
+<ol type="a">
+<li><p>Defina uma função <span class="math inline">\(f(x) = x^3/(e^x - 1)\)</span></p></li>
+<li><p>Crie um vetor com valores de <span class="math inline">\(x = [10^{-8}, 50]\)</span> e discretize ele em <span class="math inline">\(N=2^{12}\)</span> passos.</p></li>
+<li><p>Calcule a Integral da <a href="#eq-p3-integral-calcular">Equação&nbsp;<span>12.1</span></a> usando os 3 métodos tabelados. Repare que a <a href="#fig-p3-areas">Figura&nbsp;<span>12.1</span></a> consegue representar os índices das Fórmula do Trapézio e Simpson, mas não para Fórmula de Bode. Você precisa de uma estrutura de repetição com passo 2 para fórmula do Trapézio/Simpson, e passo 4 para Bode.</p></li>
+</ol></li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-p3_capivaras" class="csl-entry" role="doc-biblioentry">
-<span class="smallcaps">Silva et al, L.G. da</span>. 2019. Termografia de capivaras (Hydrochoerus hydrochaeris) do perímetro urbano de Campo Grande-MS. <em>PUBVET</em> <em>13</em>, 3, 1–9.
+<div id="ref-p3_integral_contorno" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">S, S.</span> 2012. complex analysis - Contour integral for <span class="math inline">\(x^3/(e^x-1)\)</span>? - Mathematics Stack Exchange.
+</div>
+<div id="ref-p3_integracao" class="csl-entry" role="doc-biblioentry">
+<span class="smallcaps">University of Washington Center for Quantitative Science, U. by the T.P.</span> 2020. 8.3 Black Body Radiation | Calculus-Integration.
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Minhas desculpas se você está em região polar durante o inverno.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -386,13 +413,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Projeto2/_24_propagacao_erros.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Dados com Mais Erros</span></span>
+      <a href="../Projeto3/_32_raiz.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Raíz</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto3/_31_derivada.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Derivada</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

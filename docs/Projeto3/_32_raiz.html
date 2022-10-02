@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Física Computacional - 3. O Sol</title>
+<title>Física Computacional - 11&nbsp; Raíz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -49,8 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto3/_31_derivada.html" rel="next">
-<link href="../Projeto2/_24_propagacao_erros.html" rel="prev">
+<link href="../Projeto3/_33_integral.html" rel="next">
+<link href="../Projeto3/_31_derivada.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,6 +61,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -90,7 +72,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">3. O Sol</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Raíz</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -188,7 +170,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link active">3. O Sol</a>
+            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link">3. O Sol</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -201,7 +183,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto3/_32_raiz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Raíz</span></a>
+  <a href="../Projeto3/_32_raiz.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Raíz</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -221,20 +203,14 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#radiação-solar" id="toc-radiação-solar" class="nav-link active" data-scroll-target="#radiação-solar">Radiação Solar</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NoelAraujo/fiscomp/issues/new" class="toc-action">Criar uma issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">3. O Sol</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Raíz</span></h1>
 </div>
 
 
@@ -248,42 +224,95 @@ div.csl-indent {
 
 </header>
 
-<p><strong>Objetivo Geral</strong>: Aprender alguns princípios de cálculo numérico.</p>
-<p><strong>Objetivo Especifico</strong>: Calcular o valor de derivadas e integrais com métodos numéricos, usando a física de radiação de corpo negro como pano de fundo. Esse assunto é uma das primeiras vezes no curso de Física no qual é necessário encontrar a solução (a raiz) de uma equação transcendental.</p>
-<p><strong>Conteúdo</strong>: Radiação de Corpo Negro; Derivada; Ordem de Erro; Método de Newton-Raphson, Método da Secante; Quadratura do Trapézio, Simpson, Bode.</p>
-<p>Você já assistiu algum filme do Predador? Uma das características mais marcantes do personagem é sua tecnologia de visão noturna. Isso não é pura ficção científica, há décadas que seres humanos também já usam imagens térmicas, e aplicações fora do campo militar existem aos montes, a mais interessante que devo mencionar é a observação de capivaras como na <a href="#fig-capivaras">Figura&nbsp;<span>1</span></a>.</p>
-<div id="fig-capivaras" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="capivara.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 1: Imagem térmica de uma capivara com seu filhote em Campo Grande-MS <span class="citation" data-cites="p3_capivaras">[<a href="../references.html#ref-p3_capivaras" role="doc-biblioref">Silva et al 2019</a>]</span>.</figcaption><p></p>
-</figure>
-</div>
-<p>Tudo que possui matéria emite ondas eletromagnéticas em diferentes frequências. Você nesse momento esta emitindo radiação no regime do infra-vermelho, que nosso olhos não conseguem ver, mesmo você estando brilhando. A explicação desse fenômeno é recente na história da humanidade, e em seu curso de Física Moderna, estudará a <strong>Radiação de Corpo Negro</strong>.</p>
-<section id="radiação-solar" class="level2">
-<h2 class="anchored" data-anchor-id="radiação-solar">Radiação Solar</h2>
-<p>O melhor exemplo de Corpo Negro que qualquer um pode acessar, é Sol de todo dia<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Ele parece amarelo, mas na verdade é composto de vários comprimentos de onda diferentes, alguns dos quais são bloqueados pela atmosfera (lembra da Camada de Ozônio?), outros chegam na superfície, e fazem a vida prosperar - o pico do espectro solar ser no campo visível humano é provavelmente uma coincidência causada por uma junção de fatores complexos.</p>
-<div id="fig-solar-wikipedia" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Solar_Spectrum.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 2: Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho, e no topo de atmosfera, em amarelo. A região de máximo de irradiância depende da Temperatura do corpo que emissor. O Sol tem pico na região vísivel, você tem um pico na região infra-vermelha. Fonte: <a href="https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png">Wikipédia</a></figcaption><p></p>
-</figure>
-</div>
-<p>Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a <strong>Lei de Planck</strong>. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.</p>
-<p>Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-p3_capivaras" class="csl-entry" role="doc-biblioentry">
-<span class="smallcaps">Silva et al, L.G. da</span>. 2019. Termografia de capivaras (Hydrochoerus hydrochaeris) do perímetro urbano de Campo Grande-MS. <em>PUBVET</em> <em>13</em>, 3, 1–9.
-</div>
-</div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Minhas desculpas se você está em região polar durante o inverno.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>O último exercício referenciava o Wikipédia. Caso não o tenha acessado a página, agora é sua chance. Nela, busque pela seção <em>Derivation from Planck’s law</em>, e você descobrirá que a solução para o valor máximo do comprimento de onda <span class="math inline">\(\lambda_{peak}\)</span>, não é obtido por manipulações algébricas. Você precisa recorrer ao computador para descobrir qual a solução da equação:</p>
+<p><span id="eq-transcendental"><span class="math display">\[
+    (x-5)e^x + 5 = 0
+\tag{11.1}\]</span></span></p>
+<p>Iremos estudar métodos que permitem achar a solução de problemas do tipo <span class="math inline">\(g(x) = 0\)</span>, ou seja, em termos técnicos, nós queremos as raízes de uma função.</p>
+<p>Inicialmente, vamos verificar que a solução da <a href="#eq-transcendental">Equação&nbsp;<span>11.1</span></a> é <span class="math inline">\(x = 4.9651142\)</span>. Em seguida, usaremos esses métodos para encontrar o comprimento de onda <span class="math inline">\(\lambda^*\)</span> onde <span class="math inline">\(E'(\lambda^*; T) = 0\)</span> - que é exatamente onde fica o pico do espectro.</p>
+<ol class="example" type="1">
+<li>O primeiro método é o menos elaborado. Nós podemos exibir a função <span class="math inline">\(ln|g(x)|\)</span>, pois <span class="math inline">\(ln(0) = -\infty\)</span> é uma singularidade, facilmente identificável como um declínio muito rápido.
+<ol type="a">
+<li><p>Crie 2 arrays, <span class="math inline">\(\vec{x}\)</span> e <span class="math inline">\(\vec{g}\)</span> e exiba <span class="math inline">\(\vec{x} \; vs \; ln(abs(\vec{g}))\)</span>. Você deve escolher os valores de <span class="math inline">\(\vec{x}\)</span>, até visualizar a singularidade.</p></li>
+<li><p>Em seguida, faça um loop que buscará pela raiz <span class="math inline">\(x^*\)</span> sabendo que <span class="math inline">\(|g(x^*)|\)</span> é um mínimo. Portanto, para um valor <span class="math inline">\(|g(x_i)|\)</span> antes da raiz, e outro ponto <span class="math inline">\(|g(x_j)|\)</span> depois da raiz, sempre será verdade que <span class="math inline">\(|g(x_i)| &gt; |g(x^*)|\)</span> e <span class="math inline">\(|g(x_j)| &gt; |g(x^*)|\)</span>.</p></li>
+<li><p>Outra maneira de interpretar o mesmo problema, é que dado um <span class="math inline">\(g(x_i)\)</span> antes da raiz, e outro <span class="math inline">\(g(x_j)\)</span> depois da raiz, eles necessariamente possuem sinais opostos (um positivo, e outro negativo. Estou ignorando o caso onde a função apenas toca o eixo vertical). Assim, <span class="math inline">\(g(x_i)*g(x_j) &lt; 0\)</span>. Use essa condição para encontrar <span class="math inline">\(x^*\)</span> novamente.</p></li>
+</ol></li>
 </ol>
-</section>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Observação
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>O processo de achar a singularidade não é automático, ele é um processo de tentativa e erro, mas pode salvar sua vida quando os métodos tradicionais não funcionarem.</p>
+</div>
+</div>
+<ol start="2" class="example" type="1">
+<li>O segunda método se chama Método de Newton-Raphson. Ele consiste em usar derivadas e intersecções sucessivas até chegar na raiz.
+<ol type="a">
+<li><p>Tenho certeza que ver um vídeo é mais interessante que ler a explicação. Assista <a href="https://www.youtube.com/watch?v=qlNqPE_X4ME">Newton-Raphson method | Animated and explained | Algorithm for finding roots of a function</a> no YouTube do Canal <code>MathAndPhysics</code>.</p>
+<p>No final do vídeo, você deve ter encontrado a Fórmula <span id="eq-newton-raphson"><span class="math display">\[
+     x_{i+1} = x_{i} - \frac{g(x_i)}{g'(x_i)}
+  \tag{11.2}\]</span></span></p></li>
+<li><p>Obtenha <span class="math inline">\(g'(x)\)</span> da <a href="#eq-newton-raphson">Equação&nbsp;<span>11.2</span></a> com a <a href="#eq-transcendental">Equação&nbsp;<span>11.1</span></a></p></li>
+<li><p>Você precisa escolher um valor inicial <span class="math inline">\(x_0\)</span>, use a sua resposta do exercício anterior, e aplique a em um loop, faça a iteração da <a href="#eq-newton-raphson">Equação&nbsp;<span>11.2</span></a>. Pare quando <span class="math inline">\(|x_{i+1} - x_i| &lt; 10^{-6}\)</span>.</p></li>
+<li><p>Armazene todos valores e os exiba numa figura.</p></li>
+</ol></li>
+</ol>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Observação
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eu alterei a função ‘<span class="math inline">\(f\)</span>’ exibida no vídeo, para ‘<span class="math inline">\(g\)</span>’, apenas para manter consistência de notação.</p>
+</div>
+</div>
+<ol start="3" class="example" type="1">
+<li><p>O último método se chama Método da Secante.</p>
+<ol type="a">
+<li><p>Você Já deve ter percebido que não vou definir as tecnicalidades do método aqui no texto. Assista o vídeo <a href="https://www.youtube.com/watch?v=_KuvOaJXzrE">Explicação do Método da Secante - Conceitos básicos - Utilizando o Software GeoGebra</a> do Canal <code>Matemática na Veia Online</code>.</p>
+<p>Dessa vez, o vídeo não fornece uma fórmula, apenas um procedimento, e justamente isso que eu quero que você entenda. Eu pouparei seu tempo, e darei a Fórmula: <span id="eq-secante"><span class="math display">\[
+     x_{i+1} = x_{i} - g(x_i)\frac{x_i - x_{i-1}}{g(x_i) - g(x_{i-1})}
+  \tag{11.3}\]</span></span></p>
+<p>Repare que não precisamos mais de <span class="math inline">\(g'(x)\)</span>, mas precisamos armazenar um valor anterior, <span class="math inline">\(x_{i-1}\)</span>.</p>
+<ol start="2" type="a">
+<li>Encontre a raiz <span class="math inline">\(x^*\)</span> com <a href="#eq-secante">Equação&nbsp;<span>11.3</span></a> com o mesmo critério de parada <span class="math inline">\(|x_{i+1} - x_i| &lt; 10^{-6}\)</span>.</li>
+</ol></li>
+</ol></li>
+</ol>
+<p>Ao exibir a evolução dos valores, você deve encontrar que o Método da Secante é mais lento que o Newton-Rapshon.</p>
+<ol start="4" class="example" type="1">
+<li><p>Temos todo o conhecimento para obter <span class="math inline">\(\lambda_{peak}\)</span></p>
+<ol type="a">
+<li><p>Use o primeiro método, e com a Primeira derivada de irradiância dos dados teóricos normalizados, diga qual o <span class="math inline">\(\lambda^*\)</span> no qual <span class="math inline">\(E(\lambda; T)\)</span> é máximo.</p></li>
+<li><p>Use o Método de Newton-Raphson e tente descubrir <span class="math inline">\(\lambda_{peak}\)</span> com <a href="_31_derivada.html#eq-p3-lei-plank">Equação&nbsp;<span>10.3</span></a> e <a href="_31_derivada.html#eq-wien">Equação&nbsp;<span>10.4</span></a></p></li>
+</ol></li>
+</ol>
+<p>Você não deve ter conseguido achar <span class="math inline">\(\lambda_{peak}\)</span> com o Método de Newton-Raphson. Isso é resultados das ordens de magnitude astronômicas que estão envolvidas nas divisão <span class="math inline">\(g(x_i)/g'(x_{i})\)</span>. Todavia, o método mais simplista conseguiu fornecer a resposta correta.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Dica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Nem sempre os algoritmos mais elaboradas são as melhores.</strong></p>
+</div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -386,13 +415,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Projeto2/_24_propagacao_erros.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Dados com Mais Erros</span></span>
+      <a href="../Projeto3/_31_derivada.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Derivada</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto3/_31_derivada.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Derivada</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto3/_33_integral.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Integral</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

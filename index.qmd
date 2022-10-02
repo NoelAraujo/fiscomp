@@ -1,4 +1,4 @@
-# Física Computacional {.unnumbered}
+# Home {.unnumbered}
 
 **Física Computacional**, ou **FisComp** para os íntimos, é uma disciplina comum em cursos universitários de Física. Isso se faz necessário, pois, de uma maneira ou outra, em pleno século 21 não é possível fazer física sem o auxílio do computador, e essa disciplina visa ensinar conceito de Métodos Numéricos aplicados à Física.
 

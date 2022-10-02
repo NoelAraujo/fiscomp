@@ -1,4 +1,4 @@
-# O Sol
+# 3. O Sol
 
 
 **Objetivo Geral**: Aprender alguns princípios de cálculo numérico.
@@ -34,11 +34,3 @@ Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho
 Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a **Lei de Planck**. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.
 
 Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.
-
-
-{{< include _derivada.qmd >}}
-
-{{< include _raiz.qmd >}}
-
-{{< include _integral.qmd >}}
-

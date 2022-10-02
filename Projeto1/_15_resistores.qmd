@@ -1,0 +1,8 @@
+## Resistores em Série
+
+Será inevitável que você fará uso de pacotes prontos. E é comum em Julia a criação de novos tipos de dados - `tipos` no sentido `Int` ou `Float`. Esse recurso permite que você desenvolva códigos mais inteligível e tudo começa com `struct`. Nesse exercício criaremos um tipo de dado para ajudar a calcular resistências em série de circuitos elétricos.
+
+5. Defina um `struct`^[É esperado que você busque na internet por exemplos mínimos de como trabalhar com `struct`.] chamado `resistor` com 2 campos do tipo `Number`: Resistência, $R$ e Corrente, $i$.
+  a. Instancie 2 resistores em série, com $i = 4A$, e $R_1 = 5\Omega$ e $R_2 = 20\Omega$.
+  a. Crie uma função que receba o tipo de entrada `resistor` e retorne a tensão $U = R\cdot i$.
+  a. Crie um novo *método* que some 2 resistências em série e retorne um novo objeto do tipo `resistor`.

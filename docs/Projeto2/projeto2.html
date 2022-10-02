@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FisComp - 2&nbsp; Tratamento de Dados</title>
+<title>Física Computacional - 2. Tratamento de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,88 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -112,13 +30,14 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto3/projeto3.html" rel="next">
-<link href="../Projeto1/projeto1.html" rel="prev">
+<link href="../Projeto2/_21_experimento.html" rel="next">
+<link href="../Projeto1/_15_resistores.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
@@ -141,25 +60,18 @@ div.csl-indent {
     "search-submit-button-title": "Enviar"
   }
 }</script>
-<style>
-    .quarto-title-block .quarto-title-banner {
-      color: #FFFFFF;
-background-image: url(../cover.png);
-background-size: cover;
-    }
-    </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></h1>
+      <h1 class="quarto-secondary-nav-title">2. Tratamento de Dados</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -167,27 +79,12 @@ background-size: cover;
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">FisComp</a> 
+      <a href="../">Física Computacional</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/NoelAraujo/fiscomp" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
 </div>
@@ -202,35 +99,95 @@ background-size: cover;
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Física Computacional</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Home</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../projetos.html" class="sidebar-item-text sidebar-link">Projetos</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link">1. Prólogo</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prólogo</span></a>
+  <a href="../Projeto1/_11_vetores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vetores e Matrizes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto2/projeto2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tratamento de Dados</span></a>
+  <a href="../Projeto1/_12_leitura_escrita.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leitura e Escrita</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">O Sol</span></a>
+  <a href="../Projeto1/_13_loops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estrutura de Repetição</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto4/projeto4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Nuvens na Frente do Sol</span></a>
+  <a href="../Projeto1/_14_trigonometria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Trigonometria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto1/_15_resistores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resistores em Série</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../Projeto2/projeto2.html" class="sidebar-item-text sidebar-link active">2. Tratamento de Dados</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto2/_21_experimento.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">O Experimento</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto2/_22_atenuacao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Atenuação Sonora</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto2/_23_fit_com_erros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dados com erros</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto2/_24_propagacao_erros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dados com Mais Erros</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link">3. O Sol</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto3/_31_derivada.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Derivada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto3/_32_raiz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Raíz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Projeto3/_33_integral.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Integral</span></a>
   </div>
 </li>
       </ul>
@@ -245,245 +202,33 @@ background-size: cover;
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#o-experimento" id="toc-o-experimento" class="nav-link active" data-scroll-target="#o-experimento"> <span class="header-section-number">2.1</span> O Experimento</a></li>
-  <li><a href="#atenuação-sonora" id="toc-atenuação-sonora" class="nav-link" data-scroll-target="#atenuação-sonora"> <span class="header-section-number">2.2</span> Atenuação Sonora</a></li>
-  <li><a href="#dados-com-erros" id="toc-dados-com-erros" class="nav-link" data-scroll-target="#dados-com-erros"> <span class="header-section-number">2.3</span> Dados com erros</a></li>
-  <li><a href="#dados-com-mais-erros" id="toc-dados-com-mais-erros" class="nav-link" data-scroll-target="#dados-com-mais-erros"> <span class="header-section-number">2.4</span> Dados com Mais Erros</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NoelAraujo/fiscomp/issues/new" class="toc-action">Criar uma issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">2. Tratamento de Dados</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
 
 <p><strong>Objetivo Geral</strong>: Aprender como obter taxas de decaimento.</p>
 <p><strong>Objetivo Especifico</strong>: Fazer fits de curvas de decaimento com lei de potência, típico de sistemas de atenuação de energia no espaço. Como a taxa de decaimento é rápida, você precisará ter cuidado adicional para fazer seu <em>fitting</em>.</p>
 <p><strong>Conteúdo</strong>: Escala Logarítmica; Lei do Inverso do Quadrado da Distância; Despacito; Métodos dos Mínimos Quadrados; Propagação de Erros.</p>
 <p>Uma situação que você fará uso de computador para facilitar sua vida no mundo da Física, será para obtenção e tratamentos de dados experimentais. Rotineiramente você precisará criar figuras com os seus resultados, estimar parâmetros relevantes do sistema e ainda escrever relatórios. Como não são todos os estudantes que tem a oportunidade de ter uma aula específica sobre esses assuntos, esse projeto será um guia inicial de como fazer tratamentos de dados.</p>
-<section id="o-experimento" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="o-experimento"><span class="header-section-number">2.1</span> O Experimento</h2>
-<p>Você pode aumentar ou diminuir a altura do som do seu celular com 2 botões. Contudo, seu ouvido não funciona da mesma maneira. Se você é exposto a sons de mesma intensidade, mas frequências diferentes, você terá a impressão que os sons estão em volumes diferentes. Essa sensibilidade diferente para cada frequência depende de pessoa para pessoa, e sua primeira atividade será descobrir os limites dos <strong>seus</strong> ouvidos.</p>
-<p>Você irá realizar o experimento proposto em <span class="citation" data-cites="p2_experimento">[<a href="../references.html#ref-p2_experimento" role="doc-biblioref">Staff 2020</a>]</span>, para acessar os seus detalhes, clique <a href="https://www.sciencebuddies.org/science-fair-projects/project-ideas/HumBio_p011/human-biology-health/measuring-hearing-threshold-different-pitches">aqui</a>. A atividade consiste em escutar sons com frequências bem definidas, porém de intensidades diferentes ao longo do tempo. Ao contar a quantidade de tons, você conseguirá calcular os seus limites auditivos.</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Aviso
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Não esqueça que seu primeiro passo na atividade não é preencher a tabela, mas sim ajustar a altura do fone de ouvido para que você escute 18 ou 19 batidas em 3500Hz.</p>
-<p>Leia toda a prática antes de começar a realiza-lá.</p>
-</div>
-</div>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Aviso
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Não se preocupe com os resultados no regime de alta frequência. Fones de ouvidos não são feitos para ter alta fidelidade nessa região, logo, você provavelmente não escutará tantas batidas.</p>
-<p>Relaxe, você não está surdo.</p>
-</div>
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Esse experimento é longo e será inevitável a fadiga. Isso é um problema para garantir a qualidade dos seus dados, pois você terá muita atenção para contar as batidas no começo da prática, e não terá a mesma disposição e atenção para contar batidas no final do experimento.</p>
-<p>Uma maneira de contornar o cansaço físico é não realizar o experimento de forma linear, escute as frequências em ordem aleatória.</p>
-</div>
-</div>
-<ol class="example" type="1">
-<li><p>Leia atentamente a descrição do <a href="https://www.sciencebuddies.org/science-fair-projects/project-ideas/HumBio_p011/human-biology-health/measuring-hearing-threshold-different-pitches">experimento</a> e preencha uma tabela com a quantidade de batidas que você escutou em cada repetição.</p>
-<ol type="a">
-<li><p>Armazene os seus resultados em uma planilha.</p></li>
-<li><p>Salve os dados como um arquivo CSV.</p></li>
-<li><p>Leia os dados em Julia com o pacote <code>DelimitedFiles.jl</code>, e com o pacote de vizualização de sua escolha, faça um gráfico <code>semilogx</code> dos seus resultados.</p>
-<p>O tamanho da fonte da figura deve ser comparável ao texto onde ele estará embutido.</p></li>
-</ol></li>
-</ol>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Observação
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Salvar arquivos em formato <code>.csv</code> é conveniente apenas quando o conjunto de dados é pequeno, pois você pode acessar os dados com um editor de texto.</p>
-<p>Quando o conjunto de dados é enorme, e você não precisa de uma banco de dados, use arquivos do formato <code>.hdf5</code>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="atenuação-sonora" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="atenuação-sonora"><span class="header-section-number">2.2</span> Atenuação Sonora</h2>
-<p>Experimentos científicos não feitos apenas para ter resultados em um gráfico, como aconteceu na prática anterior, pois o idealizador do experimento quer obter alguma informação relevante dos dados. Em alguns casos as variáveis relevantes ainda não são claras, e o objetivo do experimento é justamente descobrir quais são as propriedades básicas do sistema, em outros casos já existe um modelo matemático com uma lista de comportamentos esperados, e seu objetivo será obter alguns parâmetros desse modelo.</p>
-<p>Como a modelagem completa do sistema auditivo humano não é tópico de interesse em nosso projeto, trabalharemos com tópico correlato, e muito mais simples, isto é, Atenuação Sonora pela <strong>Lei do Inverso do Quadrado da Distância</strong></p>
-<p><span id="eq-p2-inverso-quadrado"><span class="math display">\[
-    I(r) = \frac{P}{4\pi r^2},
-\tag{2.1}\]</span></span></p>
-<p>onde <span class="math inline">\(I(r)\)</span> é intensidade sonora a uma distância <span class="math inline">\(r\)</span> da origem, e <span class="math inline">\(P\)</span> é a potência da fonte. Um experimento que desejasse validar essa equação deveria encontrar 2 números: o primeiro é o termo geométrico <span class="math inline">\(4\pi\)</span>, e o segundo, é o crescimento quadrático, <span class="math inline">\(r^2\)</span>. Nessa sessão, <strong>não</strong> vamos criar um experimento, criaremos os dados e aprenderemos a estimar os parâmetros.</p>
-<ol start="2" class="example" type="1">
-<li>Para nossoas simulações precisamos definir alguns valores para trabalhar com <a href="#eq-p2-inverso-quadrado">Equação&nbsp;<span>2.1</span></a>, e nos basearemos no artigo <span class="citation" data-cites="p2_despacito">[<a href="../references.html#ref-p2_despacito" role="doc-biblioref">Gray 2019</a>]</span>, onde o autor calcula quantos decibeis são produzidos por todas os Alexas do mundo tocando a música <em>Despacito</em> ao mesmo tempo<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.
-<ol type="a">
-<li><p>Com <span class="math inline">\(P=159\)</span> e <span class="math inline">\(r \in [0.1, 28]\)</span> (com 30 pontos), faça um <code>scatter</code> de <span class="math inline">\(I(r)\)</span> em escala loglog.</p></li>
-<li><p>Refaça a figura anterior, garantindo pontos igualmente espaçados em escala loglog.</p></li>
-<li><p>Seria possível criar essa mesma figura com <span class="math inline">\(r\)</span> iniciando em zero?</p></li>
-<li><p>Supondo que esses dados foram obtidos de um experimento, você deve obter as constantes para <span class="math inline">\(y(x,p) = P/ar^b\)</span>. Já sabemos que <span class="math inline">\(a=4\pi\)</span> e <span class="math inline">\(b=2\)</span>, mas você deve obter isso com o pacote <code>LsqFit.jl</code>. Consulte a documentação do pacote <a href="https://julianlsolvers.github.io/LsqFit.jl/latest/getting_started/">aqui</a>.</p></li>
-<li><p>Com os parâmetros que você obteve, aplique eles sobre o domínio <span class="math inline">\(r\)</span> e obtenha um vetor <code>y_fit</code> - e sobreponha com a figura de <span class="math inline">\(I(r)\)</span> anterior para testar a qualidade do seu fit.</p></li>
-</ol></li>
-</ol>
-</section>
-<section id="dados-com-erros" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="dados-com-erros"><span class="header-section-number">2.3</span> Dados com erros</h2>
-<p>Seus resultados experimentais anteriores foram <em>perfeitos</em> ou <em>ideais</em>, já que criamos eles no computador. No mundo real seus dados irão desviar do modelo matemático por inúmeros motivos, desde o equipamento de medição com problemas, até efeitos não-lineares que foram desconsiderados, começarem a serem relevantes. A solução inevitável é estimar o erro dos seus resultados, e existe todo um arcabouço matemático dedicado a isso. No entanto, é um processo <em>chato</em> e <em>trabalhoso</em>. Felizmente, computadores são ótimos para automatizar processos trabalhosos.</p>
-<ol start="3" class="example" type="1">
-<li><p>Vamos recriar o fit do problema anterior, porém adicionaremos erros aleatórios para emular dados reais.</p>
-<ol type="a">
-<li><p>Quando trabalhamos com simulações envolvendo números aleatórios, é uma boa prática cientifica controlar o gerador de números aleatórios, assim, os seus dados podem ser reproduzidos por outras pessoas. Com o pacote <code>Random.jl</code> fixe a <code>seed</code> de números aleatórios com o número 18 - não tem nada de especial com esse número. Ele só foi fixado para você não ficar escolhendo números.</p></li>
-<li><p>Para cada valor de <span class="math inline">\(I(r)\)</span>, multiplique por um número aleatório com a função <code>rand</code>, e exiba seus novos resultados com <code>scatter</code> plot. Multiplicar por números aleatórios vai garantir que a ordem de grandeza do erro é proporcional ao valor da medição.</p></li>
-<li><p>Com o pacote <code>LsqFit.jl</code> calcule novamente os valores dos parâmetros <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>. O pacote permite estimar o erro de cada parâmetro com a função <code>stderror(fit)</code> ou o intervalo de confiança com <code>confidence_interval(fit)</code>. Exiba curvas de intervalo de confiança, junto da curva <code>y_fit</code>.</p></li>
-</ol></li>
-</ol>
-<p>Até o momento, seus resultados devem estar parecido com a <a href="#fig-p3-fit1">Figura&nbsp;<span>2.1</span></a>. Tecnicamente, nós não fizemos errado, usamos equações certas e podemos ainda ajustar a função <code>curve_fit</code> para fixar os limites inferiores/superiores de cada parâmetro, e mesmo assim, eu já lhe garanto que isso não é a solução.</p>
-<div id="fig-p3-fit1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig_fit1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 2.1: Fit não ideal sobre os dados gerados ao usar valores default da biblioteca <code>LsqFit.jl</code>.</figcaption><p></p>
-</figure>
-</div>
-<p><strong>Nosso erro foi esquecer que trabalhamos com valores em escala logarítmica.</strong> O nome do pacote utilizado, <code>LsqFit.jl</code>, significa <em>Least-Squares Fitting</em>, que em essência, calcula o <em>erro quadrático</em> entre sua função modelo com os dados experimentais. Os nossos dados possuem valores que decrescem ordens de magnitude, logo, pontos próximos da origem, possuem erros maiores, e serão as regiões dominantes do ponto de vista do algoritmo.</p>
-<p><strong>A primeira solução</strong> é fazer um <em>fit ponderado</em>, no qual você informa ao algoritmo qual a “importância”, o “peso”, a “contribuição” que cada valor <span class="math inline">\(I(r)\)</span> possui, com um vetor <code>w_t</code>. Normalmente você faz esse procedimento quando já conhece alguma informação extra do sistema. No nosso exemplo, isso não é verdade, e o melhor que <em>poderiamos</em> fazer é supor alguns pesos <em>ad hoc</em>, e usar o comando</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve_fit</span>(modelo, x_data, y_data, wt, condição_inicial)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>A segunda solução</strong> é a correta, vamos <em>linearizar</em> os dados, isto é, nós aplicamos mudanças de variáveis no sistema, de tal forma que ele se comporte como uma equação de primeiro grau. Em problemas com fatores exponenciais, nossa transformação acontece aplicando a função logarítmica:</p>
-<p><span id="eq-linearizar"><span class="math display">\[
-    \begin{alignat*}{4}
-    I(r) &amp;= \frac{P}{4\pi r^2}\\
-    I(r) &amp;= \frac{1}{r^2}\cdot\frac{P}{4\pi}\\
-    log_{10}(I(r)) &amp;= log_{10}\left (\frac{1}{r^2} \right ) + log_{10}\left (\frac{P}{4\pi} \right )\\
-    log_{10}(I(r)) &amp;= log_{10}\left (r^{-2} \right ) + log_{10}\left (\frac{P}{4\pi}\right )\\
-    log_{10}(I(r)) &amp;= -2log_{10}(r) + log_{10}\left (\frac{P}{4\pi}\right )\\
-    Y &amp;= -2X + C
-    \end{alignat*}
-\tag{2.2}\]</span></span></p>
-<ol start="4" class="example" type="1">
-<li>Linearize seus dados
-<ol type="a">
-<li><p>Calcule o logaritmo de <span class="math inline">\(r\)</span> e <span class="math inline">\(I(r)\)</span></p></li>
-<li><p>Refaça o seu fit com um modelo do tipo <span class="math inline">\(y(x,p) = p_1x + p_2\)</span>.</p></li>
-<li><p>Exiba seus resultados e veja que agora estarão muito melhores.</p></li>
-</ol></li>
-</ol>
-</section>
-<section id="dados-com-mais-erros" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="dados-com-mais-erros"><span class="header-section-number">2.4</span> Dados com Mais Erros</h2>
-<p>Vamos aprimorar o nosso conhecimento do processo de <em>fitting</em>. Nós usamoa a biblioteca <code>LsqFit.jl</code> pela conivência e nos deparamos com uma situação simples onde ela falhou. Felizmente eu lhe disse a origem do problema e sua solução.</p>
-<p>Mas e se seu código rodasse dentro de um sistema embarcado?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Para economizar bateria do equipamento, você gostaria de refazer todas as contas do fit, porém otimizadas com comandos específicos do seu dispositivo. Logo, o que você precisa é conhecer a matemática dos <strong>Métodos dos Mínimos Quadrados</strong>.</p>
-<p>Vamos usar o <em>fitting</em> da função de primeiro grau, pois nós acabamos de usar ela. Suponha uma função modelo do tipo</p>
-<p><span class="math display">\[
-    y(r) = \alpha r + \beta
-\]</span></p>
-<p>A distância <span class="math inline">\(d_i\)</span> de cada ponto experimental <span class="math inline">\((r_i, I_i)\)</span> e a curva de fit é:</p>
-<p><span class="math display">\[
-    d_i = I_i - (\alpha r_i + \beta)
-\]</span></p>
-<p>O <em>Métodos dos Mínimos Quadrados</em> é autoexplicativo, vamos somar todos os <span class="math inline">\(N\)</span> valores dos erros, <span class="math inline">\(d_i\)</span>, ao quadrado. Precisaremos de um nome para essa quantidade, e vou chamar de <span class="math inline">\(D\)</span>:</p>
-<p><span class="math display">\[
-    D = \sum_{i=1}^N [I_i - (\alpha r_i + \beta)]^2
-\]</span></p>
-<p>Buscamos o valor mínimo de <span class="math inline">\(D\)</span> variando <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, ou seja, a primeira derivada parcial deve ser nula:</p>
-<p><span class="math display">\[
-    \begin{alignat*}{4}
-    \frac{\partial D}{\partial \alpha}  &amp;= \sum_{i=1}^N 2(-r_i)[I_i - (\alpha r_i + \beta)]= 0\\
-    \frac{\partial D}{\partial \beta}  &amp;= \sum_{i=1}^N 2(-1)[I_i - (\alpha r_i + \beta)]= 0
-    \end{alignat*}
-\]</span></p>
-<p>Agora reorganizando as expressões, temos uma sistema linear:</p>
-<p><span class="math display">\[
-    \begin{alignat*}{4}
-     \alpha \sum_{i=1}^N r_i^2 + \beta \sum_{i=1}^N r_i  &amp;= \sum_{i=1}^N r_iI_i\\
-    \alpha \sum_{i=1}^N r_i + \beta N  &amp;= \sum_{i=1}^N I_i
-    \end{alignat*}
-\]</span></p>
-<p>Finalmente, podemos escrever esse sistema em forma matricial:</p>
-<p><span id="eq-sistema-linear"><span class="math display">\[
-    \begin{pmatrix}
-        \sum_{i=1}^N r_i^2  &amp; \sum_{i=1}^N r_i  \\
-        \sum_{i=1}^N r_i &amp; N
-    \end{pmatrix}
-    \begin{pmatrix}
-        \alpha \\
-        \beta
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-        \sum_{i=1}^N r_iI_i \\
-        \sum_{i=1}^N I_i
-    \end{pmatrix}
-\tag{2.3}\]</span></span></p>
-<p>Sistemas lineares do tipo <span class="math inline">\(Ax=b\)</span> são facilmente resolvidos em Julia com o operador <code>backslash</code>, o barra invertida: <span class="math inline">\(x= A\backslash b\)</span>.</p>
-<p>Até o momento nós obtivemos o valor de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, mas ainda faltam as margem de erro. No lugar de aprender os detalhes de estatística de matriz de covariância, vamos focar em outro assunto correlato, mais pertinente a dados experimentais: <em>Cada medição experimental possui um erro associado</em>.</p>
-<p>Não precisamos aprender o cálculo de <a href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty">Propagação de Erros</a>, pois isso é a finalidade de cursos de laboratório. O que faremos é usar um pacote chamado <code>Measurements.jl</code> que faz toda a propagação de erro nativamente em Julia, ou seja, podemos fazer qualquer análise com os nossos dados, e a propagação de erro será automática.</p>
-<ol start="5" class="example" type="1">
-<li><p>Com os mesmos dados de <span class="math inline">\(r\)</span> e <span class="math inline">\(I(r)\)</span> que você calculo o fit através de linearização. Vamos recalcular o fit usando o sistema de equações que foi apresentado. A diferença, é que você adicionará um erro para cada valor de <span class="math inline">\(I(r)\)</span> e verá a propagação de erros acontecer.</p>
-<ol type="a">
-<li><p>Para cada valor de <span class="math inline">\(I(r)\)</span> adicione um erro experimental<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Nada impede lhe de adicionar erros na medição de <span class="math inline">\(r\)</span>, mas a figura final fica confusa, então eu quero que você não faça isso.</p></li>
-<li><p>Faça o <code>scatter</code> plot usando o pacote <code>Plots.jl</code>, pois ela é integrada com o pacote , e seus gráficos já terão barras de erros.</p>
-<p>Crie novos vetores <span class="math inline">\((r\_log, I\_log)\)</span>, com os valores de <span class="math inline">\((r, I(r))\)</span> em escala logarítmica.</p></li>
-<li><p>Resolva o sistema linear da <a href="#eq-sistema-linear">Equação&nbsp;<span>2.3</span></a> com os seus dados de <span class="math inline">\((r\_log, I\_log)\)</span>.</p></li>
-<li><p>Para extrair o Valor do fit use <code>Measurements.value</code>, e para as incertezas, use <code>Measurements.uncertainty</code>. Com esses comandos, você consegue calcular a margem de erro, e finalmente pode exibir a última figura com todos os resultados.</p></li>
-</ol></li>
-</ol>
-<p>Ao final desse projeto, sua figura estará próxima da <a href="#fig-p3-fit-final">Figura&nbsp;<span>2.2</span></a>.</p>
-<div id="fig-p3-fit-final" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fit_final.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 2.2: Fit usando Método dos Mínimos Quadrados de dados linearizados, e com propagação de erros.</figcaption><p></p>
-</figure>
-</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-p2_despacito" class="csl-entry" role="doc-biblioentry">
-<span class="smallcaps">Gray, A.</span> 2019. How Loud Would It Be If Every Alexa In The World Played <span>«Despacito»</span> At The Same Time? <em>Journal of Interdisciplinary Science Topics</em> <em>8</em>.
-</div>
-<div id="ref-p2_experimento" class="csl-entry" role="doc-biblioentry">
-<span class="smallcaps">Staff, S.B.</span> 2020. Measuring Your Threshold of Hearing for Sounds of Different Pitches.
-</div>
-</div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>O autor desse Caderno de Exercícios deseja compartilhar sua literatura de fatos e assuntos engraçados. e por isso colocou essa referência no texto.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Um micro controlador fabricado para um equipamento ou máquina específica.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Lembre-se de multiplicar valores aleatórios como no Exercício 3.2.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -586,17 +331,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Projeto1/projeto1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prólogo</span></span>
+      <a href="../Projeto1/_15_resistores.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Resistores em Série</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto3/projeto3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">O Sol</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto2/_21_experimento.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">O Experimento</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">2022</div>
+  </div>
+</footer>
 
 
 

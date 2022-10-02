@@ -1,0 +1,13 @@
+## Leitura e Escrita
+
+Outra tarefa recorrente em programação é leitura de dados em arquivo para posterior análise. Voltaremos aos tempos de ensino médio, e vamos calcular tempo de queda livre $t_q = \sqrt{2h/g}$, porém não apenas na Terra.
+
+**a. Pesquise o valor da aceleração da gravidade, $g$, em diferentes planetas do sistema solar. Salve seus resultados em um arquivo `.txt`, cuja primeira coluna é o nome do planeta, e na segunda o valor de $g$. Separe os dados com uma vírgula.**
+
+**b. Use o pacote `DelimitedFiles.jl` para ler os dados em uma matriz.**
+
+**c. Para cada planeta, calcule quanto tempo um objeto demora para atingir o solo, dado que a altura inicial é $h=120 m$.**
+
+**d. Por meio de interpolação de texto, exiba seus resultados como: `"[planeta]: tempo de queda é [tempo] segundos"`.**
+
+**e. Use funções padrões de Julia, e descubra qual o planeta que demora *mais* e *menos* tempo para a queda acontecer.**

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Física Computacional - 3. O Sol</title>
+<title>Física Computacional - 9&nbsp; Dados com Mais Erros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -49,8 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto3/_31_derivada.html" rel="next">
-<link href="../Projeto2/_24_propagacao_erros.html" rel="prev">
+<link href="../Projeto3/projeto3.html" rel="next">
+<link href="../Projeto2/_23_fit_com_erros.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,6 +61,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -90,7 +72,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">3. O Sol</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Dados com Mais Erros</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -159,11 +141,11 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../Projeto2/projeto2.html" class="sidebar-item-text sidebar-link">2. Tratamento de Dados</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto2/_21_experimento.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">O Experimento</span></a>
@@ -181,19 +163,19 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto2/_24_propagacao_erros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dados com Mais Erros</span></a>
+  <a href="../Projeto2/_24_propagacao_erros.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Dados com Mais Erros</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link active">3. O Sol</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a href="../Projeto3/projeto3.html" class="sidebar-item-text sidebar-link">3. O Sol</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto3/_31_derivada.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Derivada</span></a>
@@ -221,20 +203,14 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#radiação-solar" id="toc-radiação-solar" class="nav-link active" data-scroll-target="#radiação-solar">Radiação Solar</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NoelAraujo/fiscomp/issues/new" class="toc-action">Criar uma issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">3. O Sol</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-title">Dados com Mais Erros</span></h1>
 </div>
 
 
@@ -248,40 +224,77 @@ div.csl-indent {
 
 </header>
 
-<p><strong>Objetivo Geral</strong>: Aprender alguns princípios de cálculo numérico.</p>
-<p><strong>Objetivo Especifico</strong>: Calcular o valor de derivadas e integrais com métodos numéricos, usando a física de radiação de corpo negro como pano de fundo. Esse assunto é uma das primeiras vezes no curso de Física no qual é necessário encontrar a solução (a raiz) de uma equação transcendental.</p>
-<p><strong>Conteúdo</strong>: Radiação de Corpo Negro; Derivada; Ordem de Erro; Método de Newton-Raphson, Método da Secante; Quadratura do Trapézio, Simpson, Bode.</p>
-<p>Você já assistiu algum filme do Predador? Uma das características mais marcantes do personagem é sua tecnologia de visão noturna. Isso não é pura ficção científica, há décadas que seres humanos também já usam imagens térmicas, e aplicações fora do campo militar existem aos montes, a mais interessante que devo mencionar é a observação de capivaras como na <a href="#fig-capivaras">Figura&nbsp;<span>1</span></a>.</p>
-<div id="fig-capivaras" class="quarto-figure quarto-figure-center anchored">
+<p>Vamos aprimorar o nosso conhecimento do processo de <em>fitting</em>. Nós usamoa a biblioteca <code>LsqFit.jl</code> pela conivência e nos deparamos com uma situação simples onde ela falhou. Felizmente eu lhe disse a origem do problema e sua solução.</p>
+<p>Mas e se seu código rodasse dentro de um sistema embarcado?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Para economizar bateria do equipamento, você gostaria de refazer todas as contas do fit, porém otimizadas com comandos específicos do seu dispositivo. Logo, o que você precisa é conhecer a matemática dos <strong>Métodos dos Mínimos Quadrados</strong>.</p>
+<p>Vamos usar o <em>fitting</em> da função de primeiro grau, pois nós acabamos de usar ela. Suponha uma função modelo do tipo</p>
+<p><span class="math display">\[
+    y(r) = \alpha r + \beta
+\]</span></p>
+<p>A distância <span class="math inline">\(d_i\)</span> de cada ponto experimental <span class="math inline">\((r_i, I_i)\)</span> e a curva de fit é:</p>
+<p><span class="math display">\[
+    d_i = I_i - (\alpha r_i + \beta)
+\]</span></p>
+<p>O <em>Métodos dos Mínimos Quadrados</em> é autoexplicativo, vamos somar todos os <span class="math inline">\(N\)</span> valores dos erros, <span class="math inline">\(d_i\)</span>, ao quadrado. Precisaremos de um nome para essa quantidade, e vou chamar de <span class="math inline">\(D\)</span>:</p>
+<p><span class="math display">\[
+    D = \sum_{i=1}^N [I_i - (\alpha r_i + \beta)]^2
+\]</span></p>
+<p>Buscamos o valor mínimo de <span class="math inline">\(D\)</span> variando <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, ou seja, a primeira derivada parcial deve ser nula:</p>
+<p><span class="math display">\[
+    \begin{alignat*}{4}
+    \frac{\partial D}{\partial \alpha}  &amp;= \sum_{i=1}^N 2(-r_i)[I_i - (\alpha r_i + \beta)]= 0\\
+    \frac{\partial D}{\partial \beta}  &amp;= \sum_{i=1}^N 2(-1)[I_i - (\alpha r_i + \beta)]= 0
+    \end{alignat*}
+\]</span></p>
+<p>Agora reorganizando as expressões, temos uma sistema linear:</p>
+<p><span class="math display">\[
+    \begin{alignat*}{4}
+     \alpha \sum_{i=1}^N r_i^2 + \beta \sum_{i=1}^N r_i  &amp;= \sum_{i=1}^N r_iI_i\\
+    \alpha \sum_{i=1}^N r_i + \beta N  &amp;= \sum_{i=1}^N I_i
+    \end{alignat*}
+\]</span></p>
+<p>Finalmente, podemos escrever esse sistema em forma matricial:</p>
+<p><span id="eq-sistema-linear"><span class="math display">\[
+    \begin{pmatrix}
+        \sum_{i=1}^N r_i^2  &amp; \sum_{i=1}^N r_i  \\
+        \sum_{i=1}^N r_i &amp; N
+    \end{pmatrix}
+    \begin{pmatrix}
+        \alpha \\
+        \beta
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \sum_{i=1}^N r_iI_i \\
+        \sum_{i=1}^N I_i
+    \end{pmatrix}
+\tag{9.1}\]</span></span></p>
+<p>Sistemas lineares do tipo <span class="math inline">\(Ax=b\)</span> são facilmente resolvidos em Julia com o operador <code>backslash</code>, o barra invertida: <span class="math inline">\(x= A\backslash b\)</span>.</p>
+<p>Até o momento nós obtivemos o valor de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, mas ainda faltam as margem de erro. No lugar de aprender os detalhes de estatística de matriz de covariância, vamos focar em outro assunto correlato, mais pertinente a dados experimentais: <em>Cada medição experimental possui um erro associado</em>.</p>
+<p>Não precisamos aprender o cálculo de <a href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty">Propagação de Erros</a>, pois isso é a finalidade de cursos de laboratório. O que faremos é usar um pacote chamado <code>Measurements.jl</code> que faz toda a propagação de erro nativamente em Julia, ou seja, podemos fazer qualquer análise com os nossos dados, e a propagação de erro será automática.</p>
+<ol class="example" type="1">
+<li><p>Com os mesmos dados de <span class="math inline">\(r\)</span> e <span class="math inline">\(I(r)\)</span> que você calculo o fit através de linearização. Vamos recalcular o fit usando o sistema de equações que foi apresentado. A diferença, é que você adicionará um erro para cada valor de <span class="math inline">\(I(r)\)</span> e verá a propagação de erros acontecer.</p>
+<ol type="a">
+<li><p>Para cada valor de <span class="math inline">\(I(r)\)</span> adicione um erro experimental<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Nada impede lhe de adicionar erros na medição de <span class="math inline">\(r\)</span>, mas a figura final fica confusa, então eu quero que você não faça isso.</p></li>
+<li><p>Faça o <code>scatter</code> plot usando o pacote <code>Plots.jl</code>, pois ela é integrada com o pacote , e seus gráficos já terão barras de erros.</p>
+<p>Crie novos vetores <span class="math inline">\((r\_log, I\_log)\)</span>, com os valores de <span class="math inline">\((r, I(r))\)</span> em escala logarítmica.</p></li>
+<li><p>Resolva o sistema linear da <a href="#eq-sistema-linear">Equação&nbsp;<span>9.1</span></a> com os seus dados de <span class="math inline">\((r\_log, I\_log)\)</span>.</p></li>
+<li><p>Para extrair o Valor do fit use <code>Measurements.value</code>, e para as incertezas, use <code>Measurements.uncertainty</code>. Com esses comandos, você consegue calcular a margem de erro, e finalmente pode exibir a última figura com todos os resultados.</p></li>
+</ol></li>
+</ol>
+<p>Ao final desse projeto, sua figura estará próxima da <a href="#fig-p3-fit-final">Figura&nbsp;<span>9.1</span></a>.</p>
+<div id="fig-p3-fit-final" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="capivara.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 1: Imagem térmica de uma capivara com seu filhote em Campo Grande-MS <span class="citation" data-cites="p3_capivaras">[<a href="../references.html#ref-p3_capivaras" role="doc-biblioref">Silva et al 2019</a>]</span>.</figcaption><p></p>
+<p><img src="fit_final.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura 9.1: Fit usando Método dos Mínimos Quadrados de dados linearizados, e com propagação de erros.</figcaption><p></p>
 </figure>
 </div>
-<p>Tudo que possui matéria emite ondas eletromagnéticas em diferentes frequências. Você nesse momento esta emitindo radiação no regime do infra-vermelho, que nosso olhos não conseguem ver, mesmo você estando brilhando. A explicação desse fenômeno é recente na história da humanidade, e em seu curso de Física Moderna, estudará a <strong>Radiação de Corpo Negro</strong>.</p>
-<section id="radiação-solar" class="level2">
-<h2 class="anchored" data-anchor-id="radiação-solar">Radiação Solar</h2>
-<p>O melhor exemplo de Corpo Negro que qualquer um pode acessar, é Sol de todo dia<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Ele parece amarelo, mas na verdade é composto de vários comprimentos de onda diferentes, alguns dos quais são bloqueados pela atmosfera (lembra da Camada de Ozônio?), outros chegam na superfície, e fazem a vida prosperar - o pico do espectro solar ser no campo visível humano é provavelmente uma coincidência causada por uma junção de fatores complexos.</p>
-<div id="fig-solar-wikipedia" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Solar_Spectrum.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figura 2: Irradiância por comprimento de onda obtido na superfície da Terra, em vermelho, e no topo de atmosfera, em amarelo. A região de máximo de irradiância depende da Temperatura do corpo que emissor. O Sol tem pico na região vísivel, você tem um pico na região infra-vermelha. Fonte: <a href="https://commons.wikimedia.org/wiki/File:Solar_Spectrum.png">Wikipédia</a></figcaption><p></p>
-</figure>
-</div>
-<p>Para estimar o espectro de radiação de qualquer objetivo no universo, usamos a <strong>Lei de Planck</strong>. Ela será nosso objeto de estudo nesse projeto pois uma equação que facilmente recorremos a ajuda de Cálculo Numérico. As próximas seções são dedicadas a apresentar o mínimo de cálculo numérico.</p>
-<p>Não tenha medo do tamanho do projeto. As tarefas serão fáceis, mas como os conceitos são novos, eu preciso dedicar mais tempo explicando os detalhes.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-p3_capivaras" class="csl-entry" role="doc-biblioentry">
-<span class="smallcaps">Silva et al, L.G. da</span>. 2019. Termografia de capivaras (Hydrochoerus hydrochaeris) do perímetro urbano de Campo Grande-MS. <em>PUBVET</em> <em>13</em>, 3, 1–9.
-</div>
-</div>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Minhas desculpas se você está em região polar durante o inverno.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Um micro controlador fabricado para um equipamento ou máquina específica.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Lembre-se de multiplicar valores aleatórios como no Exercício 3.2.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -386,13 +399,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../Projeto2/_24_propagacao_erros.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Dados com Mais Erros</span></span>
+      <a href="../Projeto2/_23_fit_com_erros.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Dados com erros</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto3/_31_derivada.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Derivada</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto3/projeto3.html" class="pagination-link">
+        <span class="nav-page-text">3. O Sol</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
