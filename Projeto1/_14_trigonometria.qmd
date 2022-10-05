@@ -2,14 +2,17 @@
 
 Computadores são máquinas incríveis para fazer contas, mas ainda sim possuem limites. Vamos testar um deles com o cálculo da função seno.
 
-4. Crie um programa para estimar o valor  de *sen(x)* através de sua expansão de Taylor truncada em $N$ elementos:
+::: callout-tip
+## Exercício 1.4
+**Crie um programa para estimar o valor  de *sen(x)* através de sua expansão de Taylor truncada em $N$ elementos:**
     $$
        sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
     $$
+
   a. Escolha um valor de $x$ e calcule a série para $N$ diferentes. Quanto maior $N$, melhor será seus resultado, e nós desejamos verificar isso exibindo os erro absoluto  em um plot de escala logarítmica. Use a biblioteca `Plots.jl` para isso.
 
-  a. Para quais valores de $N$ você não consegue mais realizar a somatória ? Por quê?
-
+  b. Para quais valores de $N$ você não consegue mais realizar a somatória ? Por quê?
+:::
 
 ::: callout-note
 ## Nota

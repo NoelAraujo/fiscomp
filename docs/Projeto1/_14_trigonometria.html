@@ -225,15 +225,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Computadores são máquinas incríveis para fazer contas, mas ainda sim possuem limites. Vamos testar um deles com o cálculo da função seno.</p>
-<ol start="4" type="1">
-<li>Crie um programa para estimar o valor de <em>sen(x)</em> através de sua expansão de Taylor truncada em <span class="math inline">\(N\)</span> elementos: <span class="math display">\[
-    sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
-\]</span></li>
-</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercício 1.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Crie um programa para estimar o valor de <em>sen(x)</em> através de sua expansão de Taylor truncada em <span class="math inline">\(N\)</span> elementos:</strong> <span class="math display">\[
+       sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+    \]</span></p>
 <ol type="a">
 <li><p>Escolha um valor de <span class="math inline">\(x\)</span> e calcule a série para <span class="math inline">\(N\)</span> diferentes. Quanto maior <span class="math inline">\(N\)</span>, melhor será seus resultado, e nós desejamos verificar isso exibindo os erro absoluto em um plot de escala logarítmica. Use a biblioteca <code>Plots.jl</code> para isso.</p></li>
 <li><p>Para quais valores de <span class="math inline">\(N\)</span> você não consegue mais realizar a somatória ? Por quê?</p></li>
 </ol>
+</div>
+</div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

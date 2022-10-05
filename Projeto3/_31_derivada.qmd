@@ -53,6 +53,8 @@ A @tbl-primeira-derivada e @tbl-seg-ter-derivada contêm fórmulas que você far
 
 Sobre a temática de erros de truncamento, eu recomendo ao leitor curioso, a palestra do professor John L. Gustafson,  discutindo sobre erros numéricos, disponível no [YouTube](https://www.youtube.com/watch?v=aP0Y1uAA-2Y).
 
+::: callout-tip
+## Exercício 3.1
 Vamos fixar os novos conceitos calculando a derivada de alguma função conhecida, e para aumentar sua cultura, vamos calcular a primeira derivada da *Equação Parametrizada de um Coração*:
 
 $$
@@ -67,22 +69,22 @@ $$ {#eq-p3-coracao}
 ![](coracao.png)
 :::
 
-(@) Baseado na @eq-p3-coracao :
+Baseado na @eq-p3-coracao :
 
-    a. Obtenha a expressão analítica da Primeira Derivada, $x'_{exato}$, e Segunda Derivada $x''_{exato}$.
+a. Obtenha a expressão analítica da Primeira Derivada, $x'_{exato}$, e Segunda Derivada $x''_{exato}$.
 
-    a. Implemente as funções  *Primeira e Segunda* Derivada Simétrica de 3 pontos.
+a. Implemente as funções  *Primeira e Segunda* Derivada Simétrica de 3 pontos.
 
-    a. Sorteie um número aleatório para $t_0$.
+a. Sorteie um número aleatório para $t_0$.
 
-    a. Crie um vetor com valores de $\Delta t \in [10^{-8}, 10^{-1}]$ em escala logarítmica.
+a. Crie um vetor com valores de $\Delta t \in [10^{-8}, 10^{-1}]$ em escala logarítmica.
 
-    a. Calcule $|x'(t_0) - x'_{exato}(t_0)|$ para diferentes valores de $\Delta t$
+a. Calcule $|x'(t_0) - x'_{exato}(t_0)|$ para diferentes valores de $\Delta t$
 
-    a. Repita o item anterior para a Segunda Derivada.
+a. Repita o item anterior para a Segunda Derivada.
 
-    a. Exiba os resultados em uma Figura de escala log-log. Para melhor interpretação, inverta o eixo X.
-
+a. Exiba os resultados em uma Figura de escala log-log. Para melhor interpretação, inverta o eixo X.
+:::
 
 Agora que você já sabe derivar uma função $f(t)$, usaremos o mesmo raciocínio com vetores. Assim, podemos calcular a derivada da Lei de Planck
 
@@ -92,17 +94,20 @@ $$ {#eq-p3-lei-plank}
 
 Essa expressão da Lei de Planck não é apresentada em livros textos de física, ela fornece a *Radiância* solar, contudo, medições de satélite correspondem a *Irradiância*. Para mais detalhes, confira a discussão em  @p3_irradiancia_treta e uma explicação mais *esclarecedora* em @p3_irradiancia_detalhe.
 
-(@) Nesse exercício, graficaremos a Lei de Planck junto a dados experimentais. Não é necessário entender as origens e fundamentos da @eq-p3-lei-plank para realizar o exercício, mas se lhe interessa, sugiro o capítulo 3 do livro @p3_book_radiation.
-    a. Como essa equação é famosa, pesquise os valores das constantes fundamentais, e escreva uma função em Julia que calcule $E(\lambda; T)$
+::: callout-tip
+## Exercício 3.2
+Nesse exercício, graficaremos a Lei de Planck junto a dados experimentais. Não é necessário entender as origens e fundamentos da @eq-p3-lei-plank para realizar o exercício, mas se lhe interessa, sugiro o capítulo 3 do livro @p3_book_radiation.
+a. Como essa equação é famosa, pesquise os valores das constantes fundamentais, e escreva uma função em Julia que calcule $E(\lambda; T)$
 
-    a. Com $T=6000$, e um vetor $\lambda \in [200, 2500]\, \text{nm}$, calcule o espectro de irradiância do Sol armazenando os resultados em um vetor chamado $E\_\lambda$
+a. Com $T=6000$, e um vetor $\lambda \in [200, 2500]\, \text{nm}$, calcule o espectro de irradiância do Sol armazenando os resultados em um vetor chamado $E\_\lambda$
 
-    a. Exiba o espectro que você obteve em uma figura, e normalize o eixo vertical, o comprimento de onda, em nanômetros, ou seja, divida todos os valores do eixo vertical por $1 \text{nm} = 10^{-9}\text{m}$. Assim, o eixo vertical poderá ser descrito como '$\lambda \; [\text{nm}]$'.
+a. Exiba o espectro que você obteve em uma figura, e normalize o eixo vertical, o comprimento de onda, em nanômetros, ou seja, divida todos os valores do eixo vertical por $1 \text{nm} = 10^{-9}\text{m}$. Assim, o eixo vertical poderá ser descrito como '$\lambda \; [\text{nm}]$'.
 
-    a. Clique [aqui](spectra.txt) e baixe os dados que usaremos, esses dados foram obtidos do *National Renewable Energy Laboratory* @p3_satelite. A primeira coluna é o Comprimento de Onda multiplicado por um fator $10^9$ (ou seja, em unidades de $nm$), e a segunda é a irradiância em $W m^{-2} nm^{-1}$. Sobreponha esses  dados experimentais com a figura produzida com os dados teóricos.
+a. Clique [aqui](spectra.txt) e baixe os dados que usaremos, esses dados foram obtidos do *National Renewable Energy Laboratory* @p3_satelite. A primeira coluna é o Comprimento de Onda multiplicado por um fator $10^9$ (ou seja, em unidades de $nm$), e a segunda é a irradiância em $W m^{-2} nm^{-1}$. Sobreponha esses  dados experimentais com a figura produzida com os dados teóricos.
+:::
 
-
-
+::: callout-tip
+## Exercício 3.3
 Nosso próximo objetivo é calcular o comprimento de onda  no qual a irradiância é máxima, vamos denominar esse valor $\lambda^*$. A nível computacional é muito fácil, é só usar o comando `findmax()`. Se os valores do comprimento de onda estão em um vetor $\lambda$
 
 ``` julia
@@ -112,32 +117,27 @@ E_max, idx_max = findmax(E_λ)
 
 Sinto informar, mas nós usaremos o caminho das pedras.
 
-(@) Vamos achar o máximo com conhecimentos de Cálculo 1: o máximo (ou minimo, ou inflexão) de uma função $f(x)$ existe quando a primeira derivada é nula, $f'(x^*) = 0$.
+Vamos achar o máximo com conhecimentos de Cálculo 1: o máximo (ou minimo, ou inflexão) de uma função $f(x)$ existe quando a primeira derivada é nula, $f'(x^*) = 0$.
 
-    A expressão analítica de $E'(\lambda)$ disponível no Wikipedia é @p3_Wien
-    $$
-                E'(\lambda; T) = 2hc^2\left ( \frac{hc}{kT\lambda^7}\frac{e^{hc/\lambda kT}}{(e^{hc/\lambda k T} -1 )^2} - \frac{1}{\lambda^6}\frac{5}{e^{hc/\lambda k T} -1 }  \right )
-    $$ {#eq-wien}
+A expressão analítica de $E'(\lambda)$ disponível no Wikipedia é @p3_Wien
+$$
+            E'(\lambda; T) = 2hc^2\left ( \frac{hc}{kT\lambda^7}\frac{e^{hc/\lambda kT}}{(e^{hc/\lambda k T} -1 )^2} - \frac{1}{\lambda^6}\frac{5}{e^{hc/\lambda k T} -1 }  \right )
+$$ {#eq-wien}
 
-    a. Implemente a Primeira Derivada Simétrica de 5 Pontos e aplique sobre os **Dados Teóricos** que você tem.
-
-    ::: callout-caution
-    ## Aviso
-    Não calcule a primeira derivada sobre os dados de satélite, pois as oscilações são grandes o suficientes para atrapalhar nossa análise - e não quero que voê se preocupe com mais problemas.
-    :::
-
-    ::: callout-note
-    ## Observação
-    Você esta calculando derivada de vetores, então alguns pontos nas extremidades ficarão sem derivadas, a menos que algum critério especial seja definido. Não faremos nada, simplesmente ignore a derivada nas bordas.
-    :::
-
-    a. Diminua a magnitude dos dados com uma normalização do tipo $f \rightarrow f/max(f)$
-
-    a. Crie um vetor com os valores analíticos e também os normalize
-
-    a. Compare com os valores numéricos com os analíticos em uma figura
+a. Implemente a Primeira Derivada Simétrica de 5 Pontos e aplique sobre os **Dados Teóricos** que você tem.
 
 
+Não calcule a primeira derivada sobre os dados de satélite, pois as oscilações são grandes o suficientes para atrapalhar nossa análise - e não quero que voê se preocupe com mais problemas.
+
+Você esta calculando derivada de vetores, então alguns pontos nas extremidades ficarão sem derivadas, a menos que algum critério especial seja definido. Não faremos nada, simplesmente ignore a derivada nas bordas.
+
+
+b. Diminua a magnitude dos dados com uma normalização do tipo $f \rightarrow f/max(f)$
+
+c. Crie um vetor com os valores analíticos e também os normalize
+
+d. Compare com os valores numéricos com os analíticos em uma figura
+:::
 
 
 
