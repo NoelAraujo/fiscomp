@@ -4,7 +4,7 @@ Computadores são máquinas incríveis para fazer contas, mas ainda sim possuem 
 
 ::: callout-tip
 ## Exercício 1.4
-**Crie um programa para estimar o valor  de *sen(x)* através de sua expansão de Taylor truncada em $N$ elementos:**
+Crie um programa para estimar o valor  de *sen(x)* através de sua expansão de Taylor truncada em $N$ elementos:
     $$
        sin(x) = \sum_{n=0}^{N} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
     $$

@@ -48,14 +48,16 @@ format:
     code-fold: true
     code-line-numbers: false
     code-block-border-left: "#06BEE1"
-    code-copy: hover
+    code-copy: true
     code-block-bg: "#F4F4F9"
     highlight-style: github
-    number-sections: false
+    number-sections: true
     anchor-sections: true
     css: styles.css
     toc-title: "Conteúdo"
     lang: pt
+    fig-width: 4
+    fig-height: 3
 
 
 execute:

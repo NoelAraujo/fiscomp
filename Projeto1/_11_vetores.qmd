@@ -1,24 +1,41 @@
 ## Vetores e Matrizes
 É muito difícil você fazer Física sem manipular vetores e matrizes, por isso você precisa ao menos realizar as operações básicas de Algebra Linear em Julia.
 
----
+::: callout-note
+## Exercício 1.1
+Crie 3 vetores  $\vec{a} = (1,6,7)$,  $\vec{b} = (6,3,4)$ e $\vec{c} = (4,2,5)$.
 
-**a. Crie 3 vetores  $\vec{a} = (1,6,7)$,  $\vec{b} = (6,3,4)$ e $\vec{c} = (4,2,5)$**.
 ```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
 a = [1, 6, 7]
 b = [6, 3, 4]
-c = [4, 2, 5];
+c = [4, 2, 5]
 ```
+:::
 
-**b. Calcule a norma (valor absoluto Euclidiano) de cada vetor.**
+::: callout-note
+## Exercício 1.2
+Calcule a norma (valor absoluto Euclidiano) de cada vetor.
 ```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
 using LinearAlgebra
 norm(a)
 norm(b)
-norm(c);
+norm(c)
 ```
-**c. Calcule o produto escalar e vetorial entre todas as combinações de  $\vec{a},\vec{b}$ e $\vec{c}$.**
+:::
+
+::: callout-note
+## Exercício 1.3
+Calcule o produto escalar e vetorial entre todas as combinações de  $\vec{a},\vec{b}$ e $\vec{c}$.
 ```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
 using IterTools
 for i in subsets([a, b, c], 2)
     x, y = i[1], i[2]
@@ -27,20 +44,32 @@ end
 
 cross(a, b)
 ×(a, c)
-b×c;
+b×c
 ```
+:::
 
-
-**d. Calcule o ângulo entre os vetores $\vec{ab}$ e $\vec{ac}$.**
+::: callout-note
+## Exercício 1.4
+Calcule o ângulo entre os vetores $\vec{ab}$ e $\vec{ac}$.
 ```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
 θ(x,y) = acos( x⋅y/(norm(x)*norm(y)) )
 θ(a, b)
 θ(a, c)
-θ(b, c);
+θ(b, c)
 ```
+:::
 
-**e. Crie a matriz $A = [\vec{a}\; \vec{b}\; \vec{c}]$ e calcule seu determinante.**
+::: callout-note
+## Exercício 1.5
+Crie a matriz $A = [\vec{a}\; \vec{b}\; \vec{c}]$ e calcule seu determinante.
 ```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
 𝐀 = [a b c]
-det(𝐀);
+det(𝐀)
 ```
+:::

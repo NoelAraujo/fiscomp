@@ -27,15 +27,23 @@ Esse experimento é longo e será inevitável a fadiga. Isso é um problema para
 Uma maneira de contornar o cansaço físico é não realizar o experimento de forma linear, escute as frequências em ordem aleatória.
 :::
 
-
+::: callout-note
+## Exercício 6.1
 Leia atentamente a descrição do [experimento](https://www.sciencebuddies.org/science-fair-projects/project-ideas/HumBio_p011/human-biology-health/measuring-hearing-threshold-different-pitches) e preencha uma tabela com a quantidade de batidas que você escutou em cada repetição.
 
-**a. Armazene os seus resultados em uma planilha\footnote{Tipo Microsoft Excel ou similar}.**
+Armazene os seus resultados em uma planilha\footnote{Tipo Microsoft Excel ou similar}.
+:::
 
-**b. Salve os dados como um arquivo CSV.**
+::: callout-note
+## Exercício 6.2
+Salve os dados como um arquivo CSV.
+:::
 
-**c. Leia os dados em Julia com o pacote `DelimitedFiles.jl`, e com o pacote de vizualização de sua escolha, faça um gráfico `semilogx` dos seus resultados.**
+::: callout-note
+## Exercício 6.3
+Leia os dados em Julia com o pacote `DelimitedFiles.jl`, e com o pacote de vizualização de sua escolha, faça um gráfico `semilogx` dos seus resultados.
 ```{julia}
+#| output: true
 using DelimitedFiles
 data = readdlm("minha_audicao.csv", ','; skipstart=1);
 
@@ -49,7 +57,7 @@ plot!(; xlabel="Hertz", ylabel="dB", title="Threshold of Hering")
 ```
 
 O tamanho da fonte da figura deve ser comparável ao texto onde ele estará embutido.
-
+:::
 
 
 ::: {.callout-note collapse="true"}

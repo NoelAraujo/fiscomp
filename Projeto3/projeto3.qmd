@@ -1,4 +1,4 @@
-# 3. O Sol
+# O Sol
 
 
 **Objetivo Geral**: Aprender alguns princípios de cálculo numérico.

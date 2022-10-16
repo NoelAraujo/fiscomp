@@ -1,4 +1,4 @@
-# 1. Prólogo
+# Prólogo
 
 
 **Objetivo Geral**: Quebrar o gelo com a linguagem Julia.

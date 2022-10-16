@@ -2,12 +2,73 @@
 
 Outra tarefa recorrente em programação é leitura de dados em arquivo para posterior análise. Voltaremos aos tempos de ensino médio, e vamos calcular tempo de queda livre $t_q = \sqrt{2h/g}$, porém não apenas na Terra.
 
-**a. Pesquise o valor da aceleração da gravidade, $g$, em diferentes planetas do sistema solar. Salve seus resultados em um arquivo `.txt`, cuja primeira coluna é o nome do planeta, e na segunda o valor de $g$. Separe os dados com uma vírgula.**
+::: callout-note
+## Exercício 2.1
+Pesquise o valor da aceleração da gravidade, $g$, em diferentes corpos celestes do sistema solar. Salve seus resultados em um arquivo `.txt`, cuja primeira coluna é o nome do planeta, e na segunda o valor de $g$. Separe os dados com uma vírgula.
+```{julia}
+#| code-fold: true
+#| code-summary: "Solução"
+# Pegue dados do link:
+# https://en.wikipedia.org/wiki/Surface_gravity
+```
+:::
 
-**b. Use o pacote `DelimitedFiles.jl` para ler os dados em uma matriz.**
+::: callout-note
+## Exercício 2.2
+Use o pacote `DelimitedFiles.jl` para ler os dados em uma matriz.
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+using DelimitedFiles
+gravidades_sistema_solar = readdlm("surface_gravity.txt",',')
+```
+:::
 
-**c. Para cada planeta, calcule quanto tempo um objeto demora para atingir o solo, dado que a altura inicial é $h=120 m$.**
+::: callout-note
+## Exercício 2.3
+Para cada planeta, calcule quanto tempo um objeto demora para atingir o solo, dado que a altura inicial é $h=120 m$.
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+h = 120
+tempo(h,g) = sqrt(2h/g)
+```
+:::
 
-**d. Por meio de interpolação de texto, exiba seus resultados como: `"[planeta]: tempo de queda é [tempo] segundos"`.**
+::: callout-note
+## Exercício 2.4
+Por meio de interpolação de texto, exiba seus resultados como: `"[planeta]: tempo de queda é [tempo] segundos"`.
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+for planeta ∈ eachrow(gravidades_sistema_solar)
+    nome, gravidade = planeta
+    g = gravidade*9.8
+    t_q = round(tempo(h,g),digits=3)
+    println("$(nome): tempo de queda é $( t_q ) segundos")
+end
+```
+:::
 
-**e. Use funções padrões de Julia, e descubra qual o planeta que demora *mais* e *menos* tempo para a queda acontecer.**
+::: callout-note
+## Exercício 2.5
+Use funções padrões de Julia, e descubra qual o planeta que demora *mais* e *menos* tempo para a queda acontecer.
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+todos_tempos = map(eachrow(gravidades_sistema_solar)) do planeta
+    g = planeta[2]*9.8
+    t_q = tempo(h,g)
+end
+
+idx_min = findmin(todos_tempos)[2]
+idx_max = findmax(todos_tempos)[2];
+
+println("queda mais rápida aconteceu em : $(gravidades_sistema_solar[idx_min,1])")
+println("queda mais lenta aconteceu em : $(gravidades_sistema_solar[idx_max,1])")
+```
+:::
