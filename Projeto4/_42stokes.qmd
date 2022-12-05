@@ -1,11 +1,10 @@
 ## Luz com Polarização
 
-O modelo da sessão anterior é uma grande simplificação da interação luz-matéria, o que não é necessariamente um defeito, com a Equação @eq-solucao-lambert-beer} pode-se obter resultados rotineiros em um laboratório de Espectroscopia de Absorção. Nosso modelo simplificado também foi útil para você compreender o Método de Euler, que era o objetivo principal.
+O modelo da sessão anterior é uma grande simplificação muito grande da interação luz-matéria, mas não é necessariamente algo pejorativo. A @eq-solucao-lambert-beer é usada rotineiramente em laboratórios de Espectroscopia de Absorção.
 
-Uma situação que necessita levar em conta a **polarização** da luz é na área de Sensoriamento Remoto, uma vez que cristais de gelo dentro das nuvens, alteram a polarização do espectro eletromagnético, e interfere na imagens que um satélite produz.
-Vamos adicionar polarização ao nosso modelo para você ter um primeiro contato com *Exponenciais de Matrizes* - um tópico normalmente ensinado em Física Matemática ou Mecânica Quântica.
+Um cenário que necessitamos levar em conta a **polarização** da luz é na área de Sensoriamento Remoto. Cristais de gelo dentro das nuvens alteram a polarização do espectro eletromagnético, e interfere diretamente em imagens satélite. Vamos adicionar polarização ao nosso modelo para você ter um primeiro contato com *Exponenciais de Matrizes* - um tópico normalmente ensinado em Física Matemática ou Mecânica Quântica.
 
-A Figura \ref{fig:fig_polarizacao} ilustra uma versão simplificada do problema. Um feixe de luz com polarização bem definida pelas direções $(E_x, E_y)$ atravessa um material, e altera sua polarização para outra direção.
+A @fig-polarizacao ilustra uma versão simplificada do problema. Um feixe de luz com polarização bem definida pelas direções $(E_x, E_y)$ atravessa um material, e altera sua polarização para outra direção $(E'_x, E'_y)$.
 
 
 ::: {#fig-polarizacao}
@@ -15,7 +14,7 @@ A Figura \ref{fig:fig_polarizacao} ilustra uma versão simplificada do problema.
 Mudança na direção de polarização de um feixe de luz ao atravessar um material, por exemplo, uma nuvem com cristais de gelo.
 :::
 
-Afim de descrever *como* a polarização é modificada, você precisa conhecer - apenas conheça o conceito, não precisa compreender os detalhes. novos conceitos, são eles **Vetores de Stokes** e **Matrizes de Mueller**. Vetores de Stokes são usados para representar muito mais que as 2 componentes $(E_x, E_y)$ da polarização, eles são vetores de 4 dimensões @p4_stokes:
+Afim de descrever *como* a polarização é modificada, você precisa conhecer novos conceitos, são eles **Vetores de Stokes** e **Matrizes de Mueller**. Vetores de Stokes são usados para representar muito mais que as 2 componentes $(E_x, E_y)$ da polarização, eles são vetores de 4 dimensões [@p4_stokes]:
 
 $$
     \vec{s} = \begin{bmatrix}
@@ -32,10 +31,10 @@ $$
     \vec{s}' = M\vec{s}.
 $$ {#eq-transformcao-s-M}
 
-A matriz $M$ é a Matriz de Mueller, ela representa a física da interação luz-matéria,  podendo ser *medida* em laboratório. Do ponto de vista teórico existem algumas matrizes de Mueller para casos especiais, o que nos leva a pergunta: *Existe alguma matriz de Mueller para nosso problema?* Queremos uma matriz que represente mudança de polarização com efeitos de absorção, e [@p4absorcaomueller] já respondeu essa pergunta na década de 70.
+A matriz $M$ é a Matriz de Mueller e representa a física da interação luz-matéria, podendo ser *medida* em laboratório. Do ponto de vista teórico existem algumas matrizes de Mueller para casos especiais, o que nos leva a pergunta: *Existe alguma matriz de Mueller para nosso problema?* Queremos uma matriz que represente mudança de polarização com efeitos de absorção, e [@p4absorcaomueller] já respondeu essa pergunta na década de 70.
 
 
-No nosso projeto usaremos o formato da matriz bi-isotrópica apresentada em [@p4_oriol], onde cada em termo diferente de zero, inspirado em @p4absorcaomueller,  terá o fator de absorção $\alpha = n(\omega)\sigma$, formando a matriz
+Em nosso projeto usaremos o formato da matriz bi-isotrópica apresentada em [@p4_oriol], onde cada em termo diferente de zero, inspirado em @p4absorcaomueller,  terá o fator de absorção $\alpha = n(\omega)\sigma$, formando a matriz
 $$
     M = \begin{bmatrix}
 \alpha & 0 & 0 & \alpha \\

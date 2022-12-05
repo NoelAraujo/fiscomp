@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Física Computacional - Prólogo</title>
+<title>Física Computacional - Nuvens</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto1/_11_vetores.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../Projeto4/_41beer_lambert.html" rel="next">
+<link href="../Projeto3/_33_integral.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Prólogo</h1>
+      <h1 class="quarto-secondary-nav-title">Nuvens</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -104,12 +104,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link active">Prólogo</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link">Prólogo</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto1/_11_vetores.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vetores e Matrizes</span></a>
@@ -194,12 +194,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto4/projeto4.html" class="sidebar-item-text sidebar-link">Nuvens</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a href="../Projeto4/projeto4.html" class="sidebar-item-text sidebar-link active">Nuvens</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto4/_41beer_lambert.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lei de Beer-Lambert</span></a>
@@ -234,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Prólogo</h1>
+<h1 class="title d-none d-lg-block">Nuvens</h1>
 </div>
 
 
@@ -248,10 +248,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><strong>Objetivo Geral</strong>: Quebrar o gelo com a linguagem Julia.</p>
-<p><strong>Objetivo Especifico</strong>: Resolver vários exercícios de pequena complexidade, para mostrar funcionalidades da linguagem que serão recorrente durante o curso</p>
-<p><strong>Conteúdo</strong>: Entrada e Saída; Álgebra Linear; Estruturas de repetição; Erros numéricos; Multiple-Dispatch</p>
-<p>Se você já sabe Julia, ou consegue resolver os exercícios sem dificuldades, simplesmente pule esse projeto.</p>
+<p><strong>Objetivo Geral</strong>: Resolver Equações Diferenciais de Primeira Ordem.</p>
+<p><strong>Objetivo Especifico</strong>: Em Física, as equações diferenciais de primeira ordem interessantes, são exponenciais. Em casos simples, tais problemas se beneficam de métodos numéricos também simples, como o Método de Euler. Trabalharemos esse método com valores escalares e matriciais.</p>
+<p>A manipulação de tais equações de forma analítica também é recorrente, por isso, vamos usar ferramentas simbólicas para servir de <em>facilitadores</em> de nossas contas.</p>
+<p>Por último, ‘veremos’ uma equações diferencial em busca de soluções interessantes, normalmente por pontos de equilibrio. Para tal, precisamos criar um <em>Campos de Direções</em>, produzidas em por gráfico chamado <code>quiver</code>.</p>
+<p><strong>Conteúdo</strong>: Lei de Beer-Lambert; Método de Euler; Matrizes de Mueller; Exponencial de Matriz; Cálculo Simbólico; Equação de Transferência Radiativa; Quiver;</p>
+<p>O capítulo anterior mostrou que o espectro de radiação solar não é perfeito devido a efeitos de absorção (de certas frequências) pela atmosfera terrestre. Isso acontece em todo o universo, e ao olhar para as <em>janelas de frequências</em> certas, podemos ver o que esta escondido atrás de uma atmosfera ou de uma nuvem. O Telescópio James Webb é um ótimo exemplo, ele foi criado para ter imagens no infra vermelho, justamente pois as nuvens inter estelares tem menor espalhamento nessa região do espectro eletromagnético.</p>
+<p>Esse curso de Física Computacional é direcionado a alunos em anos inciais da graduação, logo, não posso apresentar um modelo matemático (de clássica ou quântica avançadas) para encontrar frequências de ressonâncias, pois só traria frustrações ao leitor. No entanto, podemos aprender alguns conceitos básicos que são correlatos a espalhamento, e cuja matemática não é complexa, são eles <strong>absorção</strong> e <strong>emissão</strong>.</p>
+<!-- {{< include _41beer_lambert.qmd >}}
+
+{{< include _42stokes.qmd >}} -->
+<!-- {{< include _43quiver.qmd >}} -->
 
 
 
@@ -356,13 +363,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      <a href="../Projeto3/_33_integral.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Integral</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto1/_11_vetores.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vetores e Matrizes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto4/_41beer_lambert.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lei de Beer-Lambert</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

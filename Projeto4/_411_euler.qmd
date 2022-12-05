@@ -1,0 +1,82 @@
+# Método de Euler
+
+Capítulo 3 nos ensinou como calcular derivadas em *pontos* de uma função. No entanto, agora temos uma *equação* que possui derivadas (Equação @eq-lambert-beer) e não sabemos como resolver apenas com nosso conhecimento atual. Aprender a resolver esse tipo de problema é essencial, por exemplo, para obter de $I(x)$, se a densidade não fosse contante no espaço, $n(x)$.
+
+Nesse primeiro projeto, vamos aprender resolver Equações Diferenciais Ordinárias, EDOs, com o **Método de Euler**.
+
+Em essência: Você pega a definição de derivada, e a discretiza. Vamos resolver um problema genérico, e depois voltamos ao nosso contexto. Imagine que a função da intensidade $I(x)$ pode ser escrita da seguinte forma:
+$$
+    \frac{dI}{dx} = f(I),
+$$ {#eq-edo-padrao}
+
+no qual $f(I)$ é uma função que pode depender de mais parâmetros - porém eles são omitindo eles para facilitar a notação. Agora, lembremos da definição formal de uma derivada, que envolve limites, e isolamos o termo que se refere ao *futuro*:
+
+$$
+    \begin{alignat*}{4}
+    \frac{dI}{dx} &= f(I)\\
+    \lim_{\Delta x \to 0} \frac{\Delta I}{\Delta x} &= f(I)\\
+    \frac{\Delta I}{\Delta x} &\approx f(I)\\
+    \frac{I_{k+1} - I_{k}}{\Delta x} &= f(I)\\
+    I_{k+1} - I_{k} &= \Delta x\cdot f(I)\\
+    I_{k+1} &= I_{k} + \Delta x\cdot f(I)
+    \end{alignat*}
+$$
+
+Se você sabe a condição inicial, $I_0$, e um intervalo $\Delta x$, você consegue obter o valor de $I_{n+1}$ iterativamente.
+
+::: callout-note
+## Exercício 4.1
+Descubra qual é a função $f(I)$ alterando a Equação @eq-lambert-beer para adquirir o formato da Equação @eq-edo-padrao. Então crie uma função em Julia `f(I,p)`, onde `p` é uma tupla com os valores de $\sigma, n$.
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+function f(I,p)
+    σ, n = p
+    return -σ*n*I
+end
+```
+:::
+
+::: callout-note
+## Exercício 4.2
+Obtenha o resultado de $I(x)$ em um `array` utilizando o Método de Euler.
+
+Use os parâmetros: $I_0 = 10$, $x \in [0,5]$, $\Delta x = 10^{-2}$ e $\sigma = n = 1$.
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+
+Δx = 1e-2
+x = range(0, stop=5, step=Δx)
+
+I₀ = 10
+σ, n = 1, 1; p = σ, n
+
+maxIter = length(x)
+Iₙ = zeros(maxIter)
+Iₙ[1] = I₀
+for n = 1:(maxIter-1)
+    Iₙ[n+1] = Iₙ[n] + Δx*f(Iₙ[n], p)
+end
+```
+:::
+
+
+
+::: callout-note
+## Exercício 4.2
+Exiba seu resultado anterior em uma figura, e compare com o resultado exato, $I(x) = I_0e^{-\sigma n x}$.
+
+```{julia}
+#| output: false
+#| code-fold: true
+#| code-summary: "Solução"
+# using Plots
+# plot(x, Iₙ, lw=4, label="Euler")
+# plot!(x, x->I₀*exp(-σ*n*x), linestyle=:dash, label="Exato", lw=3, c=:black)
+# xlabel!("x")
+# ylabel!("I")
+```
+:::

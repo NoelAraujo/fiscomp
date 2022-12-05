@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Física Computacional - Prólogo</title>
+<title>Física Computacional - 13&nbsp; Lei de Beer-Lambert</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Projeto1/_11_vetores.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../Projeto4/_411_euler.html" rel="next">
+<link href="../Projeto4/projeto4.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Prólogo</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lei de Beer-Lambert</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -104,12 +105,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link active">Prólogo</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a href="../Projeto1/projeto1.html" class="sidebar-item-text sidebar-link">Prólogo</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Projeto1/_11_vetores.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vetores e Matrizes</span></a>
@@ -195,14 +196,14 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../Projeto4/projeto4.html" class="sidebar-item-text sidebar-link">Nuvens</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Projeto4/_41beer_lambert.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lei de Beer-Lambert</span></a>
+  <a href="../Projeto4/_41beer_lambert.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lei de Beer-Lambert</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Prólogo</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lei de Beer-Lambert</span></h1>
 </div>
 
 
@@ -248,10 +249,35 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><strong>Objetivo Geral</strong>: Quebrar o gelo com a linguagem Julia.</p>
-<p><strong>Objetivo Especifico</strong>: Resolver vários exercícios de pequena complexidade, para mostrar funcionalidades da linguagem que serão recorrente durante o curso</p>
-<p><strong>Conteúdo</strong>: Entrada e Saída; Álgebra Linear; Estruturas de repetição; Erros numéricos; Multiple-Dispatch</p>
-<p>Se você já sabe Julia, ou consegue resolver os exercícios sem dificuldades, simplesmente pule esse projeto.</p>
+<p>Em nosso contexto, de luz solar atravessando a atmosfera terrestre, <em>absorção</em> de energia significa que átomos e moléculas dentro de nuvens absorvem energia luminosa e a transforma, seja em energia térmica (fazendo moléculas se movimentarem ou vibrarem), seja em espalhamento (energia é absorvida pela nuvem, e é reemitida em luz). Contudo, não sabemos como quantificar a atenuação de um feixe de luz atravessando uma nuvem.</p>
+<p>Absorção é um processo de ‘perda’ de energia do sistema, por isso o decaimento é diferente da atenuação sonora, vista no Projeto 2, cujo decaimento era quadrático, <span class="math inline">\(1/r^2\)</span> - motivada pela conservação de energia no espaço. Faremos um modelo de atenuação por absorção baseado em ideias simples de proporcionalidade, e descobriremos que a intensidade luminosa tem decaimento exponencial, <span class="math inline">\(e^{-r}\)</span>. O processo de modelagem que você irá ler é importante, pois o mecanismo se repete em outros contextos da Física.</p>
+<p>Imagine uma nuvem de densidade <span class="math inline">\(n\)</span>, e formato bem definido, de largura <span class="math inline">\(dx\)</span> e área <span class="math inline">\(A\)</span>, como representado na Figure XXX. Como cada molécula interage com a luz solar <span class="math inline">\(I_0\)</span>, precismos quantificar essa interação com um número, e a seção de choque <span class="math inline">\(\sigma\)</span> faz exatamente isso. Nós imaginamos que cada átomos faz uma sombra sombra na luz incidente, vide Figure YYY, e portanto, a luz que atravessa o meio é atenuada. O valor exato de <span class="math inline">\(\sigma\)</span> depende de qual frequência estamos trabalhando, para não esquecer disso, a notação utilizada será <span class="math inline">\(\sigma_{\omega}\)</span>. Na modelagem a seguir, vamos fixar nosso raciocínio para uma frequência <span class="math inline">\(\omega\)</span> bem definida.</p>
+<p>Vamos a modelagem:</p>
+<ul>
+<li><p>Como a quantidade de luz atenuada foi <span class="math inline">\(dI\)</span>, e a luz inicial foi <span class="math inline">\(I\)</span>, a porcentagem de luz transmitida é <span class="math inline">\(dI/I\)</span>. Para não esquecermos que estamos trabalhando em uma frequência bem definida, adicionaremos o sub indice <span class="math inline">\(\omega\)</span>: <span class="math inline">\(dI_{\omega}/I_{\omega}\)</span></p></li>
+<li><p>A quantidade de átomos que interagiram com a luz fornece qual a área da nuvem que ficou bloqueada (a área que criou a sombra). A quantidade de átomos é obtido da densidade e volume, <span class="math inline">\(N = n dx A\)</span>. A área total de interação é obtida com a seção de choque temos <span class="math inline">\(A_{choque} = \sigma n dx A\)</span>. Finalmente, a proporção de átomos que bloquearam a luz e de área total é <span class="math inline">\(A_{choque}/A = \sigma n dx\)</span></p></li>
+</ul>
+<p>Fazendo igualdade de proporções, e colocando um sinal de negativo, para indicar que luz esta sendo perdida, obtemos a <em>Lei de Lambert-Beer</em>:</p>
+<p><span id="eq-lambert-beer"><span class="math display">\[
+    \frac{dI_{\omega}(x)}{I_{\omega}} = - \sigma(\omega) n dx.
+\tag{13.1}\]</span></span></p>
+<p>Se a seção de choque e a densidade forem constantes no espaço, a solução é uma exponencial, como prometido no começo do capítulo:</p>
+<p><span id="eq-solucao-lambert-beer"><span class="math display">\[
+    I(x) = I_0e^{-\sigma n x}.
+\tag{13.2}\]</span></span></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A integral <span class="math inline">\(\tau = \int_0^x \sigma(\omega) n dx' = \sigma n x\)</span> tem vários nomes, aqui, será conhecida como Profundidade Óptica.</p>
+</div>
+</div>
 
 
 
@@ -356,13 +382,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      <a href="../Projeto4/projeto4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nuvens</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Projeto1/_11_vetores.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vetores e Matrizes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Projeto4/_411_euler.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Método de Euler</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

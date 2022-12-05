@@ -38,6 +38,11 @@ book:
         - Projeto3/_31_derivada.qmd
         - Projeto3/_32_raiz.qmd
         - Projeto3/_33_integral.qmd
+    - part: Projeto4/projeto4.qmd
+      chapters:
+        - Projeto4/_41beer_lambert.qmd
+        - Projeto4/_411_euler.qmd
+        - Projeto4/_42stokes.qmd
     - references.qmd
   repo-url: https://github.com/NoelAraujo/fiscomp
   repo-actions: [issue]
